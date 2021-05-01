@@ -8,5 +8,16 @@
 </head>
 <body>
     <h1>Ini Halaman Detail Lomba</h1>
+    <tabel border="1">
+    @foreach ($data as $item)
+    <tr>
+        <td>{{ $item->id_lomba }}</td>
+        <td><img src="{{ $item->poster }}" alt="Girl in a jacket" width="200" height="300"></td>
+        <td>{{ $item->judul }}</td>
+        <td>{{ $item->biaya }}</td>
+        <td>{{ $item->nama_kategori }}</td>
+    </tr>
+    @endforeach
+    </tabel>
 </body>
 </html>
