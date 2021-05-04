@@ -12,22 +12,67 @@
     </head>
 
     <body>
-        <footer class="bg-blue pt-5">
+        <footer class="bg-blue-footer pt-5">
             <div class="container p-4">
                 
-                <div class="bg-white-footer">
-                    <p class="text-black">Ingin berbagi informasi lomba? <br>
-                        Hai, Kami membuka kolaborasi dengan pihak penyelenggara lomba untuk menyebarkan informasi <br> 
+                <div class="bg-white-footer" style="border-radius: 35px;">
+                    <section class="">
+                    <p class="text-black fw-bold">Ingin berbagi informasi lomba? </p>
+                    <p class="text-black"> Hai, Kami membuka kolaborasi dengan pihak penyelenggara lomba untuk menyebarkan informasi <br> 
                         lombanya. Tenang saja, layanan kolaborasi kami GRATIS !! tanpa dipungut biaya :D <br>
-                        <br>
-
+                    </p>
+                    <p>
                         Apakah kalian tertarik ?
                     </p>
-                    <p class="text-white">
-                        Contact person Admin
-                    </p>
+
+                    <button class="button-footer fw-bold">Yuk kolaborasi</button>
+                    </section>
                 </div>
-            </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <p class="text-white fw-bold contact"> 
+                            Contact Person Admin 
+                        </p>
+                        <p class="text-white wa"> 
+                            WA : +6287675456352 <br>
+                            Email : infoITION@gmail.com 
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 px-6"></div>
+
+                    <div class="col-md-4 col-sm-6 px-6">
+                        <div class="col-md-12">
+                            <div class="">
+                                <div class="contact text-center">
+                                    <ul>
+                                        <li class="round-btn btn-items"><a href="#">
+                                            <img class="" src="{{asset('logo/1200px-Instagram_logo_2016 1.png')}}">
+                                        </a></li>
+                                        <li class="round-btn btn-items"><a href="#">
+                                            <img src="{{asset('logo/logo-gmail 1.png')}}">
+                                        </a></li>
+                                        <li class="round-btn btn-items"><a href="#">
+                                            <img src="{{asset('logo/WhatsApp-Logo 1.png')}}">
+                                        </a></li>
+                                    </ul>   
+                                                                        
+                                    <ul>
+                                        <li class="btn-items top-footer">
+                                            <img src="{{asset('logo/Logo_PENS putih.png')}}">
+                                            <img src="{{asset('logo/Putih.png')}}">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+                <p class="text-white text-center fw-bold">
+                    Copyright ITION 2021
+                </p>
+			</div>	
         </footer>
     
     </body>
