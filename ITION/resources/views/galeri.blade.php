@@ -8,5 +8,20 @@
 </head>
 <body>
     <h1>Ini Halaman Galeri</h1>
+    <tabel border="3">
+        <tr>
+            <td>ID</td>
+            <td>Foto</td>
+            <td>Kategori</td>
+            <br>
+        </tr>
+        @foreach ($data as $item)
+        <tr>
+            <td>{{ $item->id_galeri }}</td>
+            <td><img src="{{ $item->foto }}" width="300" height="400"></td>
+            <td>{{ $item->nama_kategori }}</td>
+            <br>
+        </tr>
+        @endforeach
 </body>
 </html>

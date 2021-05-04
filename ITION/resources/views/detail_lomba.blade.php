@@ -16,6 +16,7 @@
         <td>{{ $item->judul }}</td>
         <td>{{ $item->biaya }}</td>
         <td>{{ $item->nama_kategori }}</td>
+        <td><a href="https://wa.me/{{$item->kontak}}?text=Halo%20kak," target="_blank">Kontak</a></td>
     </tr>
     @endforeach
     </tabel>
