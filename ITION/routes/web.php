@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('beranda');
+    return view('footer');
 });
 
 Route::get('/lomba',function(){
