@@ -32,7 +32,7 @@
 
                     <div class="p-3"></div>
 
-                    <button class="button-lomba fw-bolder">Cari Lomba</button>
+                    <button class="button-lomba fw-bolder" onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button>
                 </div>
 
                 <div class="p-3"></div>
@@ -41,16 +41,18 @@
     </div>
 
     <div class="p-5"></div>
+    @foreach ($data as $item)
     <div class="container">
         <div class="card w-100">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <img class="">
+                    <img class="" src="{{ $item->poster }}" width="300" height="400">
                 </div>
+                
                 <div class="col-md-3 col-sm-6">
                     <div class="card-body" style="width: 30rem;">
-                        <h5 class="card-title">Hackathon</h5>
-                        <h6 class="card-text fw-normal">KMIPN</h6>
+                        <h5 class="card-title">{{ $item->judul }}</h5>
+                        <h6 class="card-text fw-normal">{{ $item->nama_kategori }}</h6>
                         <p></p>
                         <p class="card-text">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et</p>
                     </div>
@@ -65,13 +67,14 @@
 
                         <div class="p-3"></div>
 
-                        <button class="button fw-bolder">Baca Selengkapnya !</button>
+                        <button class="button fw-bolder" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="p-5"></div>
     </div>
+    @endforeach
 
     <div class="container">
         <div class="row">

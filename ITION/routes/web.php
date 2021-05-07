@@ -16,11 +16,10 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('beranda.beranda');
-});
-
-Route::get('/beranda', function () {
-    return view('beranda.beranda');
+    $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,kategori.nama_kategori 
+    FROM lomba,kategori 
+    WHERE lomba.id_lomba = 1 AND lomba.id_kategori = kategori.id_kategori");
+    return view('beranda.beranda',['data' => $data]);
 });
 
 Route::get('/lomba',function(){
