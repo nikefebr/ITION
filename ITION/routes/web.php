@@ -16,9 +16,10 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
+    $id_lomba_random = rand(1,2);
     $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,kategori.nama_kategori 
     FROM lomba,kategori 
-    WHERE lomba.id_lomba = 1 AND lomba.id_kategori = kategori.id_kategori");
+    WHERE lomba.id_lomba = $id_lomba_random AND lomba.id_kategori = kategori.id_kategori");
     return view('beranda.beranda',['data' => $data]);
 });
 
