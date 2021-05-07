@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html, body {
+    font-family: 'Roboto';
+    font-size: '';
+    line-height: '';
+    box-sizing: border-box;
+    margin: 0;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.bg-blue {
+    background-color: #003567;
+}
+
+.bg-blue-gradient {
+    background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
+}
+
+.bg-blue-footer {
+    background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
+    border-radius: 35px 35px 0px 0px;
+}
+
+.bg-ition {
+    color: #F4F4F4;
+}
+
+.bg-white-footer {
+    background-color: #F4F9F9;
+    padding: 50px;
+}
+
+.bg-yellow-ition {
+    background: rgba(255, 222, 39, 0.2);
+}
+
+.button {
+    background-color: #FFDE27;
+    border: none;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.white-button {
+    background-color: white;
+    border-color: #FFDE27;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.button-footer {
+    background-color: #FFDE27;
+    border: none;
+    border-radius: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.button-lomba {
+    background-color: #FFDE27;
+    border: none;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-items {
+    padding-top: 11px;
+}
+
+.round-btn {
+    display: inline; 
+    height: 60px; 
+    width: 60px; 
+    background:#fff; 
+    border-radius: 50%; 
+    float: left; 
+    border: 1px solid;
+}
+
+.contact {
+    padding-top: 100px;
+    padding-left: 30px;
+}
+
+footer .round-btn {
+    box-shadow: 2px 2px 5px 0px #222 !important;
+    margin: 0px 30px 0px 0px;
+}
+
+.top-footer {
+    padding-top: 60px;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-blue {
+    color: #00203E;
+}
+
+.text-grey {
+    color: #373737;
+    opacity: 0.5;;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-white:hover {
+    color: #FFDE27;
+}
+
+.wa {
+    padding-left: 30px;
+}
