@@ -6,29 +6,28 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-sm navbar-dark sticky-top py-1" style="background-color: #003567;">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-1" style="background-color: #003567;">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="{{ url("") }}">ITION</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+            <a class="navbar-brand text-white" href="{{ url('beranda') }}">ITION</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-            
-                <div class="collapse navbar-collapse justify-content-between" id="#navbarMenu">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="{{ url("") }}">Beranda</a>
+                            <a class="nav-link active text-white" aria-current="page" href="{{ url('beranda') }}">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url("lomba") }}">Lomba</a>
+                            <a class="nav-link text-white" href="{{ url('lomba') }}">Lomba</a>
                             </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url("galeri") }}">Galeri</a>
+                            <a class="nav-link text-white" href="{{ url('galeri') }}">Galeri</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url("testimoni") }}">Testimoni</a>
+                            <a class="nav-link text-white" href="{{ url('testimoni') }}">Testimoni</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url("tentang") }}">Tentang</a>
+                            <a class="nav-link text-white" href="{{ url('tentang') }}">Tentang</a>
                         </li>
                     </ul>
                 </div>
