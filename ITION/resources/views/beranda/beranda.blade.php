@@ -24,7 +24,7 @@
 
                     <div class="p-3"></div>
 
-                    <button class="button-lomba fw-bolder">Cari Lomba</button>
+                    <button class="button-lomba fw-bolder" onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button>
                 </div>
 
                 <div class="p-3"></div>
@@ -33,16 +33,17 @@
     </div>
 
     <div class="p-5"></div>
+    @foreach ($rekom as $item)
     <div class="container">
         <div class="card w-100">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <img class="">
+                    <img class="" src="{{ $item->poster }}" width="300" height="400">
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="card-body" style="width: 30rem;">
-                        <h5 class="card-title">Hackathon</h5>
-                        <h6 class="card-text fw-normal">KMIPN</h6>
+                        <h5 class="card-title">{{ $item->judul }}</h5>
+                        <h6 class="card-text fw-normal">{{ $item->nama_kategori }}</h6>
                         <p></p>
                         <p class="card-text">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et</p>
                     </div>
@@ -57,13 +58,14 @@
 
                         <div class="p-3"></div>
 
-                        <button class="button fw-bolder">Baca Selengkapnya !</button>
+                        <button class="button fw-bolder" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="p-5"></div>
     </div>
+    @endforeach
 
     <div class="container">
         <div class="row">
@@ -75,37 +77,43 @@
             </div>
 
             <div class="col-md-2 col-sm-2"></div>
-
+            @foreach ($galeri as $item)
+            @if ($loop->first)
             <div class="col-md-3 col-sm-6">
                 <h5 class="fw-bold">Lihat keseruan lainnya</h5>
                 <div class="p-2"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="" class="card-img-top" alt="">
+                    <img src="{{ $item->foto }}" class="card-img-top" alt="" width="200" height="200">
                         <div class="card-body">
                             <p class="card-text fw-normal"></p>
                             <p class="card-text fw-bold"></p>
                     </div>
                 </div>
             </div>
-
+            @endif
+            
+            @if ($loop->last)
             <div class="col-md-3 col-sm-6 px-5">
                 <div class="p-4"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="" class="card-img-top" alt="">
+                    <img src="{{ $item->foto }}" class="card-img-top" alt="" width="200" height="200">
                         <div class="card-body">
                             <p class="card-text fw-normal"></p>
                             <p class="card-text fw-bold"></p>
 
                             <div class="p-4"></div>
 
-                            <button class="white-button fw-bolder">Selengkapnya>></button>
+                            <button class="white-button fw-bolder" onclick="window.location='{{ url("galeri") }}'">Selengkapnya>></button>
 
                             <div class="p-4"></div>
                         </div>
                 </div>
             </div>
+            @endif
+            
+            @endforeach
         </div>
     </div>
 
