@@ -24,6 +24,10 @@ ul {
     background-color: #003567;
 }
 
+.bg-blue-2 {
+    background-color: #001B35;
+}
+
 .bg-blue-gradient {
     background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
 }
@@ -86,6 +90,16 @@ ul {
     padding-bottom: 5px;
 }
 
+.button-katalog {
+    background-color: #FFDE27;
+    border: none;
+    border-radius: 0px 0px 26px 26px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .btn-items {
     padding-top: 11px;
 }
@@ -120,6 +134,10 @@ footer .round-btn {
 
 .text-blue {
     color: #00203E;
+}
+
+.text-blue-2 {
+    color: #003567;
 }
 
 .text-grey {
