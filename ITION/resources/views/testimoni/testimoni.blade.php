@@ -11,23 +11,27 @@
 <body>
     @include('navbar')
     <h1>Ini Halaman Testimoni</h1>
-    <tabel style="boder: 1px;">
+    <tabel class="table table-bordered">
+    <thead>
         <tr>
-            <td>Nama</td>
-            <td>Foto</td>
-            <td>Judul Lomba</td>
-            <td>Tahun Lomba</td>
-            <td>Testimoni</td>
+            <th>Nama</th>
+            <th>Foto</th>
+            <th>Judul Lomba</th>
+            <th>Tahun Lomba</th>
+            <th>Testimoni</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach ($data as $item)
         <tr>
-            <td>{{ $item->nama }}</td>
-            <td><img src="{{ url('image/reviewer/'.$item->foto) }}" width="100"></td>
-            <td>{{ $item->judul }}</td>
-            <td>{{ $item->tahun_lomba }}</td>
-            <td>{{ $item->testimoni }}</td>
+            <th>{{ $item->nama }}</th>
+            <th><img src="{{ url('image/reviewer/'.$item->foto) }}" width="100"></th>
+            <th>{{ $item->judul }}</th>
+            <th>{{ $item->tahun_lomba }}</th>
+            <th>{{ $item->testimoni }}</th>
         </tr>
         @endforeach
+    </tbdoy>
     </tabel>
     @include('footer')
 </body>
