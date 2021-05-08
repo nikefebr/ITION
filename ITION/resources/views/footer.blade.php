@@ -8,20 +8,29 @@
 
     <body>
         <footer class="bg-blue-footer pt-5">
-            <div class="container p-4">
+            <div class="container p-5">
                 
                 <div class="bg-white-footer" style="border-radius: 35px;">
-                    <section class="">
-                    <p class="text-black fw-bold">Ingin berbagi informasi lomba? </p>
-                    <p class="text-black"> Hai, Kami membuka kolaborasi dengan pihak penyelenggara lomba untuk menyebarkan informasi <br> 
-                        lombanya. Tenang saja, layanan kolaborasi kami GRATIS !! tanpa dipungut biaya :D <br>
-                    </p>
-                    <p>
-                        Apakah kalian tertarik ?
-                    </p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <section class="">
+                            <p class="text-black fw-bold fs-5">Ingin berbagi informasi lomba? </p>
+                            <p class="text-black fs-6"> Hai, Kami membuka kolaborasi dengan pihak penyelenggara lomba untuk menyebarkan informasi
+                                lombanya. Tenang saja, layanan kolaborasi kami GRATIS !! <br> 
+                                Tanpa dipungut biaya :D <br>
+                            </p>
+                            <p class="mt-4">
+                                Apakah kalian tertarik ?
+                            </p>
 
-                    <button class="button-footer fw-bold" onclick="window.open('https://wa.me/6287701437591?text=Halo kak,')">Yuk kolaborasi</button>
-                    </section>
+                            <button class="button-footer fw-bold" onclick="window.open('https://wa.me/6287701437591?text=Halo kak, saya ingin melakukan kolaborasi')">Yuk kolaborasi</button>
+                            </section>
+                        </div>
+
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="{{asset('image/footer.png')}}">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">

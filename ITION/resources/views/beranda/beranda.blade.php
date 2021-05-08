@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda</title>
-</head>
 <body style="background-color: #F4F4F4;">
     @include('navbar')
     
@@ -41,14 +33,13 @@
     </div>
 
     <div class="p-5"></div>
-    @foreach ($data as $item)
+    @foreach ($rekom as $item)
     <div class="container">
         <div class="card w-100">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <img class="" src="{{ $item->poster }}" width="300" height="400">
                 </div>
-                
                 <div class="col-md-3 col-sm-6">
                     <div class="card-body" style="width: 30rem;">
                         <h5 class="card-title">{{ $item->judul }}</h5>
@@ -86,37 +77,43 @@
             </div>
 
             <div class="col-md-2 col-sm-2"></div>
-
+            @foreach ($galeri as $item)
+            @if ($loop->first)
             <div class="col-md-3 col-sm-6">
                 <h5 class="fw-bold">Lihat keseruan lainnya</h5>
                 <div class="p-2"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="" class="card-img-top" alt="">
+                    <img src="{{ $item->foto }}" class="card-img-top" alt="" width="200" height="200">
                         <div class="card-body">
                             <p class="card-text fw-normal"></p>
                             <p class="card-text fw-bold"></p>
                     </div>
                 </div>
             </div>
-
+            @endif
+            
+            @if ($loop->last)
             <div class="col-md-3 col-sm-6 px-5">
                 <div class="p-4"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="" class="card-img-top" alt="">
+                    <img src="{{ $item->foto }}" class="card-img-top" alt="" width="200" height="200">
                         <div class="card-body">
                             <p class="card-text fw-normal"></p>
                             <p class="card-text fw-bold"></p>
 
                             <div class="p-4"></div>
 
-                            <button class="white-button fw-bolder">Selengkapnya>></button>
+                            <button class="white-button fw-bolder" onclick="window.location='{{ url("galeri") }}'">Selengkapnya>></button>
 
                             <div class="p-4"></div>
                         </div>
                 </div>
             </div>
+            @endif
+            
+            @endforeach
         </div>
     </div>
 
@@ -131,7 +128,7 @@
 
                         <div class="p-3"></div>
 
-                        <div class="card">
+                        <div class="card" style="width: 25rem;">
                             <div class="row">
                                 <img src="" class="card-img-top" alt="">
                                     <div class="card-img-overlay">
@@ -139,9 +136,11 @@
                                     </div>
                             </div>
 
+                            <div class="p-3"></div>
+
                             <div class="row">
-                                <div class="col">
-                                    <div class="card-body p-3">
+                                <div class="col-md-7 col-sm-7">
+                                    <div class="card-body">
                                         <h5 class="card-text fw-bold text-blue">Judul</h5>
                                         <h6 class="card-text fw-light text-blue">Kategori</h6>
                                         
@@ -150,6 +149,23 @@
                                         </p>
                                     </div>
                                 </div>
+
+                                <div class="col-md-5 col-sm-5 mt-0 pt-0">
+                                    <div class="p-2"></div>
+
+                                    <div class="card-body bg-blue-2 text-center">
+                                        <h6 class="card-text fw-bold text-blue text-white">DEADLINE</h6>
+                                        <h6 class="card-text fw-bold text-blue text-white">PENDAFTARAN</h6>
+                                        
+                                        <p class="card-text mt-4">
+                                            
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row ms-0" style="width: 25rem;">
+                                <button class="button-katalog fw-bolder text-blue-2">Daftar Lomba Ini</button>
                             </div>
                         </div>
                     </div>
@@ -157,8 +173,66 @@
         </div>
         <div class="p-5"></div>
     </div>
+
+    <div class="p-4"></div>
+    
+    <div class="container mt-0 bg-white-ition">
+        <h5 class="fw-bold text-center">Keuntungan sering mengikuti lomba</h5>
+        <div class="p-4"></div>
+
+            <div class="row fw-bold text-center">
+                <div class="col-md-3 col-sm-6">
+                    <p>Langkah untuk menjadi<br>
+                        Mawapres</p>
+                    <img src="{{asset('logo/mawapres.png')}}">
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <p>Personal Branding</p>
+                    <img src="{{asset('logo/branding.png')}}">
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <p>Membuat<br>
+                        CV lebih menarik</p>
+                    <img src="{{asset('logo/cv.png')}}">
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <p>Mengasah skillmu</p>
+                    <img src="{{asset('logo/skill.png')}}">
+                </div>
+            </div>
+    </div>
+
+    <div class="p-5"></div>
+
+    <div class="container mt-0 bg-white-ition">
+        <h5 class="fw-bold">Apa kata mereka?</h5>
+        
+        <div class="p-4"></div>
+
+        <div class="card mx-auto" style="max-width: 900px;">
+            <div class="row g-0">
+
+                <div class="col-md-4">
+                    <img src="" alt="" class="rounded">
+                </div>
+
+                <div class="col-md-8 bg-blue px-4">
+                    <div class="p-4"></div>
+
+                    <div class="card-body text-white">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+
+                    <div class="p-5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="p-5"></div>
 
     @include('footer')
 </body>
-</html>

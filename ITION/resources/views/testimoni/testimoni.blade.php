@@ -11,6 +11,24 @@
 <body>
     @include('navbar')
     <h1>Ini Halaman Testimoni</h1>
+    <tabel style="boder: 1px;">
+        <tr>
+            <td>Nama</td>
+            <td>Foto</td>
+            <td>Judul Lomba</td>
+            <td>Tahun Lomba</td>
+            <td>Testimoni</td>
+        </tr>
+        @foreach ($data as $item)
+        <tr>
+            <td>{{ $item->nama }}</td>
+            <td><img src="{{ url('image/reviewer/'.$item->foto) }}" width="100"></td>
+            <td>{{ $item->judul }}</td>
+            <td>{{ $item->tahun_lomba }}</td>
+            <td>{{ $item->testimoni }}</td>
+        </tr>
+        @endforeach
+    </tabel>
     @include('footer')
 </body>
 </html>
