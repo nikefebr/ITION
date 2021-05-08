@@ -31,4 +31,4 @@ Route::view('/tentang', 'tentang.tentang');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
