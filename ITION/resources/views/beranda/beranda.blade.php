@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" type="text/css" {{ asset('beranda.cs') }}>
+</head>
 <body style="background-color: #F4F4F4;">
     @include('navbar')
     
@@ -209,30 +212,24 @@
 
     <div class="container mt-0 bg-white-ition">
         <h5 class="fw-bold">Apa kata mereka?</h5>
-        
         <div class="p-4"></div>
-
-        <div class="card mx-auto" style="max-width: 900px;">
-            <div class="row g-0" >
-            @foreach ($testimoni as $item)
-                <div class="col-md-4">
-                    <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" class="rounded">
+        @foreach ($testimoni as $item)
+        <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
+            <div class="row g-0">
+                <div class="col-md-2">
+                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" class="img-fluid rounded-circle">
                 </div>
-            @endforeach
                 <div class="col-md-8 bg-blue px-4">
                     <div class="p-4"></div>
-
                     <div class="card-body text-white">
                         <p class="card-text">{{ $item->testimoni }}</p>
                     </div>
-
                     <div class="p-5"></div>
                 </div>
-            </div>
-        </div>
+            </div> 
+        <!-- </div> -->
+        @endforeach
     </div>
-
     <div class="p-5"></div>
-
     @include('footer')
 </body>
