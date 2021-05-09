@@ -14,7 +14,7 @@
     <div class="p-3"></div>
         <div class="container p-5">
             <div class="row">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <img src="{{asset('image/image 2.jpeg')}}">
                 </div>
 
@@ -40,44 +40,79 @@
                     <p class="fw-bold fs-3 text-black text-center">
                         Nilai Kami
                     </p>
-    </div>
 <br>
 
-<div class="row" center>
- 
-<div class="col-sm-2">
-<center>
-		<div class="card text-center">
-		  <div class="card-body">
-		    <h5 class="card-title">Memotivasi</h5>
-		    <p class="card-text">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba</p>
-		    <br>
-		  </div>
-		</div>
-	</div>
- 
-	<div class="col-sm-2">
-		<div class="card text-center">
-		  <div class="card-body">
-		    <h5 class="card-title">Akurat</h5>
-		    <p class="card-text">	Mahasiswa mendapatkan informasi lomba secara akurat</p>
-		    <br><br>
-		  </div>
-		</div>
-	</div>
- 
-	<div class="col-sm-2">
-		<div class="card text-center">
-		  <div class="card-body">
-		    <h5 class="card-title">Integrasi</h5>
-		    <p class="card-text">Mahasiswa dapat mencari informasi lomba di dalam satu sistem informasi</p>
-		    <br><br>
-		  </div>
-		</div>
-	</div> 
-    </center>
+<div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2"> <img src= "{{asset('image/image 1.png')}}" class="rounded-circle img-thumbnail">
+                  <h5>Memotivasi</h5>
+                 
+                  <span>Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</span></div>
+        <div class="col-md-2">   
+        <img src= "{{asset('image/image 1.png')}}" class="rounded-circle img-thumbnail">
+                  <h4>Akurat</h4>
+                  <span> Mahasiswa mendapatkan informasi lomba secara akurat.</span>    </div>
+        <div class="col-md-2">
+        <img src= "{{asset('image/image 1.png')}}" class="rounded-circle img-thumbnail">
+                  <h4>Integrasi</h4>
+                  <span>Mahasiswa dapat mencari informasi lomba di dalam satu sistem informasi.</span>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+
     <br><br>
+
     
+    <div class="p-3"></div>
+                    <p class="fw-bold fs-3 text-black text-center">
+                       Partner Kami
+                    </p>
+      <div class="row">
+        <div class="col-md-3"> </div>
+        <div class="col-md-3"><img src="{{asset('image/pens.png')}}   "></div>
+        <div class="col-md-3"><img src="{{asset('image/it.png')}} "></div>
+        <div class="col-md-3"> </div>
+      </div>
+</div>
+    </div>
+    <b><br>
+
+    <div class="p-3"></div>
+            </div>
+            </div>
+            </div>
+    <br><br>
+                    <p class="fw-bold fs-3 text-black text-center">
+                       Tim Kami
+                    </p>
+    </div>
+
+      <div class="container p-5">
+                
+                <div class="bg-white-footer" style="border-radius: 35px;">
+                    <div class="row">
+                    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2"> <img src= "{{asset('image/image 1.png')}}"class="rounded-circle img-thumbnail" >
+                  <h5>Nike</h5>
+                 
+                  <span>deksripsi</span></div>
+        <div class="col-md-2">   
+        <img src= "{{asset('image/image 1.png')}}" class="rounded-circle img-thumbnail">
+                  <h4>Aqila</h4>
+                  <span>deskripsi</span>    </div>
+        <div class="col-md-2">
+        <img src= "{{asset('image/image 1.png')}}" class="rounded-circle img-thumbnail">
+                  <h4>Arita</h4>
+                  <span>deskripsi</span>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+                 
+                    </div>
+                </div>
+    <br>
 
     @include('footer')
 </body>
