@@ -18,7 +18,10 @@ class BerandaController extends Controller
         $galeri = DB::select("SELECT galeri.id_galeri,galeri.foto,kategori.nama_kategori 
         FROM galeri,lomba,kategori 
         WHERE galeri.id_lomba = lomba.id_lomba AND lomba.id_kategori = kategori.id_kategori");
+
+        $testimoni = DB::select("SELECT reviewer.nama,reviewer.foto,lomba.judul,testimoni.tahun_lomba,testimoni.testimoni 
+        FROM reviewer,testimoni,lomba");
     
-        return view('beranda.beranda',['rekom' => $rekom, 'galeri' => $galeri]);
+        return view('beranda.beranda',['rekom' => $rekom, 'galeri' => $galeri, 'testimoni' => $testimoni]);
     }
 }

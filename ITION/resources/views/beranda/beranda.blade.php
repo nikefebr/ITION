@@ -213,17 +213,17 @@
         <div class="p-4"></div>
 
         <div class="card mx-auto" style="max-width: 900px;">
-            <div class="row g-0">
-
+            <div class="row g-0" >
+            @foreach ($testimoni as $item)
                 <div class="col-md-4">
-                    <img src="" alt="" class="rounded">
+                    <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" class="rounded">
                 </div>
-
+            @endforeach
                 <div class="col-md-8 bg-blue px-4">
                     <div class="p-4"></div>
 
                     <div class="card-body text-white">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">{{ $item->testimoni }}</p>
                     </div>
 
                     <div class="p-5"></div>
