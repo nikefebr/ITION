@@ -57,7 +57,7 @@
         <div class="p-5"></div>
         <div class="mt-1"></div>
 
-        <h5 class="fw-bold text-center">Ikuti Lomba</h5>
+        <h1 class="fw-bold text-center">Ikuti Lomba</h1>
 
         <div class="p-4"></div>
 
