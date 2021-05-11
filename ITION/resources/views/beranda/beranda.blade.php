@@ -214,22 +214,54 @@
     <div class="container mt-0 bg-white-ition">
         <h5 class="fw-bold">Apa kata mereka?</h5>
         <div class="p-4"></div>
-        @foreach ($testimoni as $item)
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+        @foreach ($testimoni1 as $item)
         <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
             <div class="row g-0">
                 <div class="col-md-2">
-                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" id="fototestimoni">
+                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" id="fototestimoni" class="img-thumbnail rounded-circle">
                 </div>
-                <div class="col-md-8 bg-blue px-4">
+                <div class="col-md-8 bg-blue px-4" id="text">
                     <div class="p-4"></div>
                     <div class="card-body text-white">
-                        <p class="card-text">{{ $item->testimoni }}</p>
+                        <p class="card-text d-block">{{ $item->testimoni }}</p>
                     </div>
                     <div class="p-5"></div>
                 </div>
             </div> 
         <!-- </div> -->
         @endforeach
+        </div>
+        <div class="carousel-item">
+        @foreach ($testimoni as $item)
+        <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
+            <div class="row g-0">
+                <div class="col-md-2">
+                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" id="fototestimoni" class="img-thumbnail rounded-circle">
+                </div>
+                <div class="col-md-8 bg-blue px-4" id="text">
+                    <div class="p-4"></div>
+                    <div class="card-body text-white">
+                        <p class="card-text d-block">{{ $item->testimoni }}</p>
+                    </div>
+                    <div class="p-5"></div>
+                </div>
+            </div> 
+        <!-- </div> -->
+        @endforeach
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+         </button>
+        </div>
         <div class="p-4"></div>
         <a class="fw-bold" href="testimoni" id="selengkapnya">Selengkapnya >></a>
     </div>
