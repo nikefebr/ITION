@@ -12,9 +12,17 @@ class BerandaController extends Controller
     {
         $today = date("Y-m-d");
         $total_lomba = DB::table('lomba')->where('deadline', '>=', $today)->get()->count();
-        $total_galeri = (DB::table('galeri')->count()) - 2;
-        $lomba_random = rand(0,$total_lomba-1);
-        
+        if($total_lomba > 0)
+            $lomba_random = rand(0,$total_lomba - 1);
+        else
+            $lomba_random = rand(0,$total_lomba);
+
+        $total_galeri = DB::table('galeri')->count();
+        if($total_galeri < 2)
+            $total_galeri = 0;
+        else
+            $total_galeri -= 2;
+       
         $highlight = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,lomba.deskripsi,lomba.deadline,kategori.nama_kategori 
         FROM lomba,kategori 
         WHERE lomba.id_kategori = kategori.id_kategori AND lomba.deadline >= '$today' LIMIT $lomba_random, 1");
