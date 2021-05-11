@@ -1,5 +1,5 @@
 <head>
-<link rel="stylesheet" type="text/css" {{ asset('beranda.cs') }}>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/beranda.css') }}">
 </head>
 <body style="background-color: #F4F4F4;">
     @include('navbar')
@@ -217,7 +217,7 @@
         <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
             <div class="row g-0">
                 <div class="col-md-2">
-                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" class="img-fluid rounded-circle">
+                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" id="fototestimoni">
                 </div>
                 <div class="col-md-8 bg-blue px-4">
                     <div class="p-4"></div>
@@ -229,6 +229,8 @@
             </div> 
         <!-- </div> -->
         @endforeach
+        <div class="p-4"></div>
+        <a class="fw-bold" href="testimoni" id="selengkapnya">Selengkapnya >></a>
     </div>
     <div class="p-5"></div>
     @include('footer')
