@@ -37,7 +37,7 @@
     </div>
 
     <div class="p-5"></div>
-    @foreach ($rekom as $item)
+    @foreach ($highlight as $item)
     <div class="container">
         <div class="card w-100">
             <div class="row">
