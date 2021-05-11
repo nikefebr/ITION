@@ -5,7 +5,8 @@
     @include('navbar')
     
     <div class="bg-blue-gradient">
-    <div class="p-3"></div>
+        <div class="p-5"></div>
+        
         <div class="container p-5">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
