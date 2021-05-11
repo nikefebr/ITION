@@ -21,7 +21,7 @@ class BerandaController extends Controller
 
         $testimoni = DB::select("SELECT reviewer.nama,reviewer.foto,lomba.judul,testimoni.tahun_lomba,testimoni.testimoni 
         FROM reviewer,testimoni,lomba 
-        WHERE testimoni.id_lomba = lomba.id_lomba AND testimoni.id_reviewer = reviewer.id_reviewer");
+        WHERE testimoni.id_lomba = lomba.id_lomba AND testimoni.id_reviewer = reviewer.id_reviewer LIMIT 0,5");
     
         return view('beranda.beranda',['rekom' => $rekom, 'galeri' => $galeri, 'testimoni' => $testimoni]);
     }
