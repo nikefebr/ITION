@@ -48,10 +48,6 @@ class BerandaController extends Controller
         FROM reviewer,testimoni,lomba 
         WHERE testimoni.id_lomba = lomba.id_lomba AND testimoni.id_reviewer = reviewer.id_reviewer LIMIT 0,1");
     
-<<<<<<< HEAD
-        return view('beranda.beranda',['rekom' => $rekom, 'galeri' => $galeri, 'lomba' => $lomba,'testimoni' => $testimoni,'testimoni1' => $testimoni1]);
-=======
-        return view('beranda.beranda',['highlight' => $highlight, 'galeri' => $galeri, 'lomba' => $lomba, 'testimoni' => $testimoni]);
->>>>>>> c07ae786cdba8199ec6a3f7661b416b361d0b70b
+        return view('beranda.beranda',['highlight' => $highlight, 'galeri' => $galeri, 'lomba' => $lomba, 'testimoni' => $testimoni,'testimoni1' => $testimoni1]);
     }
 }
