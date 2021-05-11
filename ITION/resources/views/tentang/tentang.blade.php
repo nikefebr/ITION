@@ -10,27 +10,21 @@
     
     <div class="container p-5">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <img src="{{asset('image/image 2.jpeg')}}">
+            <div class="col-md-4">
+                <img src="{{asset('image/ition.jpeg' ) }}" width="270" >
             </div>
-
-            <div class="col-md-2 col-sm-2"></div>
-
-            <div class="col-md-6 col-sm-6">
-                <div class="p-5"></div>
-
+           
+            <div class="col-md-7">
                 <p class="fw-bold fs-3 text-black">
                     ITION 
                 </p>
-
                 <p class="text-black">
-                    ITION atau IT Competition merupakan website yang dibuat sebagai project 
-                    mata kuliah Workshop Produksi Perangkat Lunak Tahun 2021. Website ini 
-                    bertujuan guna membantu mahasiswa khususnya Teknik Informatika 
+                    ITION atau IT Competition merupakan website yang dibuat sebagai project <br>
+                    mata kuliah Workshop Produksi Perangkat Lunak Tahun 2021. Website ini<br>
+                    bertujuan guna membantu mahasiswa khususnya Teknik Informatika <br>
                     dalam mendapatkan informasi lomba di bidang IT. 
-                </p>
-
-                <div class="p-3"></div>
+                </p></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
@@ -71,14 +65,18 @@
     <p class="fw-bold fs-3 text-black text-center">
         Partner Kami
     </p>
+    <br><br>
 
     <div class="row">
-        <div class="col-md-3"> </div>
-        <div class="col-md-3"><img src="{{asset('image/pens.png')}}   "></div>
-        <div class="col-md-3"><img src="{{asset('image/it.png')}} "></div>
-        <div class="col-md-3"> </div>
+        <div class="col-md-4"> </div>
+        <div class="col-md-3">
+            <img src="{{asset('image/pens.png' ) }}" width="120" ></div>
+        <div class="col-md-4">
+            <img src="{{asset('image/it.png' ) }}" width="120" ></div>
+        <div class="col-md-1"> </div>
     </div>
-    
+
+
     <div class="p-4"></div>
 
     <div class="p-4"></div>
