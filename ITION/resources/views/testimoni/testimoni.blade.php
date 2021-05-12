@@ -22,128 +22,56 @@
         <div class="row ms-5">
             <h2 class="fw-bold">Gimana sih rasanya ikut ...?</h2>
         </div>
-
+        @foreach ($data as $item)
         <div class="p-5"></div>
-
+        
         <div class="row ms-5">
             <div class="col-md-3 col-sm-6 float-start">
                 <div class="card" style="width: 20rem; height: 27rem;">
                     <div class="row">
-                        <img src="" class="card-img-top rounded-circle" alt="" width="200" height="200">
+                        <img src="{{ url('image/reviewer/'.$item->foto) }}" class="card-img-top rounded-circle" alt="" width="200" height="200">
                     </div>
 
                     <div class="row">
                         <div class="card-body">
-                            <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                    
+                            <h5 class="card-text fw-bold text-blue">{{ $item->nama }}</h5>
+                            <h7 class="card-text fw-bold text-blue">{{ $item->judul }} {{ $item->tahun_lomba }}</h7>
                             <h5 class="card-text fw-normal fst-italic">
-                                Deskripsi
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 mx-auto">
-                <div class="card" style="width: 20rem; height: 27rem;">
-                    <div class="row">
-                        <img src="" class="card-img-top rounded-circle" alt="" width="200" height="200">
-                    </div>
-
-                    <div class="row">
-                        <div class="card-body">
-                            <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                    
-                            <h5 class="card-text fw-normal fst-italic">
-                                Deskripsi
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 float-end">
-                <div class="card" style="width: 20rem; height: 27rem;">
-                    <div class="row">
-                        <img src="" class="card-img-top rounded-circle" alt="" width="200" height="200">
-                    </div>
-
-                    <div class="row">
-                        <div class="card-body">
-                            <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                    
-                            <h5 class="card-text fw-normal fst-italic">
-                                Deskripsi
+                            {{ $item->testimoni }}
                             </h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        @endforeach
         <div class="p-5"></div>
-
         <div class="row ms-5">
             <h2 class="fw-bold">Gimana sih rasanya ikut ...?</h2>
         </div>
-
+        @foreach ($data as $item)
         <div class="p-5"></div>
 
         <div class="row ms-5">
-            <div class="col-md-3 col-sm-6 float-start">
-                <div class="card" style="width: 20rem; height: 27rem;">
-                    <div class="row">
-                        <img src="" class="card-img-top rounded-circle" alt="" width="200" height="200">
-                    </div>
-
-                    <div class="row">
-                        <div class="card-body">
-                            <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                    
-                            <h5 class="card-text fw-normal fst-italic">
-                                Deskripsi
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 mx-auto">
-                <div class="card" style="width: 20rem; height: 27rem;">
-                    <div class="row">
-                        <img src="" class="card-img-top rounded-circle" alt="" width="200" height="200">
-                    </div>
-
-                    <div class="row">
-                        <div class="card-body">
-                            <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                    
-                            <h5 class="card-text fw-normal fst-italic">
-                                Deskripsi
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="col-md-3 col-sm-6 float-end">
                 <div class="card" style="width: 20rem; height: 27rem;">
                     <div class="row">
-                        <img src="" class="card-img-top rounded-circle" alt="" width="200" height="200">
+                        <img src="{{ url('image/reviewer/'.$item->foto) }}" class="card-img-top rounded-circle" alt="" width="200" height="200">
                     </div>
 
                     <div class="row">
                         <div class="card-body">
-                            <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                    
+                            <h5 class="card-text fw-bold text-blue">{{ $item->nama }}</h5>
+                            <h7 class="card-text fw-bold text-blue">{{ $item->judul }} {{ $item->tahun_lomba }}</h7>        
                             <h5 class="card-text fw-normal fst-italic">
-                                Deskripsi
+                            {{ $item->testimoni }}
                             </h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 
     <div class="pt-5"></div>
