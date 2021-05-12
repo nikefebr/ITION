@@ -221,7 +221,9 @@
         <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
             <div class="row g-0">
                 <div class="col-md-2">
-                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" id="fototestimoni" class="img-thumbnail rounded-circle">
+                <div class="fototestimoni">
+                 <img src="{{ url('image/reviewer/'.$item->foto) }}" id="fototestimoni" class="img-fluid">
+                </div>
                 </div>
                 <div class="col-md-8 bg-blue px-4" id="text">
                     <div class="p-4"></div>
@@ -239,7 +241,9 @@
         <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
             <div class="row g-0">
                 <div class="col-md-2">
-                 <img src="{{ url('image/reviewer/'.$item->foto) }}" width="100" id="fototestimoni" class="img-thumbnail rounded-circle">
+                <div class="fototestimoni">
+                 <img src="{{ url('image/reviewer/'.$item->foto) }}" id="fototestimoni" class="img-fluid">
+                </div>
                 </div>
                 <div class="col-md-8 bg-blue px-4" id="text">
                     <div class="p-4"></div>

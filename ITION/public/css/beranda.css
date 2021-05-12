@@ -3,3 +3,9 @@
     color: black;
     margin-left: 900px;
 }
+.fototestimoni{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
