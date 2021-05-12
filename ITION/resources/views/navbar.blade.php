@@ -8,7 +8,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-1 pt-2 pb-2" style="background-color: #003567;">
         <div class="container-fluid">
-            <a class="navbar-brand text-white ms-5 ps-5 fw-bolder fs-3" href="{{ url('') }}">ITION</a>
+            <a class="navbar-brand text-white ms-5 ps-4 fw-bolder fs-3" href="{{ url('') }}">ITION</a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

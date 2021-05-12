@@ -6,7 +6,7 @@
 <body style="background-color: #F4F4F4;">
     @include('navbar')
 
-    <div class="p-3"></div>
+    <div class="pt-5"></div>
     
     <div class="container p-5">
         <div class="row">
@@ -14,31 +14,67 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container px-0 ms-5">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
         <div class="pt-5"></div>
 
-        <div class="row">
+        <div class="row ms-5">
             <h2 class="fw-bold">Gimana sih rasanya ikut ...?</h2>
         </div>
+        @foreach ($data as $item)
+        <div class="p-5"></div>
+        
+        <div class="row ms-5">
+            <div class="col-md-3 col-sm-6 float-start">
+                <div class="card" style="width: 20rem; height: 27rem;">
+                    <div class="row">
+                        <img src="{{ url('image/reviewer/'.$item->foto) }}" class="card-img-top rounded-circle" alt="" width="200" height="200">
+                    </div>
 
-        <div class="row">
-            <div class="row">
-                <div class="p-3"></div>
-
-                <div class="col-md-3 col-sm-6 float-start">
-                    <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                        <img src="" class="card-img-top" alt="" width="200" height="200">
-                            <div class="card-body">
-                                <p class="card-text fw-normal"></p>
-                                <p class="card-text fw-bold"></p>
+                    <div class="row">
+                        <div class="card-body">
+                            <h5 class="card-text fw-bold text-blue">{{ $item->nama }}</h5>
+                            <h7 class="card-text fw-bold text-blue">{{ $item->judul }} {{ $item->tahun_lomba }}</h7>
+                            <h5 class="card-text fw-normal fst-italic">
+                            {{ $item->testimoni }}
+                            </h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
+        <div class="p-5"></div>
+        <div class="row ms-5">
+            <h2 class="fw-bold">Gimana sih rasanya ikut ...?</h2>
+        </div>
+        @foreach ($data as $item)
+        <div class="p-5"></div>
+
+        <div class="row ms-5">
+            <div class="col-md-3 col-sm-6 float-end">
+                <div class="card" style="width: 20rem; height: 27rem;">
+                    <div class="row">
+                        <img src="{{ url('image/reviewer/'.$item->foto) }}" class="card-img-top rounded-circle" alt="" width="200" height="200">
+                    </div>
+
+                    <div class="row">
+                        <div class="card-body">
+                            <h5 class="card-text fw-bold text-blue">{{ $item->nama }}</h5>
+                            <h7 class="card-text fw-bold text-blue">{{ $item->judul }} {{ $item->tahun_lomba }}</h7>        
+                            <h5 class="card-text fw-normal fst-italic">
+                            {{ $item->testimoni }}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
     </div>
+
+    <div class="pt-5"></div>
 
     <tabel class="table table-bordered">
     <thead>
