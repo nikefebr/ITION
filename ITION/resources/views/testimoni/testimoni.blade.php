@@ -22,11 +22,12 @@
         <div class="row ms-5">
             <h2 class="fw-bold">Gimana sih rasanya ikut ...?</h2>
         </div>
-        @foreach ($data as $item)
+        
         <div class="p-5"></div>
         
         <div class="row ms-5">
-            <div class="col-md-3 col-sm-6 float-start">
+        @foreach ($data as $item)
+            <div class="col-md-4 col-sm-6 float-start">
                 <div class="card" style="width: 20rem; height: 27rem;">
                     <div class="row">
                         <img src="{{ url('image/reviewer/'.$item->foto) }}" class="card-img-top rounded-circle" alt="" width="200" height="200">
@@ -43,17 +44,19 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
+        
         <div class="p-5"></div>
+       
         <div class="row ms-5">
             <h2 class="fw-bold">Gimana sih rasanya ikut ...?</h2>
         </div>
-        @foreach ($data as $item)
         <div class="p-5"></div>
 
         <div class="row ms-5">
-            <div class="col-md-3 col-sm-6 float-end">
+        @foreach ($data as $item)
+            <div class="col-md-4 col-sm-6 float-end">
                 <div class="card" style="width: 20rem; height: 27rem;">
                     <div class="row">
                         <img src="{{ url('image/reviewer/'.$item->foto) }}" class="card-img-top rounded-circle" alt="" width="200" height="200">
@@ -70,34 +73,10 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
-
     <div class="pt-5"></div>
-
-    <tabel class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Nama</th>
-            <th>Foto</th>
-            <th>Judul Lomba</th>
-            <th>Tahun Lomba</th>
-            <th>Testimoni</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($data as $item)
-        <tr>
-            <th>{{ $item->nama }}</th>
-            <th><img src="{{ url('image/reviewer/'.$item->foto) }}" width="100"></th>
-            <th>{{ $item->judul }}</th>
-            <th>{{ $item->tahun_lomba }}</th>
-            <th>{{ $item->testimoni }}</th>
-        </tr>
-        @endforeach
-    </tbdoy>
-    </tabel>
     @include('footer')
 </body>
 </html>
