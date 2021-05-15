@@ -70,6 +70,16 @@ ul {
     padding-bottom: 10px;
 }
 
+.white-button-daftar {
+    background-color: white;
+    border-color: #FFDE27;
+    border-radius: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .button-footer {
     background-color: #FFDE27;
     border: none;
@@ -96,6 +106,17 @@ ul {
     border-radius: 0px 0px 26px 26px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.button-daftar-lomba {
+    background-color: #FFDE27;
+    border: none;
+    width: 250px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
