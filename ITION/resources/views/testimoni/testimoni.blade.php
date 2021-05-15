@@ -59,18 +59,18 @@
                 </div>
         </div>
         <div class="p-5"></div>
-
+        @foreach ($kategori as $kat)
         <div class="row ms-5">
-            <h2 class="fw-bold mb-5">Gimana sih rasanya ikut ...?</h2>
-            @foreach ($data as $item)
+            <h2 class="fw-bold mb-5">Gimana sih rasanya ikut {{$kat->nama_kategori}}?</h2>
+            @foreach ($data[$loop->iteration] as $item)
                 <div class="col">
                     <div class="card mb-3 shadow" style="border-radius:30px; width: 20rem; height: 27rem;">
                         <div class="card-body">
                         <img src="{{ url('image/reviewer/'.$item->foto) }}" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">{{ $item->nama }}</h5>
-                            <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">{{ $item->judul }} {{ $item->tahun_lomba }}</p>
+                            <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">{{$item->nama_kategori}} {{ $item->judul }} {{ $item->tahun_lomba }}</p>
                             <p class="px-3" style="font-size: 10pt;">
-                                “{{ $item->testimoni }}. “ - {{ $item->nama }},{{ $item->tahun_lomba }}.
+                                “{{ $item->testimoni }}.“ - {{ $item->nama }},{{ $item->tahun_lomba }}.
                             </p>
                         </div>
                     </div>
@@ -78,6 +78,8 @@
             @endforeach
         </div>
         <div class="p-5"></div>
+        @endforeach
+        
     </div>
     <div class="pt-5"></div>
     @include('footer')
