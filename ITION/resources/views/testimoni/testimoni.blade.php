@@ -22,8 +22,20 @@
         <div class="row ms-5">
             <h2 class="fw-bold mb-5">Gimana sih rasanya ikut ...?</h2>
              <div class="col">
-                    <div class="card mb-3">
+                    <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
+                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto; z-index:1;">
+                            <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
+                            <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
+                            <p class="px-3" style="font-size: 10pt;">
+                                “Selama saya mengikuti KMIPN, banyak hal yang bisa saya dapatkan. Mulai dari pengalaman, relasi, dan kesempatan - kesempatan emas lainnya. Skill saya jugaberkembang setelah mengikuti lomba tersebut karena telah direview oleh juri yang profesional. “ - Nanang,2018.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card mb-3 shadow" style="border-radius:30px;">
+                        <div class="card-body" >
                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
@@ -34,19 +46,7 @@
                     </div>
                 </div>
                  <div class="col">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
-                            <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
-                            <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
-                            <p class="px-3" style="font-size: 10pt;">
-                                “Selama saya mengikuti KMIPN, banyak hal yang bisa saya dapatkan. Mulai dari pengalaman, relasi, dan kesempatan - kesempatan emas lainnya. Skill saya jugaberkembang setelah mengikuti lomba tersebut karena telah direview oleh juri yang profesional. “ - Nanang,2018.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card mb-3">
+                    <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
@@ -88,7 +88,7 @@
         <div class="row ms-5">
             <h2 class="fw-bold mb-5">Gimana sih rasanya ikut ...?</h2>
              <div class="col">
-                    <div class="card mb-3">
+                    <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                  <div class="col">
-                    <div class="card mb-3">
+                    <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                  <div class="col">
-                    <div class="card mb-3">
+                    <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
