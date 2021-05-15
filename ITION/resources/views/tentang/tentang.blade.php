@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <img src="{{asset('image/tentang/ition.jpeg' ) }}" width="270" >
             </div>
-           
+
             <div class="col-md-7">
                 <p class="fw-bold fs-3 text-black">
                     ITION 
@@ -44,13 +44,13 @@
 
                 <div class="card shadow" style="background-color:#003567; width: 14rem; border-radius:30px;">
                         <div class="card-body">
-                           <br> <p class="card-text fw-bold text-white">Memotivasi</p>
+                            <br> <p class="card-text fw-bold text-white">Memotivasi</p>
                             <p class="card-text fw-normal text-white">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</p>
-   <br>
+    <br>
                         </div>
 </div>
 </div>
-       
+
         <div class="col-md-3 col-sm-8"> 
         <div class="p-4"></div>  
             <div class="card shadow" style="background-color:#003567; width: 14rem; border-radius:30px;">
@@ -72,7 +72,7 @@
                         </div>
 </div>
 </div>
-              
+        
         <div class="col-md-3"></div>
     </div>
     </div>
@@ -117,11 +117,11 @@
                         <p class="card-text fw-bold text-black">Nike Nur Amalia F</p>
                         <p class="card-text fw-normal text-black">Product Owner</p>
                         <p class="card-text fw-normal text-black">2103191013</p>
-   <br>
+    <br>
                         </div>
 </div>
 </div>
-       
+        
         <div class="col-md-3 col-sm-8"> 
         <div class="p-4"></div>  
         <img src="{{ asset('image/tentang/aqila.png')}}" class="card-img-top" alt="" width="170" height="170">
@@ -130,7 +130,7 @@
                         <p class="card-text fw-bold text-black">Mahdiya Aqila</p>
                         <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191015</p>
-   <br>
+    <br>
                         </div>
 </div>
 </div>
@@ -143,11 +143,11 @@
                         <p class="card-text fw-bold text-black">Arita Fitrianingsih</p>
                         <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191006</p>
-   <br>
+    <br>
                         </div>
 </div>
 </div>
-              
+
         <div class="col-md-2"></div>
     </div>
 
@@ -162,11 +162,11 @@
                         <p class="card-text fw-bold text-black">Aldo Faiz Winarno</p>
                         <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191004</p>
-   <br>
+    <br>
                         </div>
 </div>
 </div>
-       
+
         <div class="col-md-3 col-sm-8"> 
         <div class="p-4"></div>  
         <img src="{{ asset('image/tentang/fagi.png')}}" class="card-img-top" alt="" width="170" height="170">
@@ -175,7 +175,7 @@
                         <p class="card-text fw-bold text-black">Muhammad Fagi</p>
                         <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191020</p>
-   <br>
+    <br>
                         </div>
 </div>
 </div>
@@ -188,11 +188,11 @@
                         <p class="card-text fw-bold text-black">Muhammad Rafiif F</p>
                         <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191023</p>
-   <br>
+    <br>
                         </div>
 </div>
 </div>
-              
+                
         <div class="col-md-2"></div>
     </div>
     </div>

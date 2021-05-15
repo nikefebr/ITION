@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/beranda.css') }}">
+    <title>Beranda</title>
 </head>
 <body style="background-color: #F4F4F4;">
     @include('navbar')
@@ -37,14 +38,17 @@
     </div>
 
     <div class="p-5"></div>
+    
     @foreach ($highlight as $item)
+    
     <div class="container">
-        <div class="card w-100">
+        <div class="card w-100" style="border-radius: 30px;">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <img class="" src="{{ $item->poster }}" width="300" height="400">
+                    <img class="img-fluid" src="{{ $item->poster }}" style="border-radius: 30px;">
                 </div>
-                <div class="col-md-3 col-sm-6">
+
+                <div class="col-md-3 col-sm-6 ps-3">
                     <div class="card-body" style="width: 30rem;">
                         <h5 class="card-title">{{ $item->judul }}</h5>
                         <h6 class="card-text fw-normal">{{ $item->nama_kategori }}</h6>
@@ -52,23 +56,28 @@
                         <p class="card-text">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et</p>
                     </div>
                 </div>
+
                 <div class="col-md-3 col-sm-6"></div>
-                <div class="col-md-3 col-sm-6 text-center text-white bg-blue">
-                    <div class="card-body">
+
+                <div class="col-md-3 col-sm-6 text-center text-white bg-blue" style="border-radius: 0px 30px 30px 0px;">
+                    <div class="card-body pt-5">
                         <h5 class="card-title">DEADLINE</h5>
                         <h5 class="card-title">PENDAFTARAN</h5>
 
                         <p></p>
 
-                        <div class="p-3"></div>
+                        <div class="p-5"></div>
 
                         <button class="button fw-bolder" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="p-5"></div>
+
     </div>
+
     @endforeach
 
     <div class="container">
@@ -81,6 +90,7 @@
             </div>
 
             <div class="col-md-2 col-sm-2"></div>
+            
             @foreach ($galeri as $item)
             @if ($loop->first)
             <div class="col-md-3 col-sm-6">
@@ -180,7 +190,7 @@
 
     <div class="p-4"></div>
     
-    <div class="container mt-0 bg-white-ition">
+    <div class="container mt-0">
         <h5 class="fw-bold text-center">Keuntungan sering mengikuti lomba</h5>
         <div class="p-4"></div>
 
@@ -211,67 +221,77 @@
 
     <div class="p-5"></div>
 
-    <div class="container mt-0 bg-white-ition">
+    <div class="container mt-0">
         <h5 class="fw-bold">Apa kata mereka?</h5>
+        
         <div class="p-4"></div>
+        
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-        <div class="carousel-item active">
-        @foreach ($testimoni1 as $item)
-        <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
-            <div class="row g-0">
-                <div class="col-md-2">
-                <!-- <div class="card bg-white" id="cardfoto"> -->
-                    <div class="fototestimoni">
-                    <img src="{{ url('image/reviewer/'.$item->foto) }}" id="fototestimoni" class="img-fluid">
-                    </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    @foreach ($testimoni1 as $item)
+                    <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
+                        <div class="row g-0">
+                            <div class="col-md-2">
+                            <!-- <div class="card bg-white" id="cardfoto"> -->
+                                <div class="fototestimoni">
+                                    <img src="{{ url('image/reviewer/'.$item->foto) }}" id="fototestimoni" class="img-fluid">
+                                </div>
+                            <!-- </div> -->
+                            </div>
+                            
+                            <div class="col-md-8 bg-blue px-3"  id="tekstestimoni">
+                                <!-- <div class="p-4"></div> -->
+                                <div class="card-body text-white" >
+                                    <p>"{{ $item->testimoni }}."</p>
+                                </div>
+                                <!-- <div class="p-4"></div> -->
+                            </div>
+                        </div> 
+                    <!-- </div> -->
+                    @endforeach
+                </div>
+
+                @foreach ($testimoni as $item)
+                <div class="carousel-item">
+                <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <div class="fototestimoni">
+                                <img src="{{ url('image/reviewer/'.$item->foto) }}" id="fototestimoni" class="img-fluid">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-8 bg-blue px-3" id="tekstestimoni">
+                            <!-- <div class="p-4"></div> -->
+                            <div class="card-body text-white">
+                                <p>"{{ $item->testimoni }}."</p>
+                            </div>
+                            <!-- <div class="p-4"></div> -->
+                        </div>
+                    </div> 
                 <!-- </div> -->
                 </div>
-                <div class="col-md-8 bg-blue px-3"  id="tekstestimoni">
-                    <!-- <div class="p-4"></div> -->
-                    <div class="card-body text-white" >
-                        <p>"{{ $item->testimoni }}."</p>
-                    </div>
-                    <!-- <div class="p-4"></div> -->
-                </div>
-            </div> 
-        <!-- </div> -->
-        @endforeach
-        </div>
-        @foreach ($testimoni as $item)
-        <div class="carousel-item">
-        <!-- <div class="card mx-auto" style="max-width: 900px;"> -->
-            <div class="row g-0">
-                <div class="col-md-2">
-                <div class="fototestimoni">
-                 <img src="{{ url('image/reviewer/'.$item->foto) }}" id="fototestimoni" class="img-fluid">
-                </div>
-                </div>
-                <div class="col-md-8 bg-blue px-3" id="tekstestimoni">
-                    <!-- <div class="p-4"></div> -->
-                    <div class="card-body text-white">
-                        <p>"{{ $item->testimoni }}."</p>
-                    </div>
-                    <!-- <div class="p-4"></div> -->
-                </div>
-            </div> 
-        <!-- </div> -->
-        </div>
-        @endforeach
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-         </button>
+                @endforeach
+            </div>
+                
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
         
         <div class="p-4"></div>
+
         <a class="fw-bold" href="testimoni" id="selengkapnya">Selengkapnya >></a>
     </div>
-    <div class="p-5"></div>
-    @include('footer')
+    
+        <div class="p-5"></div>
+    
+        @include('footer')
 </body>

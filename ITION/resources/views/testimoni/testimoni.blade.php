@@ -21,10 +21,10 @@
 
         <div class="row ms-5">
             <h2 class="fw-bold mb-5">Gimana sih rasanya ikut ...?</h2>
-             <div class="col">
+            <div class="col">
                     <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
-                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto; z-index:1;">
+                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto; z-index:1;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
                             <p class="px-3" style="font-size: 10pt;">
@@ -33,10 +33,10 @@
                         </div>
                     </div>
                 </div>
-                 <div class="col">
+                <div class="col">
                     <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body" >
-                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
+                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
                             <p class="px-3" style="font-size: 10pt;">
@@ -45,10 +45,10 @@
                         </div>
                     </div>
                 </div>
-                 <div class="col">
+                <div class="col">
                     <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
-                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
+                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
                             <p class="px-3" style="font-size: 10pt;">
@@ -84,13 +84,13 @@
         </div>
         
         <div class="p-5"></div>
-       
+
         <div class="row ms-5">
             <h2 class="fw-bold mb-5">Gimana sih rasanya ikut ...?</h2>
-             <div class="col">
+            <div class="col">
                     <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
-                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
+                        <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
                             <p class="px-3" style="font-size: 10pt;">
@@ -99,10 +99,10 @@
                         </div>
                     </div>
                 </div>
-                 <div class="col">
+                <div class="col">
                     <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
-                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
+                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
                             <p class="px-3" style="font-size: 10pt;">
@@ -111,10 +111,10 @@
                         </div>
                     </div>
                 </div>
-                 <div class="col">
+                <div class="col">
                     <div class="card mb-3 shadow" style="border-radius:30px;">
                         <div class="card-body">
-                           <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
+                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
                             <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
                             <p class="px-3" style="font-size: 10pt;">
