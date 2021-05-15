@@ -115,7 +115,7 @@
                 <div class="card" style="width: 12rem; border:none;">
                         <div class="card-body">
                         <p class="card-text fw-bold text-black">Nike Nur Amalia F</p>
-                        <p class="card-text fw-normal text-black">Product Owner dan Frontend Developer</p>
+                        <p class="card-text fw-normal text-black">Product Owner</p>
                         <p class="card-text fw-normal text-black">2103191013</p>
    <br>
                         </div>
@@ -128,7 +128,7 @@
                 <div class="card" style="width: 12rem; border:none;">
                         <div class="card-body">
                         <p class="card-text fw-bold text-black">Mahdiya Aqila</p>
-                        <p class="card-text fw-normal text-black">Head of UI/UX dan Frontend Developer</p>
+                        <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191015</p>
    <br>
                         </div>
@@ -141,7 +141,7 @@
                 <div class="card" style="width: 12rem; border:none;">
                         <div class="card-body">
                         <p class="card-text fw-bold text-black">Arita Fitrianingsih</p>
-                        <p class="card-text fw-normal text-black">Frontend Developer</p>
+                        <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191006</p>
    <br>
                         </div>
@@ -160,7 +160,7 @@
                 <div class="card" style="width: 12rem; border:none;">
                         <div class="card-body">
                         <p class="card-text fw-bold text-black">Aldo Faiz Winarno</p>
-                        <p class="card-text fw-normal text-black">Head of Developer dan Backend Developer dan Database</p>
+                        <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191004</p>
    <br>
                         </div>
@@ -173,7 +173,7 @@
                 <div class="card" style="width: 12rem; border:none;">
                         <div class="card-body">
                         <p class="card-text fw-bold text-black">Muhammad Fagi</p>
-                        <p class="card-text fw-normal text-black">Backend Developer</p>
+                        <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191020</p>
    <br>
                         </div>
@@ -186,7 +186,7 @@
                 <div class="card" style="width: 12rem; border:none;">
                         <div class="card-body">
                         <p class="card-text fw-bold text-black">Muhammad Rafiif F</p>
-                        <p class="card-text fw-normal text-black">Backend Developer dan Database</p>
+                        <p class="card-text fw-normal text-black">Developer</p>
                         <p class="card-text fw-normal text-black">2103191023</p>
    <br>
                         </div>
