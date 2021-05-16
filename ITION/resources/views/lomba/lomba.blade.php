@@ -66,10 +66,10 @@
 
                 <div class="p-3"></div>
 
-                <div class="card" style="width: 25rem;">
+                <div class="card" style="width: 25rem; border-radius:30px">
                     <div class="row">
                         <img src="" class="card-img-top" alt="">
-                            <div class="card-img-overlay">
+                            <div class="">
                                 <p class="card-text">Publish </p>
                             </div>
                     </div>
@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="row ms-0" style="width: 25rem;">
-                        <button class="button-katalog fw-bolder text-blue-2">Daftar Lomba Ini</button>
+                        <button class="button-katalog fw-bolder text-blue-2" type="button">Daftar Lomba Ini</button>
                     </div>
                 </div>
             </div>
