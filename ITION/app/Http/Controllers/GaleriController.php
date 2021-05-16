@@ -14,7 +14,7 @@ class GaleriController extends Controller
         $count = 0;
         foreach($kategori as $kategori_galeri){
             $count++;
-            $data[$count] = DB::select("SELECT galeri.id_galeri,galeri.foto,galeri.deskripsi,lomba.tahun,kategori.nama_kategori 
+            $data[$count] = DB::select("SELECT galeri.id_galeri,galeri.foto,galeri.deskripsi,galeri.tgl_foto,kategori.nama_kategori 
             FROM galeri,lomba,kategori 
             WHERE galeri.id_lomba = lomba.id_lomba 
             AND lomba.id_kategori = kategori.id_kategori

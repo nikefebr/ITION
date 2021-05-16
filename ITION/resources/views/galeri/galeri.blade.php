@@ -23,13 +23,12 @@
             <div class="row">
             
                 <div class="p-3"></div>
-                @foreach ($data[$loop->iteration] as $item)
-                
+                @foreach ($data[$loop->iteration] as $item)                
                 <div class="col-md-4 col-sm-6 float-start">
                     <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
                         <img src="{{ $item->foto }}" class="card-img-top" alt="" width="200" height="200">
                             <div class="card-body">
-                                <p class="card-text fw-normal">{{ $item->tahun }}</p>
+                                <p class="card-text fw-normal">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
                                 <p class="card-text fw-bold">{{ $item->deskripsi }}</p>
 
                                 <div class="p-4"></div>
@@ -40,49 +39,6 @@
             </div>
         </div>
         @endforeach
-        <!--
-        <div class="row">
-            <h1 class="fw-bold">Kategori</h1>
-        </div>
-
-        <div class="row">
-            <div class="row">
-                <div class="p-3"></div>
-
-                <div class="col-md-3 col-sm-6 float-start">
-                    <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                        <img src="" class="card-img-top" alt="" width="200" height="200">
-                            <div class="card-body">
-                                <p class="card-text fw-normal"></p>
-                                <p class="card-text fw-bold"></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-3 col-sm-6 mx-auto">
-                    <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                        <img src="" class="card-img-top" alt="" width="200" height="200">
-                            <div class="card-body">
-                                <p class="card-text fw-normal"></p>
-                                <p class="card-text fw-bold"></p>
-
-                                <div class="p-4"></div>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 float-end">
-                    <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                        <img src="" class="card-img-top" alt="" width="200" height="200">
-                            <div class="card-body">
-                                <p class="card-text fw-normal"></p>
-                                <p class="card-text fw-bold"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
     </div>
     @include('footer')
 </body>
