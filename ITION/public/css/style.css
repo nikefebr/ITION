@@ -128,16 +128,6 @@ ul {
     padding-top: 11px;
 }
 
-.round-btn {
-    display: inline; 
-    height: 60px; 
-    width: 60px; 
-    background:#fff; 
-    border-radius: 50%; 
-    float: left; 
-    border: 1px solid;
-}
-
 .contact {
     padding-top: 100px;
     padding-left: 30px;
