@@ -43,8 +43,8 @@
             <div class="col-md-3 col-sm-6 ">
                 <div class="p-4"></div>
 
-                <div class="card shadow" style="background-color:#003567; width: 14rem; border-radius:30px;">
-                    <div class="card-body">
+                <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
+                    <div class="card-body px-4">
                         <br> <p class="card-text fw-bold text-white">Memotivasi</p>
                         <p class="card-text fw-normal text-white">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</p>
                         <br>
@@ -55,8 +55,8 @@
             <div class="col-md-3 col-sm-8"> 
                 <div class="p-4"></div>  
                 
-                <div class="card shadow" style="background-color:#003567; width: 14rem; border-radius:30px;">
-                    <div class="card-body">
+                <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
+                    <div class="card-body px-4">
                         <br><p class="card-text fw-bold text-white">Akurat</p>
                         <p class="card-text fw-normal text-white">Mahasiswa mendapatkan informasi lomba secara akurat.</p>
                         <br><br>
@@ -67,7 +67,7 @@
             <div class="col-md-2 col-sm-12">
                 <div class="p-4"></div>
                 
-                <div class="card shadow" style="background-color:#003567; width: 15rem; border-radius:30px;">   
+                <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">   
                     <div class="card-body px-4"> <br>    
                         <p class="card-text fw-bold text-white">Integrasi</p>
                         <p class="card-text fw-normal text-white">Mahasiswa dapat mencari informasi lomba di dalam satu sistem informasi.</p>
