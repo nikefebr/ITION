@@ -142,10 +142,10 @@
 
                         <div class="p-3"></div>
 
-                        <div class="card" style="width: 25rem;">
+                        <div class="card" style="width: 25rem; border-radius:30px">
                             <div class="row">
                                 <img src="" class="card-img-top" alt="">
-                                    <div class="card-img-overlay">
+                                    <div class="">
                                         <p class="card-text">Publish </p>
                                     </div>
                             </div>
