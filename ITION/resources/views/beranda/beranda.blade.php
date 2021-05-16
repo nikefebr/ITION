@@ -100,8 +100,8 @@
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
                     <img src="{{ $item->foto }}" class="card-img-top" alt="" width="200" height="200">
                         <div class="card-body">
-                            <p class="card-text fw-normal"></p>
-                            <p class="card-text fw-bold"></p>
+                            <p class="card-text fw-normal">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
+                            <p class="card-text fw-bold">{{ $item->deskripsi }}</p>
                     </div>
                 </div>
             </div>
@@ -114,8 +114,8 @@
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
                     <img src="{{ $item->foto }}" class="card-img-top" alt="" width="200" height="200">
                         <div class="card-body">
-                            <p class="card-text fw-normal"></p>
-                            <p class="card-text fw-bold"></p>
+                            <p class="card-text fw-normal">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
+                            <p class="card-text fw-bold">{{ $item->deskripsi }}</p>
 
                             <div class="p-4"></div>
 
