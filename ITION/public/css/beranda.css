@@ -3,7 +3,26 @@
     width: 200px;
     height: 200px;
 }
-
+#fototestimoni{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    align-content: center;
+}
+#tekstestimoni{
+    border-radius: 20px;
+}
+.carousel-control-prev-icon{
+    background: black;
+    border-radius: 5px;
+    margin-right: 100px;
+}
+.carousel-control-next-icon{
+    background-color: black;
+    border-radius: 5px;
+    margin-left: 100px;
+}
 #selengkapnya{
     text-decoration: none;
     color: black;
@@ -61,14 +80,6 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
-.fototestimoni{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-}
-
 .text-blue-2 {
     color: #003567;
 }
