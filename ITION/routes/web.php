@@ -29,6 +29,21 @@ Route::get('/galeri',[GaleriController::class, 'index']);
 
 Route::view('/tentang', 'tentang.tentang');
 
-Auth::routes();
+//Default Auth
+//Auth::routes();
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Modified Auth
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/lomba/input',[LombaController::class, 'input'])->name('inputlomba');
+});
+
+Route::get('/register', function () {
+    return redirect ('/admin/register');
+});
+
+Route::get('/login', function () {
+    return redirect ('/admin/login');
+});
+
