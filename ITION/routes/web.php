@@ -36,7 +36,8 @@ Route::view('/tentang', 'tentang.tentang');
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/lomba/input',[LombaController::class, 'input'])->name('inputlomba');
+    Route::get('/lomba/input',[App\Http\Controllers\admin\KategoriController::class, 'index']);
+    Route::get('/lomba/view',[App\Http\Controllers\admin\KategoriController::class, 'view']);
 });
 
 Route::get('/register', function () {
