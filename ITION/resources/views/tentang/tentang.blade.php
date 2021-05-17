@@ -110,7 +110,7 @@
     </div>
 
     <div class="container p-5" >
-        <div class="bg-white-footer" style="border-radius: 20px;  background-color:#FFFFFF; ">
+        <div class="bg-white-footer shadow" style="border-radius: 20px;  background-color:#FFFFFF; ">
             <div class="row">
                 <div class="col-md-2 col-sm-12"></div>
 
