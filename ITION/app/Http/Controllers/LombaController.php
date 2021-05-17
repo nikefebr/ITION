@@ -19,7 +19,7 @@ class LombaController extends Controller
 
     public function indexDetail($id_lomba)
     {
-        $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,kategori.nama_kategori,lomba.biaya,penyelenggara_lomba.kontak
+        $data = DB::select("SELECT lomba.*,kategori.*,penyelenggara_lomba.*
         FROM lomba,kategori,penyelenggara_lomba 
         WHERE lomba.id_lomba = $id_lomba AND lomba.id_kategori = kategori.id_kategori AND lomba.id_penyelenggara = penyelenggara_lomba.id_penyelenggara");
         if(empty($data)){
