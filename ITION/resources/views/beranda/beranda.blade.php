@@ -138,13 +138,14 @@
                 <h5 class="fw-bold">Yuk ikuti lomba lainnya</h5>
 
                 <div class="row">
+                    @foreach ($lomba as $item)
                     <div class="col-md-3 col-sm-6">
 
                         <div class="p-3"></div>
-
+                        
                         <div class="card" style="width: 25rem; border-radius:30px">
                             <div class="row">
-                                <img src="" class="card-img-top" alt="">
+                                <img src="{{ $item->poster }}" class="card-img-top" alt="" width="400" height="400">
                                     <div class="">
                                         <p class="card-text">Publish </p>
                                     </div>
@@ -182,7 +183,9 @@
                                 <button class="button-katalog fw-bolder text-blue-2">Daftar Lomba Ini</button>
                             </div>
                         </div>
+                        
                     </div>
+                    @endforeach
                 </div>
         </div>
         <div class="p-5"></div>
