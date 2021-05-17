@@ -138,6 +138,16 @@ footer .round-btn {
     margin: 0px 30px 0px 0px;
 }
 
+.round-btn {
+    display: inline; 
+    height: 60px; 
+    width: 60px; 
+    background:#fff; 
+    border-radius: 50%; 
+    float: left; 
+    border: 1px solid;
+}
+
 .top-footer {
     padding-top: 60px;
 }

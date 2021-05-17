@@ -45,7 +45,7 @@
         <div class="card w-100" style="border-radius: 30px;">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <img class="img-fluid" src="{{ $item->poster }}" style="border-radius: 30px;">
+                    <img class="img-fluid" src="{{ url('image/lomba/'.$item->poster) }}" style="border-radius: 30px;">
                 </div>
 
                 <div class="col-md-3 col-sm-6 ps-3">
