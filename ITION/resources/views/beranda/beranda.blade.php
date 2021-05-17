@@ -53,7 +53,7 @@
                         <h5 class="card-title">{{ $item->judul }}</h5>
                         <h6 class="card-text fw-normal">{{ $item->nama_kategori }}</h6>
                         <p></p>
-                        <p class="card-text">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et</p>
+                        <p class="card-text">{{ $item->deskripsi }}</p>
                     </div>
                 </div>
 
@@ -138,13 +138,14 @@
                 <h5 class="fw-bold">Yuk ikuti lomba lainnya</h5>
 
                 <div class="row">
+                    @foreach ($lomba as $item)
                     <div class="col-md-3 col-sm-6">
 
                         <div class="p-3"></div>
-
+                        
                         <div class="card" style="width: 25rem; border-radius:30px">
                             <div class="row">
-                                <img src="" class="card-img-top" alt="">
+                                <img src="{{ $item->poster }}" class="card-img-top" alt="" width="400" height="400">
                                     <div class="">
                                         <p class="card-text">Publish </p>
                                     </div>
@@ -155,11 +156,11 @@
                             <div class="row">
                                 <div class="col-md-7 col-sm-7">
                                     <div class="card-body">
-                                        <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                        <h6 class="card-text fw-light text-blue">Kategori</h6>
+                                        <h5 class="card-text fw-bold text-blue">{{ $item->judul }}</h5>
+                                        <h6 class="card-text fw-light text-blue">{{ $item->nama_kategori }}</h6>
                                         
                                         <p class="card-text text-grey mt-4">
-                                            Deskripsi
+                                        {{ $item->deskripsi }}
                                         </p>
                                     </div>
                                 </div>
@@ -179,10 +180,12 @@
                             </div>
 
                             <div class="row ms-0" style="width: 25rem;">
-                                <button class="button-katalog fw-bolder text-blue-2">Daftar Lomba Ini</button>
+                                <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             </div>
                         </div>
+                        
                     </div>
+                    @endforeach
                 </div>
         </div>
         <div class="p-5"></div>
