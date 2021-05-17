@@ -8,7 +8,7 @@
     
     <div class="p-5"></div>
     
-    <div class="container p-5" bg-white-ition>
+    <div class="container p-5">
         <div class="row">
             <div class="col-md-4">
                 <img src="{{asset('image/tentang/ition.jpeg' ) }}" width="270" >
@@ -120,7 +120,7 @@
                     <img src="{{ asset('image/tentang/nike.png')}}" class="card-img-top" alt="" width="225" height="170">
                     
                     <div class="card" style="width: 12rem; border:none;">
-                        <div class="card-body">
+                        <div class="card-body pe-0 ps-0">
                             <p class="card-text fw-bold text-black">Nike Nur Amalia F</p>
                             <p class="card-text fw-normal text-black">Product Owner</p>
                             <p class="card-text fw-normal text-black">2103191013</p>

@@ -52,8 +52,7 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    color: #fff;
-    height: 450px;
+    height: 530px;
     padding-top: 50px;
 }
 
@@ -154,6 +153,13 @@ ul {
 
 .btn-items {
     padding-top: 11px;
+}
+
+.card-dlomba {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(142, 140, 140, 0.1);
+    box-sizing: border-box;
+    border-radius: 22px;
 }
 
 .contact {
