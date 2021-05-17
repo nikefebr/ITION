@@ -7,10 +7,31 @@
     @include('navbar')
     @foreach ($data as $item)
     <div class="p-4"></div>
-    
-    <div class="container">
-        <div class="row">
-        <img class="img-fluid mx-auto" src="{{asset('image/detail_lomba.png')}}">
+
+    <div class="bg-overlay px-5">
+        <button class="button-exit fw-bolder text-blue-2">
+            <img class="mx-auto image-fluid" src="{{asset('logo/exit.png')}}">
+        </button>
+
+        <div class="container">
+            <div class="card mx-auto" style="width: 65rem; border-radius:10px">
+                <div class="row px-5 pt-5">
+                    <div class="col-md-9 col-sm-6">
+                        <div class="card-body">
+                            <h2 class="card-text fw-bold text-blue">{{ $item->judul }}</h2>
+                            <h4 class="card-text fw-light text-blue">{{ $item->nama_kategori }}</h4>
+
+                            <div class="p-2"></div>
+
+                            <p class="card-text mt-4 text-white font-12px text-uppercase">
+                                {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
+                            </p>
+
+                            <div class="p-5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -27,24 +48,27 @@
             <div class="col-md-4 col-sm-5"></div>
 
             <div class="col-md-4 col-sm-5 px-5">
-                <div class="card px-3 pt-3" style="width: 23rem;">
-                    <h5>Tunggu apa lagi ayo daftar Lomba {{ $item->nama_kategori }} sekarang :D <br><br>
+                <div class="px-3 pt-3 card text-blue-3" style="width: 20rem; border-radius: 10px; background-color: rgba(0, 53, 103, 0.1)">
+                    <h5 class="font-16px px-3 pt-3">Tunggu apa lagi ayo daftar Lomba {{ $item->nama_kategori }} sekarang :D <br><br>
                     Informasi CP : <br>
                     WA. +{{ $item->kontak }} ({{ $item->nama_kontak }}) <br>
                     </h5>
-                    <a href="https://wa.me/{{ $item->kontak }}">Klik disini untuk menghubungi CP !</a>
+                    <a href="https://wa.me/{{ $item->kontak }}" class="font-16px px-3">Klik disini untuk menghubungi <br> CP !</a>
 
                     <div class="p-4"></div>
 
-                    <div class="px-5">
+                    <div class="px-4 font-14px">
                         <button class="button-daftar-lomba fw-bolder" onclick="window.open('{{ $item->link_website }}')">Daftar Sekarang</button>
                     </div>
                 </div>
 
                 <div class="p-4"></div>
 
-                <div class="px-5">
-                    <button class="white-button-daftar fw-bolder" onclick="window.open('{{ $item->link_panduan }}')">Buku Panduan</button>
+                <div class="px-4 font-14px">
+                    <div class="mx-3">
+                        <button class="white-button-daftar fw-bolder" onclick="window.open('{{ $item->link_panduan }}')">
+                            <img src="{{asset('logo/unduh.png')}}"class="img-fluid mx-auto pe-3">Buku Panduan</button>
+                    </div>
                 </div>
             </div>
         </div>

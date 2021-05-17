@@ -63,16 +63,15 @@
 
         <div class="row">
             @foreach ($data as $item)
-            <div class="col-md-3 col-sm-6">
-
+            <div class="col-md-4 col-sm-6">
                 <div class="p-3"></div>
-
-                <div class="card" style="width: 25rem; border-radius:30px">
-                    <div class="row">
-                        <img src="{{ $item->poster }}" class="card-img-top" alt="">
-                            <div class="">
-                                <p class="card-text">Publish </p>
-                            </div>
+                
+                <div class="card" style="width: 23rem; border-radius:30px">
+                    <div class="row mx-auto" style="width: 370px; height: 470px;">
+                        <img src="{{ $item->poster }}" class="img-fluid" alt="" style="border-radius: 26px 26px 0px 0px; opacity-25">
+                        <div class="carousel-caption pt-0 pe-0 ps-0 text-dark" style="position: relative; left: 3%; text-align: left;">   
+                            <p>Publish </p>
+                        </div>
                     </div>
 
                     <div class="p-3"></div>
@@ -80,10 +79,10 @@
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
                             <div class="card-body">
-                                <h5 class="card-text fw-bold text-blue">{{ $item->judul }}</h5>
-                                <h6 class="card-text fw-light text-blue">{{ $item->nama_kategori }}</h6>
+                                <h5 class="card-text fw-bold text-blue font-16px">{{ $item->judul }}</h5>
+                                <h6 class="card-text fw-light text-blue font-14px">{{ $item->nama_kategori }}</h6>
                                 
-                                <p class="card-text text-grey mt-4">
+                                <p class="card-text text-grey mt-4 font-12px">
                                     Deskripsi
                                 </p>
                             </div>
@@ -93,49 +92,29 @@
                             <div class="p-2"></div>
 
                             <div class="card-body bg-blue-2 text-center">
-                                <h6 class="card-text fw-bold text-blue text-white">DEADLINE</h6>
-                                <h6 class="card-text fw-bold text-blue text-white">PENDAFTARAN</h6>
+                                <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
+                                PENDAFTARAN</p>
+
+                                <div class="p-1"></div>
                                 
-                                <p class="card-text mt-4">
-                                    {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
+                                <p class="card-text mt-4 text-white font-12px text-uppercase">
+                                {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row ms-0" style="width: 25rem;">
-                        <button class="button-katalog fw-bolder text-blue-2" type="button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
+                    <div class="row ms-0" style="width: 23rem;">
+                        <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                     </div>
                 </div>
-            </div>
+                    </div>
             @endforeach
         </div>
     </div>
     
     <div class="p-5"></div>
 
-    <div>
-    <tabel border="3">
-        <tr>
-            <td>ID</td>
-            <td>Gambar</td>
-            <td>Judul</td>
-            <td>Kategori</td>
-            <td>Button</td>
-            <br>
-        </tr>
-        @foreach ($data as $item)
-        <tr>
-            <td>{{ $item->id_lomba }}</td>
-            <td><img src="{{ $item->poster }}" alt="Girl in a jacket" width="300" height="400"></td>
-            <td>{{ $item->judul }}</td>
-            <td>{{ $item->nama_kategori }}</td>
-            <td><button type="button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Selengkapnya >></button></td>
-            <br>
-        </tr>
-        @endforeach
-    </tabel>
-    </div>
     @include('footer')
 </body>
 </html>
