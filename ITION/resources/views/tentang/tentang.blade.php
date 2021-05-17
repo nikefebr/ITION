@@ -41,9 +41,11 @@
             <div class="col-md-2 col-sm-12" ></div>
         
             <div class="col-md-3 col-sm-6 ">
-                <div class="p-4"></div>
-
+            <div class="p-4"></div>  
+            <img src= "{{asset('image/tentang/motivasi.png')}}" class="card-img-top" alt="" width="10" height="120">
+    
                 <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
+                <img src= "{{asset('image/tentang/motivasi.png')}}" class="card-img-top" alt="" width="10" height="120">
                     <div class="card-body px-4">
                         <br> <p class="card-text fw-bold text-white">Memotivasi</p>
                         <p class="card-text fw-normal text-white">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</p>
@@ -54,7 +56,7 @@
 
             <div class="col-md-3 col-sm-8"> 
                 <div class="p-4"></div>  
-                
+                <img src= "{{asset('image/tentang/akurat.png')}}" class="card-img-top" alt="" width="10" height="120">
                 <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
                     <div class="card-body px-4">
                         <br><p class="card-text fw-bold text-white">Akurat</p>
@@ -66,7 +68,7 @@
 
             <div class="col-md-2 col-sm-12">
                 <div class="p-4"></div>
-                
+                <img src= "{{asset('image/tentang/integrasi.png')}}" class="card-img-top" alt="" width="10" height="120">
                 <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">   
                     <div class="card-body px-4"> <br>    
                         <p class="card-text fw-bold text-white">Integrasi</p>
