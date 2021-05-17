@@ -64,7 +64,7 @@
                         <h5 class="card-title">DEADLINE</h5>
                         <h5 class="card-title">PENDAFTARAN</h5>
 
-                        <p></p>
+                        <p>{{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}</p>
 
                         <div class="p-5"></div>
 
@@ -173,7 +173,7 @@
                                         <h6 class="card-text fw-bold text-blue text-white">PENDAFTARAN</h6>
                                         
                                         <p class="card-text mt-4">
-                                            
+                                        {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
                                         </p>
                                     </div>
                                 </div>

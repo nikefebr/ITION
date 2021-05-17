@@ -62,13 +62,14 @@
         <div class="p-4"></div>
 
         <div class="row">
+            @foreach ($data as $item)
             <div class="col-md-3 col-sm-6">
 
                 <div class="p-3"></div>
 
                 <div class="card" style="width: 25rem; border-radius:30px">
                     <div class="row">
-                        <img src="" class="card-img-top" alt="">
+                        <img src="{{ $item->poster }}" class="card-img-top" alt="">
                             <div class="">
                                 <p class="card-text">Publish </p>
                             </div>
@@ -79,8 +80,8 @@
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
                             <div class="card-body">
-                                <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                <h6 class="card-text fw-light text-blue">Kategori</h6>
+                                <h5 class="card-text fw-bold text-blue">{{ $item->judul }}</h5>
+                                <h6 class="card-text fw-light text-blue">{{ $item->nama_kategori }}</h6>
                                 
                                 <p class="card-text text-grey mt-4">
                                     Deskripsi
@@ -96,17 +97,18 @@
                                 <h6 class="card-text fw-bold text-blue text-white">PENDAFTARAN</h6>
                                 
                                 <p class="card-text mt-4">
-                                    
+                                    {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="row ms-0" style="width: 25rem;">
-                        <button class="button-katalog fw-bolder text-blue-2" type="button">Daftar Lomba Ini</button>
+                        <button class="button-katalog fw-bolder text-blue-2" type="button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
     
