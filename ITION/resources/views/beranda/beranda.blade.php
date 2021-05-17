@@ -45,7 +45,7 @@
         <div class="card w-100" style="border-radius: 30px;">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <img class="img-fluid" src="{{ url('image/lomba/'.$item->poster) }}" style="border-radius: 30px;">
+                    <img class="img-fluid" src="{{ $item->poster }}" style="border-radius: 30px;">
                 </div>
 
                 <div class="col-md-3 col-sm-6 ps-3">
@@ -53,7 +53,7 @@
                         <h5 class="card-title">{{ $item->judul }}</h5>
                         <h6 class="card-text fw-normal">{{ $item->nama_kategori }}</h6>
                         <p></p>
-                        <p class="card-text">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et</p>
+                        <p class="card-text">{{ $item->deskripsi }}</p>
                     </div>
                 </div>
 
@@ -156,11 +156,11 @@
                             <div class="row">
                                 <div class="col-md-7 col-sm-7">
                                     <div class="card-body">
-                                        <h5 class="card-text fw-bold text-blue">Judul</h5>
-                                        <h6 class="card-text fw-light text-blue">Kategori</h6>
+                                        <h5 class="card-text fw-bold text-blue">{{ $item->judul }}</h5>
+                                        <h6 class="card-text fw-light text-blue">{{ $item->nama_kategori }}</h6>
                                         
                                         <p class="card-text text-grey mt-4">
-                                            Deskripsi
+                                        {{ $item->deskripsi }}
                                         </p>
                                     </div>
                                 </div>
@@ -180,7 +180,7 @@
                             </div>
 
                             <div class="row ms-0" style="width: 25rem;">
-                                <button class="button-katalog fw-bolder text-blue-2">Daftar Lomba Ini</button>
+                                <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             </div>
                         </div>
                         

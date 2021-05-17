@@ -125,7 +125,7 @@
         @foreach ($data as $item)
         <tr>
             <td>{{ $item->id_lomba }}</td>
-            <td><img src="{{ url('image/lomba/'.$item->poster) }}" alt="Girl in a jacket" width="300" height="400"></td>
+            <td><img src="{{ $item->poster }}" alt="Girl in a jacket" width="300" height="400"></td>
             <td>{{ $item->judul }}</td>
             <td>{{ $item->nama_kategori }}</td>
             <td><button type="button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Selengkapnya >></button></td>
