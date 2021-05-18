@@ -34,28 +34,34 @@
         <p class="fw-bold fs-3 text-black text-center">
             Nilai Kami
         </p>
-    <div class="p-4"></div>
+    <div class="p-2"></div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-sm-12" ></div>
+        <div class="row mx-auto ps-5">
+        <div class="row mx-auto ps-5">
         
-            <div class="col-md-3 col-sm-6 ">
-            <div class="p-4"></div>  
-            <img src= "{{asset('image/tentang/motivasi.png')}}" class="card-img-top"  alt="" width="250" height="150">
-    
+            <div class="col-md-4 col-sm-4">
+                <div class="p-4"></div>  
+                <div class="ps-4">
+                    <img src= "{{asset('image/tentang/motivasi.png')}}" class=""  alt="" width="166" height="159">
+                </div>
+        
                 <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
-                <div class="card-body px-4">
-                        <br> <p class="card-text fw-bold text-white">Memotivasi</p>
-                        <p class="card-text fw-normal text-white">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</p>
-                        <br>
+                    <div class="card-body px-4">
+                            <br> <p class="card-text fw-bold text-white">Memotivasi</p>
+                            <p class="card-text fw-normal text-white">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</p>
+                            <br>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 col-sm-8"> 
+            <div class="col-md-4 col-sm-4"> 
                 <div class="p-4"></div>  
-                <img src= "{{asset('image/tentang/akurat.png')}}" class="card-img-top"  alt="" width="250" height="150">
+                
+                <div class="ps-4">
+                    <img src= "{{asset('image/tentang/akurat.png')}}" class=""  alt="" width="166" height="159">
+                </div>
+                
                 <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
                     <div class="card-body px-4">
                         <br><p class="card-text fw-bold text-white">Akurat</p>
@@ -65,9 +71,13 @@
                 </div>
             </div>
 
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-4 col-sm-4">
                 <div class="p-4"></div>
-                <img src= "{{asset('image/tentang/integrasi.png')}}" class="card-img-top" text-align="center" alt="" width="250" height="150" >
+                
+                <div class="ps-4">
+                    <img src= "{{asset('image/tentang/integrasi.png')}}" class="" alt="" width="166" height="159">
+                </div>
+                
                 <div class="card shadow" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">   
                     <div class="card-body px-4"> <br>    
                         <p class="card-text fw-bold text-white">Integrasi</p>
@@ -76,8 +86,7 @@
                     </div>
                 </div>
             </div>
-        
-            <div class="col-md-3"></div>
+        </div>
         </div>
     </div>
 
@@ -212,8 +221,11 @@
                 </div>
                 
                 <div class="col-md-2"></div>
+                
             </div>
         </div>
+        <div class="p-5"></div>
+        <div class="p-3"></div>
     </div>
 
     @include('footer')
