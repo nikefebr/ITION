@@ -26,7 +26,7 @@
                             <h5 class="px-3 pt-3 text-bold">{{ $item->nama }}</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">{{$item->nama_kategori}} {{ $item->judul }} {{ $item->tahun_lomba }}</p>
                             <p class="px-3" style="font-size: 10pt;">
-                                “{{ $item->testimoni }}.“ - {{ $item->nama }},{{ $item->tahun_lomba }}.
+                                “{{ $item->testimoni }}.“ - {{ $item->nama }},{{ $item->angkatan }}.
                             </p>
                         </div>
                     </div>
