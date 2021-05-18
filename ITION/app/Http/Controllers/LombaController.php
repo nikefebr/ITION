@@ -11,7 +11,7 @@ class LombaController extends Controller
     public function index()
     {
         $today = date("Y-m-d");
-        $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,lomba.deadline,kategori.nama_kategori 
+        $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,lomba.deskripsi,lomba.deadline,kategori.nama_kategori 
         FROM lomba,kategori 
         WHERE lomba.id_kategori = kategori.id_kategori AND lomba.deadline >= '$today'");
         return view('lomba.lomba',['data' => $data]);
