@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 04:09 PM
+-- Generation Time: May 18, 2021 at 04:11 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -32,6 +32,13 @@ CREATE TABLE `admin` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `email`, `password`) VALUES
+(1, 'aldotest@gmail.com', '$2y$10$SOmHFKdHUY9ZFg1yB/EiEuMfZB/MqHla4XTE8MBSUASNbGORvxJSO');
 
 -- --------------------------------------------------------
 
@@ -72,7 +79,7 @@ INSERT INTO `galeri` (`id_galeri`, `id_lomba`, `foto`, `deskripsi`, `tgl_foto`) 
 (2, 1, 'https://www.pens.ac.id/wp-content/uploads/2021/04/web-pak-wikan.jpg', 'Peluncuran Program Studi Baru dan Pameran Produk Inovasi Politeknik Elektronika Negeri Surabaya (PENS)', '2021-05-09'),
 (3, 2, 'https://www.pens.ac.id/wp-content/uploads/2021/03/Team-Sierra-Web.jpg', 'Peluncuran Program Studi Baru dan Pameran Produk Inovasi Politeknik Elektronika Negeri Surabaya (PENS)', '2021-04-02'),
 (6, 3, 'https://www.pens.ac.id/wp-content/uploads/2019/05/web.jpg', 'Peluncuran Program Studi Baru dan Pameran Produk Inovasi Politeknik Elektronika Negeri Surabaya (PENS)', '2021-05-02'),
-(7, 4, 'https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png', 'Peluncuran Program Studi Baru dan Pameran Produk Inovasi Politeknik Elektronika Negeri Surabaya (PENS)', '2021-03-03');
+(7, 1, 'https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png', 'Peluncuran Program Studi Baru dan Pameran Produk Inovasi Politeknik Elektronika Negeri Surabaya (PENS)', '2021-03-03');
 
 -- --------------------------------------------------------
 
@@ -90,9 +97,10 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(1, 'Hackathon'),
-(3, 'Design Web'),
-(4, 'Programming');
+(1, 'Programming'),
+(2, 'Design Web'),
+(3, 'Data'),
+(4, 'Hackathon');
 
 -- --------------------------------------------------------
 
@@ -125,10 +133,9 @@ CREATE TABLE `lomba` (
 --
 
 INSERT INTO `lomba` (`id_lomba`, `poster`, `judul`, `deskripsi`, `syarat`, `timeline`, `biaya`, `link_panduan`, `hadiah_juara_1`, `hadiah_juara_2`, `hadiah_juara_3`, `lainnya`, `deadline`, `id_penyelenggara`, `id_kategori`, `tahun`, `link_website`) VALUES
-(1, 'https://miro.medium.com/max/2160/1*F8KK-eU-V441JBIuns0N8w.png', 'Jamkrindo Hackathon 2021', 'Smart Access Tecnology', '1. WNI\r\n2. Memiliki KTM\r\n3. Mendaftar sebagai tim', 'Penutupan Registrasi : 30 Juni 2021\r\n', '0', 'https://hackathon.jamkrindo.co.id/index.php/Rules', NULL, NULL, NULL, NULL, '2021-06-30', 1, 1, '2021', 'https://hackathon.jamkrindo.co.id/'),
-(2, 'https://bslc.or.id/wp-content/uploads/2017/01/MP-E-TIME-2017-Electro-Activities-Programme-2017-Himpunan-Mahasiswa-Elektro-PNJ-Copy.jpg', 'Incridibel Think', 'Smart Access Tecnology', '1. WNI\r\n2. Memiliki KTM\r\n3. Mendaftar sebagai tim', 'Penutupan Registrasi : 30 Juni 2020\r\n', '0', 'https://hackathon.jamkrindo.co.id/index.php/Rules', NULL, NULL, NULL, NULL, '2020-07-15', 1, 3, '2020', 'https://hackathon.jamkrindo.co.id/'),
-(3, 'https://i0.wp.com/eventpelajar.com/wp-content/uploads/2019/03/poster%20hackathon.jpg?fit=1280%2C1280&ssl=1', 'Siloam Hackathon 2021', 'Smart Access Tecnology', '1. WNI\r\n2. Memiliki KTM\r\n3. Mendaftar sebagai tim', 'Penutupan Registrasi : 30 Juni 2021\r\n', '0', 'https://hackathon.jamkrindo.co.id/index.php/Rules', NULL, NULL, NULL, NULL, '2021-06-30', 1, 4, '2021', 'https://hackathon.jamkrindo.co.id/'),
-(4, 'https://2.bp.blogspot.com/-w1XuEGn1yPE/VrAhZWI9UxI/AAAAAAAADos/mHHixzHIcfU/s1600/POSTER-WDC.jpg', 'Incridibel Think', 'Smart Access Tecnology', '1. WNI\r\n2. Memiliki KTM\r\n3. Mendaftar sebagai tim', 'Penutupan Registrasi : 30 Juni 2020\r\n', '0', 'https://hackathon.jamkrindo.co.id/index.php/Rules', NULL, NULL, NULL, NULL, '2021-07-22', 1, 3, '2021', 'https://hackathon.jamkrindo.co.id/');
+(1, 'lomba12.jpg', 'Competitive Programming', 'Competitive Programming merupakan kompetisi yang menguji kemampuan berpikir logis untuk menyelesaikan masalah yang diberikan dengan menyusun algoritma yang paling efektif dan optimal menggunakan sebuah program komputer yang ditulis menggunakan bahasa pemrograman seperti C, C++, atau Java dalam batasan waktu dan memori yang ditentukan sebelumnya.', '- Peserta merupakan mahasiswa aktif D3 atau S1 perguruan tinggi dibuktikan dengan kartu tanda mahasiswa\r\n\r\n- Kompetisi diikuti oleh tim yang terdiri atas tiga peserta yang berasal dari perguruan tinggi yang sama\r\n\r\n- Peserta diperbolehkann mendaftar lebih dari satu cabang kompetisi Find IT! yang berbeda. Namum, seorang peserta hanya diperbolehkan menjadi ketua tim di satu canag kopetisi, tidak diperbolehkan menjadi ketua tim dicabang kompetisi lainnya.\r\n\r\n- Bahasa pemrograman yang digunakan adalah C, C++, dan Java. Keputusan dewan juri bersifat mutlak dan tidak dapat diganggu gugat\r\n', 'Sabtu, 13 Maret 2021 : Open Registration FIND IT1 2021\r\n\r\nMinggu, 11 April 2021 : Close Registration \r\n\r\nSabtu, 5 Juni 2021 : Warm Up\r\n\r\nMinggu, 6 Juni 2021 : Kualifikasi dan Pengumuman Finalis\r\n\r\nMinggu, 13 Juni 2021 : Final dan Pengumuman Juara\r\n\r\n', 'Rp 120.000', 'https://drive.google.com/file/d/1K8TKmYB7MNZ6EnSwPuQdUIFvSSHuYT1Q/view', 'Rp 3.500.000', 'Rp 2.500.000', 'Rp 1.000.000', NULL, '2021-07-01', 1, 1, '2021', 'https://find-it.id/Competition/CompetitiveProgramming'),
+(2, 'lomba12.jpg', 'Data Analytics Competition', 'Data Analytics Competition merupakan kompetisi menganalisis data khususnya big data yang diharapkan dapat memberikan solusi dari sebuah permasalahan yang telah disediakan. Kompetisi ini bertujuan untuk menyiapkan generasi yang mampu menganalisis data dengan baik sehingga mampu melahirkan solusi terbaik dari sebuah masalah di era digital sekarang ini.', '- Peserta merupakan mahasiswa program diploma atau sarjana di perguruan tinggi negeri atau swasta di indonesia yang berstatus aktif\r\n\r\n- Satu tim terdiri atas maksimal 3 orang dengan salah satu anggota adalah ketua tim\r\n\r\n- Setiap anggota tim harus berasal dari perguruan tinggi/instansi pendidikan yang sama\r\n\r\n- Setiap anggota hanya boleh terdaftar dalam satu tim\r\n\r\n- Setiap tim wajib melengkapi berkas pendaftaran dengan data yang benar\r\nsetiap tim tidak diperbolehkan untuk mengubah komposisi anggota tim setelah melengkapii berkas pendaftaran\r\n\r\n- Setiap tim yang tidak mengkonfirmasikan kehadirannya pada babak final sebelum acara dimulai akan didiskualifikasi\r\n\r\n- Saat babak final berlangsung,seiap tim wajib hadir semua anggota\r\nsetiap anggota tim dilarang bekerja sama dengan anggota tim lain dalam bentuk apapun\r\n\r\n- Setiap anggota tim dilarang melakukan hal atau kegiatan yang dapat mengganggu jalannya lomba atau merugikan tim lainnya\r\n\r\n- Seluruh tim wajib mengikuti peraturan yang sudah ditetapkan tanpa terkecuali\r\npanitia berhak untuk menggugurkan tim yang melakukan tindak kecurangan maupun pelanggaran terhadap aturan kompetisi sebelum atau saat kompetisi terselenggara, tanpa pemberitahuan sebelumnya\r\n\r\n- Panitia berhak untuk mempublikasikan karya peserta yangdiikutsertakan dalam kompetisi dengan hak milik karya tetap akanmenjadi hak tim.\r\n\r\n- Panitia berhak untuk mencabut gelar juara dari pemenang jikaditemukan kecurangan atau pelanggaran atas karya yangdilombakan.\r\n\r\n- Keputusan dewan juri dan panitia mutlak tidak dapat diganggugugat.\r\nApabila ada peraturan yang belum ditetapkan akan ditetapkankemudian hari.\r\n\r\n- Berita terkait perubahan atau penambahan aturan akandipublikasikan melalui situs dan Official Account resmi Find IT! 2021.\r\n', 'Sabtu, 13 Maret 2021 : Open Registration FIND IT1 2021\r\n\r\nMinggu, 11 April 2021 : Close Registration \r\n3 - 23 Mei 2021	: Pengerjaan soal dan laporan\r\n\r\n24 - 29 Mei 2021 	: Penilaian\r\n\r\n30 Mei 2021 		: Pengumuman Finalis\r\n\r\n30 Mei - 7 Juni 2021 	: Pengumpulan Video dan Pengisian Form\r\n\r\nSabtu, 12 Juni 2021 	: Presentasi Final\r\n', 'Rp 100.000', 'https://drive.google.com/file/d/1C92piZm7-glKkci6JE95OXYzwN8HdE4S/view', 'Rp 4.000.000', 'Rp 2.000.000', 'Rp 1.000.000', NULL, '2021-07-01', 2, 3, '2021', 'https://find-it.id/Competition/DataAnalyticsCompetition'),
+(3, 'lomba12.jpg', 'Hackathon', 'Hackathon yang merupakan gabungan dari dua kata yaitu hack dan marathon adalah kompetisi pembuatan inovasi berupa produk teknologi informasi. Kompetisi ini mengkolaborasikan aspek startup yaitu Hipster (Design and User interface / User Experience), Hacker (Engineer and Developer), dan Hustler (Business and Project Management) dalam kurun waktu tertentu.', '- Peserta adalah mahasiswa program diploma atau sarjana di perguruan tinggi negeri atau swasta di Indonesia yang berstatus aktif,berumur maksimal 24 tahun pada tanggal babak final diselenggarakan (dibuktikan dengan Kartu Tanda Mahasiswa (KTM) yang masih berlaku atau surat keterangan resmi dari perguruan tinggi/institusi terkait), dan telah mengikuti mekanisme pendaftaran secara resmi melalui situs Find IT! 2021.\r\n\r\n- Satu tim terdiri atas 2-3 orang dengan salah satu anggota adalah ketua tim.\r\n\r\n- Setiap anggota tim harus berasal dari perguruan tinggi/institusi yang sama.\r\nSetiap anggota hanya boleh terdaftar dalam satu tim.\r\n\r\n- Setiap tim wajib melengkapi berkas pendaftaran dengan data yang benar.\r\nSetiap tim tidak diperbolehkan untuk mengubah komposisi anggota tim setelah melengkapi berkas pendaftaran.\r\n\r\n- Inovasi yang diangkat harus sesuai dengan tema dan memenuhi salah satu subtema.\r\n\r\n- Setiap tim yang lolos ke tahap penyisihan proposal diharapkan melakukan pengumpulan proposal sebelum waktu pengumpulan proposal resmi ditutup. Apabila tidak melakukan pengumpulan proposal, maka tim tidak akan diikutsertakan pada babak tersebut.\r\n\r\n- Setiap tim yang tidak mengkonfirmasikan kehadirannya pada babak final selambat-lambatnya satu minggu sebelum acara dimulai akan didiskualifikasi.\r\n\r\n- Saat babak final berlangsung, setiap tim wajib hadir minimal 2 anggota tim, apabila kurang maka tim akan didiskualifikasi.\r\n\r\n- Setiap anggota tim dilarang bekerja sama dengan anggota tim lain dalam bentuk apapun.\r\n\r\n- Setiap anggota tim dilarang melakukan hal atau kegiatan yang dapat mengganggu jalannya lomba atau merugikan tim lainnya.\r\n\r\n- Seluruh tim wajib mengikuti peraturan yang sudah ditetapkan tanpa terkecuali.\r\n\r\n- Panitia berhak untuk menggugurkan tim yang melakukan tindak kecurangan maupun pelanggaran terhadap aturan kompetisi sebelum atau saat kompetisi terselenggara, tanpa pemberitahuan sebelumnya.\r\n\r\n- Panitia berhak untuk mempublikasikan karya peserta yang diikutsertakan dalam kompetisi dengan hak milik karya tetap akan menjadi hak tim.\r\n\r\n- Panitia berhak untuk mencabut gelar juara dari pemenang jika ditemukan kecurangan atau pelanggaran atas karya yang dilombakan.\r\n\r\n- Keputusan dewan juri dan panitia mutlak tidak dapat diganggu gugat.\r\nApabila ada peraturan yang belum ditetapkan akan ditetapkan kemudian hari.\r\n\r\n- Berita terkait perubahan atau penambahan aturan akan dipublikasikan melalui situs dan Official Account resmi Find IT! 2021.', 'Sabtu, 13 Maret 2021 : Open Registration FIND IT1 2021\r\n\r\nMinggu, 11 April 2021 : Close Registration \r\n\r\nMinggu, 18 April 2021 : Pengumpulan Abstrak \r\n\r\nKamis, 22 April 2021 : Pengumuman Abstrak \r\n\r\nMinggu, 9 Mei 2021 : Pengumpulan Proposal\r\n\r\nSenin,24 Mei 2021 : Pengumuman Proposal\r\n\r\nMinggu, 13 Juni 2021 : Grand Final ( Pitching )\r\n\r\n', 'Rp 100.000', 'https://drive.google.com/file/d/1oXeYctDcEU6C1etgbyubnW823fc2wPCZ/view', 'Rp 4.000.000', 'Rp 2.000.000', 'Rp 1.000.000', NULL, '2021-07-01', 3, 4, '2021', 'https://find-it.id/auth/SignInPage?q=/Registration/Hackathon');
 
 -- --------------------------------------------------------
 
@@ -229,7 +236,9 @@ CREATE TABLE `penyelenggara_lomba` (
 --
 
 INSERT INTO `penyelenggara_lomba` (`id_penyelenggara`, `nama_penyelenggara`, `kontak`, `nama_kontak`) VALUES
-(1, 'UGM', '6285157555010', 'IZ');
+(1, 'UGM', '62895379261521', 'Fauzan Abdillah'),
+(2, 'UGM', '62895637566145', 'Sasa Nadya'),
+(3, 'UGM', '6281809658698', 'Yanayir Rifai');
 
 -- --------------------------------------------------------
 
@@ -408,7 +417,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -450,7 +459,7 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT for table `penyelenggara_lomba`
 --
 ALTER TABLE `penyelenggara_lomba`
-  MODIFY `id_penyelenggara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_penyelenggara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reviewer`
