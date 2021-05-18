@@ -224,8 +224,7 @@
                 
             </div>
         </div>
-        <div class="p-5"></div>
-        <div class="p-3"></div>
+        <div class="p-4"></div>
     </div>
 
     @include('footer')

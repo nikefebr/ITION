@@ -67,14 +67,11 @@
                 <div class="p-3"></div>
                 
                 <div class="card" style="width: 23rem; border-radius:30px">
-                    <div class="row mx-auto" style="width: 370px; height: 470px;">
-                        <img src="{{ $item->poster }}" class="img-fluid" alt="" style="border-radius: 26px 26px 0px 0px; opacity-25">
-                        <div class="carousel-caption pt-0 pe-0 ps-0 text-dark" style="position: relative; left: 3%; text-align: left;">   
-                            <p>Publish </p>
-                        </div>
+                    <div class="row mx-auto">
+                        <img src="{{ $item->poster }}" class="card-img" alt="" style="border-radius: 26px 26px 0px 0px; max-width: 370px; height: 370px;">
+                        
+                        <p class="card-text ps-3 text-grey pt-2">Publish </p>
                     </div>
-
-                    <div class="p-3"></div>
 
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
@@ -108,7 +105,7 @@
                         <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                     </div>
                 </div>
-                    </div>
+            </div>
             @endforeach
         </div>
     </div>
