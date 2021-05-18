@@ -42,15 +42,19 @@
         <!-- Modal -->
         <div class="modal fade" id="galeri-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content" style="border-radius: 50px; background: rgba(255, 255, 255, 0.8);">
+                <div class="modal-body px-5">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    
+                    <button type="button" class="btn-close float-end pt-2" data-dismiss="modal" aria-label="Close">
                     </button>
-                </div>
-                <div class="modal-body">
-                    <img src="" class="card-img-top modal-img" alt="" width="100" height="500" >                                        
+                
+                    <img src="" class="card-img-top modal-img" alt="">
+
+                    <p class="font-14px pt-3 mb-0">Publish</p>
+                    <h5 class="fw-bold mt-0">Judul</h5>
+
+                    <div class="pb-2"></div>                                        
                 </div>
                 
             </div>
