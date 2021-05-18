@@ -74,8 +74,6 @@
                         </div>
                     </div>
 
-                    <div class="p-3"></div>
-
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
                             <div class="card-body">
@@ -108,7 +106,7 @@
                         <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                     </div>
                 </div>
-                    </div>
+            </div>
             @endforeach
         </div>
     </div>

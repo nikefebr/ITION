@@ -152,8 +152,6 @@
                                 </div>
                             </div>
 
-                            <div class="p-3"></div>
-
                             <div class="row">
                                 <div class="col-md-7 col-sm-7">
                                     <div class="card-body">
@@ -161,7 +159,7 @@
                                         <h6 class="card-text fw-light text-blue font-14px">{{ $item->nama_kategori }}</h6>
                                         
                                         <p class="card-text text-grey mt-4 font-12px">
-                                        {{ $item->deskripsi }}
+                                            {{ $item->deskripsi }}
                                         </p>
                                     </div>
                                 </div>
@@ -180,12 +178,12 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                    </div>
 
-                            <div class="row ms-0" style="width: 23rem;">
-                                <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
-                            </div>
-                        </div>
+                    <div class="row ms-0" style="width: 23rem;">
+                        <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
+                    </div>
+                </div>
                     </div>
                     @endforeach
                 </div>
