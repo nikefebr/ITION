@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5">
                 <h1 class="fw-bold">Deskripsi</h1>
-                <img src="{{ $item->poster }}" class="img-fluid mx-auto">
+                <img src="{{ url('image/lomba/'.$item->poster) }}" class="img-fluid mx-auto">
                 <h5 class="fw-normal">{{ $item->deskripsi }}</h5>
             </div>
 
@@ -128,18 +128,25 @@
 
         <div class="row">
             <h1 class="fw-bold">Biaya Pendaftaran</h1>
-            @if($item->biaya == 0)
-            <h5 class="fw-normal">Gratis</h5>
-            @else
-            <h5 class="fw-normal">@currency($item->biaya)</h5>
-            @endif
+            <h5 class="fw-normal">{{ $item->biaya }}</h5>
         </div>
 
         <div class="p-4"></div>
 
         <div class="row">
             <h1 class="fw-bold">Juara + Hadiah</h1>
-            <h5 class="fw-normal">Deskripsi</h5>
+            @if(!empty($item->hadiah_juara_1))
+            <h5 class="fw-normal">Juara 1 : {{ $item->hadiah_juara_1 }}</h5>
+            @endif
+            @if(!empty($item->hadiah_juara_2))
+            <h5 class="fw-normal">Juara 2 : {{ $item->hadiah_juara_2 }}</h5>
+            @endif
+            @if(!empty($item->hadiah_juara_3))
+            <h5 class="fw-normal">Juara 3 : {{ $item->hadiah_juara_3 }}</h5>
+            @endif
+            @if(!empty($item->lainnya))
+            <h5 class="fw-normal">{{ $item->lainnya }}</h5>
+            @endif
         </div>
     </div>
 
