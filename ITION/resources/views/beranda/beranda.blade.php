@@ -66,9 +66,9 @@
 
                         <div class="p-3"></div>
 
-                        <p class="text-uppercase">{{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}</p>
+                        <p class="text-uppercase pt-3">{{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}</p>
 
-                        <div class="p-5"></div>
+                        <div class="p-4"></div>
 
                         <button class="button fw-bolder" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
                     </div>
@@ -196,7 +196,7 @@
     <div class="p-4"></div>
     
     <div class="container mt-0">
-        <h5 class="fw-bold text-center">Keuntungan sering mengikuti lomba</h5>
+        <h5 class="fw-bold text-center pt-4">Keuntungan sering mengikuti lomba</h5>
         <div class="p-4"></div>
 
             <div class="row fw-bold text-center">

@@ -38,13 +38,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/admin/lomba/input') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah baru</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/admin/lomba/view') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tampilkan data</p>
                 </a>

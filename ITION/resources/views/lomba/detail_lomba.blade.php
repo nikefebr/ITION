@@ -9,33 +9,70 @@
     <div class="p-4"></div>
 
     <div class="bg-overlay px-5">
-        <button class="button-exit fw-bolder text-blue-2">
+        <button class="button-exit fw-bolder text-blue-2" onclick="window.location='{{ url("lomba") }}'">
             <img class="mx-auto image-fluid" src="{{asset('logo/exit.png')}}">
         </button>
 
         <div class="container">
-            <div class="card mx-auto" style="width: 65rem; border-radius:10px">
-                <div class="row px-5 pt-5">
-                    <div class="col-md-9 col-sm-6">
+            <div class="mx-auto card-dlomba" style="width: 65rem; border-radius:10px">
+                <div class="row px-5 pt-5 pb-0">
+                    <div class="col-md-6 col-sm-5">
                         <div class="card-body">
                             <h2 class="card-text fw-bold text-blue">{{ $item->judul }}</h2>
-                            <h4 class="card-text fw-light text-blue">{{ $item->nama_kategori }}</h4>
+                            <h4 class="card-text fw-bold text-blue">{{ $item->nama_kategori }}</h4>
 
-                            <div class="p-2"></div>
-
-                            <p class="card-text mt-4 text-white font-12px text-uppercase">
-                                {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
-                            </p>
-
-                            <div class="p-5"></div>
                         </div>
                     </div>
+
+                    <div class="col-md-6 col-sm-5 pt-5">
+                        <div class="card-body text-center ps-5">
+                            <h5 class="card-text fw-bold text-blue ps-5">DEADLINE <br>
+                                PENDAFTARAN</h5>
+
+                            <div class="pt-3"></div>
+                            
+                            <h5 class="card-text mt-4 text-uppercase ps-5">
+                                {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row px-5 pt-0">
+                    <div class="col-md-2 col-sm-6">
+                        <div class="card-body">
+                            <p class="card-text fw-normal font-14px">
+                                PUBLISH
+                            </p>
+
+                            <p class="card-text font-14px text-uppercase">
+                                
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-6" style="border: 10px; border-color:black"></div>
+
+                    <div class="col-md-2 col-sm-6">
+                        <div class="card-body">
+                            <p class="card-text fw-normal font-14px">
+                                KATEGORI
+                            </p>
+
+                            <p class="card-text font-14px text-uppercase">
+                                {{ $item->nama_kategori }}
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="p-2"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="p-4"></div>
+    <div class="p-5"></div>
 
     <div class="container px-5 px-5">
         <div class="row">
