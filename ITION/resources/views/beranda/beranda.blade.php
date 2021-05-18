@@ -180,7 +180,7 @@
                                         <h6 class="card-text fw-light text-blue font-14px">{{ $item->nama_kategori }}</h6>
                                         
                                         <p class="card-text text-grey mt-4 font-12px">
-                                            {{ $item->deskripsi }}
+                                        {{ \Illuminate\Support\Str::limit($item->deskripsi, 120, $end='...') }}
                                         </p>
                                     </div>
                                 </div>
