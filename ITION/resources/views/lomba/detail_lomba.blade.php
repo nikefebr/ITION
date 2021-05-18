@@ -114,14 +114,14 @@
 
         <div class="row">
             <h1 class="fw-bold">Syarat Lomba</h1>
-            <h5 class="fw-normal">{{ $item->syarat }}</h5>
+            <h5 class="fw-normal">{!! nl2br(e($item->syarat)) !!}</h5>
         </div>
 
         <div class="p-4"></div>
 
         <div class="row">
             <h1 class="fw-bold">Timeline</h1>
-            <h5 class="fw-normal">{{ $item->timeline }}</h5>
+            <h5 class="fw-normal">{!! nl2br(e($item->timeline)) !!}</h5>
         </div>
 
         <div class="p-4"></div>
