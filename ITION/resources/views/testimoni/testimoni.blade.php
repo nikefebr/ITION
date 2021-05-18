@@ -7,15 +7,11 @@
     @include('navbar')
 
     <div class="pt-5"></div>
+    <div class="pt-3"></div>
     
-    <div class="container p-5">
-        <div class="row">
-            <img class="img-fluid mx-auto" style="width: 800px; height: 450px">
-        </div>
-    </div>
+    <div class="bg-testimoni px-5"></div>
 
     <div class="container px-0 ms-5">
-        <div class="pt-5"></div>
         <div class="pt-5"></div>
         <div class="pt-5"></div>
 
