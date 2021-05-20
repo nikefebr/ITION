@@ -35,19 +35,36 @@ Route::view('/tentang', 'tentang.tentang');
 //Modified Auth
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
     Route::prefix('lomba')->group(function () {
-        Route::get('input',[App\Http\Controllers\admin\LombaController::class, 'create']);
-        Route::get('view',[App\Http\Controllers\admin\LombaController::class, 'view']);  
+    Route::resource('/', 'App\Http\Controllers\admin\LombaController', [
+        'names' => [
+            'index' => 'lomba view',
+            'create' => 'lomba create',
+            'show' => 'lomba show',
+            'edit' => 'lomba edit'
+        ]
+        ]); 
     });
 
+    Route::prefix('kategori')->group(function () {
+    Route::resource('/', 'App\Http\Controllers\admin\KategoriController', [
+        'names' => [
+            'index' => 'kategori view',
+            'create' => 'kategori create',
+            'show' => 'kategori show',
+            'edit' => 'kategori edit'
+        ]
+        ]);
+    });
+
+    /*
     Route::prefix('kategori')->group(function () {
         Route::get('input',[App\Http\Controllers\admin\KategoriController::class, 'create']);
         Route::get('view',[App\Http\Controllers\admin\KategoriController::class, 'view']); 
     });
-
-    
+    */    
 });
 
 Route::get('/register', function () {
