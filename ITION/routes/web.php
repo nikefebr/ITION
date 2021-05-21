@@ -57,14 +57,7 @@ Route::group(['prefix' => 'admin'], function () {
             'edit' => 'kategori edit'
         ]
         ]);
-    });
-
-    /*
-    Route::prefix('kategori')->group(function () {
-        Route::get('input',[App\Http\Controllers\admin\KategoriController::class, 'create']);
-        Route::get('view',[App\Http\Controllers\admin\KategoriController::class, 'view']); 
-    });
-    */    
+    });  
 });
 
 Route::get('/register', function () {
