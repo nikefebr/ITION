@@ -34,27 +34,29 @@ class KategoriController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Validation\Validator
      */
     public function store(Request $request)
     {
         
+        $validated = $request->validate([
+            'nama_kategori' => ['required','unique:post','max:255']
+        ]);
 
-        //$Validator = Validator::make($request->all(), [
-        //     'nama_kategori'=>'required',
-        //])->validate();
+        /*$Validator = Validator::make($request->all(), [
+             'nama_kategori'=>'required',
+        ])->validate();
 
-        /*if ($validator->fails()) {
-            //return redirect('admin/kategori/create')
-            //    ->withErrors($validator);
-            echo $request;
-            echo $validator;
+        if ($validator->fails()) {
+            return redirect('admin/kategori/create')
+                ->withErrors($validator);
         } else {*/
             Kategori::create([
                 'nama_kategori' => request('nama_kategori')
             ]);
 
             //redirect
-            return redirect('admin/kategori');
+            return redirect('admin/kategori')->with('success','Kategori berhasil dibuat!');
         //}
     }
 
@@ -66,7 +68,7 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori)
     {
-        //
+        return view('admin.kategori_view');
     }
 
     /**

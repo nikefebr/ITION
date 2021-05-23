@@ -38,6 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   @error('nama_kategori')
                   <p class="alert alert-danger card-text">kategori yang anda masukkan sama/masih kosong</p>
                   @enderror
+                  
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -46,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="card-body">
                     <div class="form-group">
                       <label for="nama_kategori">Nama Kategori</label>
-                      <input type="text" class="form-control" id="nama_kategori" placeholder="Nama Kategori">
+                      <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" placeholder="Nama Kategori">
                     </div>
                   </div>
                   <!-- /.card-body -->

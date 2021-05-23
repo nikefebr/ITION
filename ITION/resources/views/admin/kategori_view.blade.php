@@ -41,6 +41,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
+                          @if ($message = Session::get('success'))
+                            <p class="alert alert-success card-text">{{ $message }}</p>
+                          @endif
+                        </div>
+                        <div class="card-header">
                           <h3 class="card-title">DataTable with default features</h3>
                         </div>
                         <!-- /.card-header -->
