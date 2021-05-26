@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Routing\Redirector;
 
 class KategoriController extends Controller
 {
@@ -16,7 +17,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('admin.kategori_view');
+        $category = Kategori::all(); //mengambil semua isi tabel
+        return view('admin.kategori.kategori_view', compact('category'));
     }
 
     /**
@@ -26,7 +28,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('admin.kategori_input');
+        return view('admin.kategori.kategori_input');
     }
 
     /**
@@ -38,26 +40,24 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $validated = $request->validate([
-            'nama_kategori' => ['required','unique:post','max:255']
+        // membuat validasi dari nama kategori
+        $validated = Validator::make($request->all(),[
+            'nama_kategori' => ['required','unique:kategori','max:255']
         ]);
-
-        /*$Validator = Validator::make($request->all(), [
-             'nama_kategori'=>'required',
-        ])->validate();
-
-        if ($validator->fails()) {
-            return redirect('admin/kategori/create')
-                ->withErrors($validator);
-        } else {*/
+        
+        // mengecek apabila terdapat error atau tidak
+        if ($validated->fails()) {
+            return redirect()->route('kategori create')->withErrors($validated); // redirect kembali dengan pesan error
+        } else {
+            
+            // akan membuat data baru dengan 
             Kategori::create([
-                'nama_kategori' => request('nama_kategori')
+                'nama_kategori' => request('nama_kategori') 
             ]);
 
             //redirect
-            return redirect('admin/kategori')->with('success','Kategori berhasil dibuat!');
-        //}
+            return redirect()->route('kategori view')->with('success','Kategori berhasil dibuat!');
+        }
     }
 
     /**
@@ -68,7 +68,7 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori)
     {
-        return view('admin.kategori_view');
+        return view('admin.kategori.kategori_view');
     }
 
     /**
@@ -79,7 +79,7 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
-        //
+        return view('admin.kategori.kategori_edit', compact('kategori'));
     }
 
     /**
@@ -91,7 +91,22 @@ class KategoriController extends Controller
      */
     public function update(Request $request, Kategori $kategori)
     {
-        //
+        //validasi data
+        $validated = Validator::make($request->all(),[
+            'nama_kategori' => ['required','unique:kategori','max:255']
+        ]);
+
+        //throw exception error
+        if ($validated->fails()) {
+            return redirect()->route('kategori edit', compact('kategori'))->withErrors($validated);
+        }
+        else {
+            $kategori->update([
+                'nama_kategori' => $request -> nama_kategori
+            ]);
+            return redirect()->route('kategori view')->with('success','Kategori berhasil diupdate!');
+        }
+
     }
 
     /**
@@ -102,6 +117,8 @@ class KategoriController extends Controller
      */
     public function destroy(Kategori $kategori)
     {
-        //
+        //fungsi eloquent untuk menghapus data
+        $kategori->delete();
+        return redirect()->route('kategori view')->with('success', 'Kategori Berhasil Dihapus!');
     }
 }

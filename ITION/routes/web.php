@@ -5,6 +5,9 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\LombaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\admin\KategoriController;
+use App\Http\Controllers\admin\PelangganController;
+use App\Http\Controllers\admin\PenyelenggaraLombaController;
 use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
@@ -35,30 +38,30 @@ Route::view('/tentang', 'tentang.tentang');
 //Modified Auth
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-
-    Route::prefix('lomba')->group(function () {
-    Route::resource('/', 'App\Http\Controllers\admin\LombaController', [
-        'names' => [
-            'index' => 'lomba view',
-            'create' => 'lomba create',
-            'show' => 'lomba show',
-            'edit' => 'lomba edit'
-        ]
-        ]); 
-    });
-
-    Route::prefix('kategori')->group(function () {
-    Route::resource('/', 'App\Http\Controllers\admin\KategoriController', [
-        'names' => [
-            'index' => 'kategori view',
-            'create' => 'kategori create',
-            'show' => 'kategori show',
-            'edit' => 'kategori edit'
-        ]
-        ]);
-    });  
 });
+
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin dashboard');
+
+Route::resource('/admin/lomba', App\Http\Controllers\admin\LombaController::class, [
+    'names' => [
+        'index' => 'lomba view',
+        'create' => 'lomba create',
+        'show' => 'lomba show',
+        'edit' => 'lomba edit'
+    ]
+]); 
+
+Route::resource('/admin/kategori', App\Http\Controllers\admin\KategoriController::class)
+->names([
+        'index' => 'kategori view',
+        'update' => 'kategori update',
+        'create' => 'kategori create',
+        'show' => 'kategori show',
+        'edit' => 'kategori edit',
+        'destroy' => 'kategori destroy',
+        'store' => 'kategori store',
+]); 
+
 
 Route::get('/register', function () {
     return redirect ('/admin/register');
@@ -67,4 +70,3 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return redirect ('/admin/login');
 });
-

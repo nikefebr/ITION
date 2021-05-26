@@ -34,4 +34,15 @@ class lomba extends Model
         'tahun',
         'link_website',
     ];
+
+    /**
+     * Get the user that owns the kategori
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
 }

@@ -35,9 +35,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Tambah Kategori baru</h3>
-                  @error('nama_kategori')
-                  <p class="alert alert-danger card-text">kategori yang anda masukkan sama/masih kosong</p>
-                  @enderror
+
+                  @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                      <p class="alert alert-danger card-text">{{$error}}</p>
+                    @endforeach
+                  @endif
                   
                 </div>
                 <!-- /.card-header -->

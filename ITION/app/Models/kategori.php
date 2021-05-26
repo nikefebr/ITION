@@ -22,6 +22,12 @@ class Kategori extends Model
         'nama_kategori',
     ];
 
+    /**
+     * Get all of the comments for the lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
     public function lomba()
     {
         return $this->hasMany(Lomba::class);
