@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class kategori extends Model
+class Kategori extends Model
 {
     use HasFactory;
 
@@ -21,6 +21,12 @@ class kategori extends Model
     protected $fillable = [
         'nama_kategori',
     ];
+
+    /**
+     * Get all of the comments for the lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
 
     public function lomba()
     {

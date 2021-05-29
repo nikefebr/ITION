@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\penyelenggara_lomba;
 use Illuminate\Http\Request;
 
-class LombaController extends Controller
+class PenyelenggaraLombaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class LombaController extends Controller
      */
     public function index()
     {
-        return view('admin.lomba_view');
+        //
     }
 
     /**
@@ -24,7 +25,7 @@ class LombaController extends Controller
      */
     public function create()
     {
-        return view('admin.lomba_input');
+        //
     }
 
     /**
@@ -41,10 +42,10 @@ class LombaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\penyelenggara_lomba  $penyelenggara_lomba
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(penyelenggara_lomba $penyelenggara_lomba)
     {
         //
     }
@@ -52,10 +53,10 @@ class LombaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\penyelenggara_lomba  $penyelenggara_lomba
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(penyelenggara_lomba $penyelenggara_lomba)
     {
         //
     }
@@ -64,10 +65,10 @@ class LombaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\penyelenggara_lomba  $penyelenggara_lomba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, penyelenggara_lomba $penyelenggara_lomba)
     {
         //
     }
@@ -75,10 +76,10 @@ class LombaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\penyelenggara_lomba  $penyelenggara_lomba
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(penyelenggara_lomba $penyelenggara_lomba)
     {
         //
     }

@@ -1,11 +1,43 @@
 <?php
 
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class kategori extends Model
+{
+    use HasFactory;
+
+    public $timestamps = false;
+    protected $table = 'kategori';
+    protected $primaryKey = 'id_kategori';
+    use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nama_kategori',
+    ];
+
+    public function lomba()
+    {
+        return $this->hasMany(Lomba::class);
+    }
+}
+
+<?php
+
 namespace App\Http\Controllers\admin;
 
+use App\Models\kategori;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class LombaController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +46,7 @@ class LombaController extends Controller
      */
     public function index()
     {
-        return view('admin.lomba_view');
+        return view('admin.kategori_view');
     }
 
     /**
@@ -24,7 +56,7 @@ class LombaController extends Controller
      */
     public function create()
     {
-        return view('admin.lomba_input');
+        return view('admin.kategori_input');
     }
 
     /**
@@ -35,7 +67,28 @@ class LombaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->vaidate([
+            'nama_kategori'=>'required',
+        ])
+
+        /*$Validator = Validator::make($request->all(), [
+            'nama_kategori'=>'required',
+        ])->validate();
+
+        if ($validator->fails()) {
+            //return redirect('admin/kategori/create')
+            //    ->withErrors($validator);
+            echo $request;
+            echo $validator;
+        } else {*/
+            $validator->kategori()->create([
+                'nama_kategori' => Input::get('nama_kategori');
+            ]);
+
+            //redirect
+            Session::flash('message', 'Berhasil membuat kategori baru');
+            return redirect('admin/kategori');
+        //}
     }
 
     /**
@@ -83,3 +136,4 @@ class LombaController extends Controller
         //
     }
 }
+
