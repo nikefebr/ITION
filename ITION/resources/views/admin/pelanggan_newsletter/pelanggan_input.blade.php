@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0">Data Kategori</h1>
+              <h1 class="m-0">Pelanggan baru</h1>
             </div><!-- /.col -->
             
 
@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Tambah Kategori baru</h3>
+                  <h3 class="card-title">Tambah Pelanggan Newsletter</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -45,15 +45,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action='{{ route('update kategori', $kategori->id_kategori) }}'>
+                <form method="post" action='/admin/pelanggan'>
                   @csrf
-                  @method('PUT')
                   <div class="card-body">
                     <div class="form-group">
-                      <label for="nama_kategori">Nama Kategori</label>
-                      <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="{{ $kategori->nama_kategori }}" placeholder="Nama Kategori">
+                      <label for="email">Email Pelanggan</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                     </div>
                   </div>
+
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="nama">Nama Pelanggan</label>
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Pelanggan">
+                    </div>
+                  </div>
+                  
                   <!-- /.card-body -->
   
                   <div class="card-footer">
@@ -99,6 +106,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
      AdminLTE App 
 <script src="dist/js/adminlte.min.js"></script>
--->
-</body>
-</html>

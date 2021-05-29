@@ -28,6 +28,31 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="{{ (request()->is('admin/kategori*')) ? 'active' : '' }} nav-link">
+              <i class="nav-icon fas fa-sitemap"></i>
+              <p>
+                Kategori
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/admin/kategori/create') }}" class="{{ (request()->is('admin/kategori/create')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah baru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/kategori') }}" class="{{ (request()->is('admin/kategori')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tampilkan data</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a href="#" class="{{ (request()->is('admin/lomba*')) ? 'active' : '' }} nav-link">
               <i class="nav-icon fas fa-trophy"></i>
@@ -53,28 +78,101 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="{{ (request()->is('admin/kategori*')) ? 'active' : '' }} nav-link">
-              <i class="nav-icon fas fa-sitemap"></i>
+            <a href="#" class="{{ (request()->is('admin/penyelenggara*')) ? 'active' : '' }} nav-link">
+              <i class="nav-icon fas fa-address-card"></i>
               <p>
-                Kategori
+                Penyelenggara Lomba
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/admin/kategori/create') }}" class="{{ (request()->is('admin/kategori/create')) ? 'active' : '' }} nav-link">
+                <a href="{{ url('/admin/penyelenggara/create') }}" class="{{ (request()->is('admin/penyelenggara/create')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah baru</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('/admin/kategori') }}" class="{{ (request()->is('admin/kategori')) ? 'active' : '' }} nav-link">
+                <a href="{{ url('/admin/penyelenggara') }}" class="{{ (request()->is('admin/penyelenggara')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tampilkan data</p>
                 </a>
               </li>
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-image"></i>
+              <p>
+                Galeri
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah baru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tampilkan data</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="{{ (request()->is('admin/pelanggan*')) ? 'active' : '' }} nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Pelanggan Newsletter
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/admin/pelanggan/create') }}" class="{{ (request()->is('admin/pelanggan/create')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah baru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/pelanggan') }}" class="{{ (request()->is('admin/pelanggan')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tampilkan data</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                Reviewer Lomba
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah baru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tampilkan data</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
 
           <!--
           <li class="nav-item">

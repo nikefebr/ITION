@@ -47,7 +47,7 @@ class KategoriController extends Controller
         
         // mengecek apabila terdapat error atau tidak
         if ($validated->fails()) {
-            return redirect()->route('kategori create')->withErrors($validated); // redirect kembali dengan pesan error
+            return redirect()->route('create kategori')->withErrors($validated); // redirect kembali dengan pesan error
         } else {
             
             // akan membuat data baru dengan 
@@ -56,7 +56,7 @@ class KategoriController extends Controller
             ]);
 
             //redirect
-            return redirect()->route('kategori view')->with('success','Kategori berhasil dibuat!');
+            return redirect()->route('view kategori')->with('success','Kategori berhasil dibuat!');
         }
     }
 
@@ -68,7 +68,7 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori)
     {
-        return view('admin.kategori.kategori_view');
+        
     }
 
     /**
@@ -98,13 +98,13 @@ class KategoriController extends Controller
 
         //throw exception error
         if ($validated->fails()) {
-            return redirect()->route('kategori edit', compact('kategori'))->withErrors($validated);
+            return redirect()->route('edit kategori', compact('kategori'))->withErrors($validated);
         }
         else {
             $kategori->update([
                 'nama_kategori' => $request -> nama_kategori
             ]);
-            return redirect()->route('kategori view')->with('success','Kategori berhasil diupdate!');
+            return redirect()->route('view kategori')->with('success','Kategori berhasil diupdate!');
         }
 
     }
@@ -119,6 +119,6 @@ class KategoriController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         $kategori->delete();
-        return redirect()->route('kategori view')->with('success', 'Kategori Berhasil Dihapus!');
+        return redirect()->route('view kategori')->with('success', 'Kategori Berhasil Dihapus!');
     }
 }

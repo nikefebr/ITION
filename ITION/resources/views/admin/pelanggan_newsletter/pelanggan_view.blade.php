@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">View data lomba</h1>
+              <h1 class="m-0">View data pelanggan</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
             </div><!-- /.col -->
@@ -53,27 +53,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                              <th>No</th>
-                              <th>nama kategori</th>
-                              <th width="200px">Action</th>
+                              <th width="50px">No</th>
+                              <th>Email Pelanggan</th>
+                              <th>Nama Pelanggan</th>
+                              <th width="100px">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @php
                             $i = 0;
                             @endphp 
-                            @foreach ($category as $kategori)
+                            @foreach ($subsciber as $pelanggan)
                             <tr>
                               <td>{{ ++$i }}</td>
-                              <td>{{ $kategori->nama_kategori }}</td>
+                              <td>{{ $pelanggan->email }}</td>
+                              <td>{{ $pelanggan->nama }}</td>
                               <td>
-                                <form method="post" action="{{ route('destroy kategori', $kategori->id_kategori) }}" >
-                                <div class="btn-group">
-                                  <a class="btn btn-warning" href="{{ route('edit kategori', $kategori->id_kategori) }}">Edit</button></a>
+                                <form method="post" action="{{ route('destroy pelanggan', $pelanggan->id_pelanggan) }}" >
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit"class="btn btn-danger" onclick="confirm('Kategori yang dibuat akan dihapus\nPastikan data lomba sudah dihapus semua')">Delete</button>
-                                </div>
+                                  <button type="submit"class="btn btn-danger" onclick="confirm('Data pelanggan yang dihapus tidak lagi menerima newsletter, lanjutkan?')">Delete</button>
                               </form>
                               </td>
                             </tr>

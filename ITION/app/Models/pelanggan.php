@@ -5,21 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class penyelenggara_lomba extends Model
+class pelanggan extends Model
 {
+    // Menghapus created at dan edited at
     public $timestamps = false;
-    protected $table = 'penyelenggara_lomba';
-    protected $primaryKey = 'id_penyelenggara';
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'pelanggan';
+    protected $primaryKey = 'id_pelanggan';
     use HasFactory;
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'nama_penyelenggara',
-        'kontak',
-        'nama_kontak',
+        'nama',
+        'email',
     ];
 }
