@@ -5,46 +5,107 @@
 </head>
 <body style="background-color: #F4F4F4;">
     @include('navbar')
-
+    @foreach ($data as $item)
     <div class="p-4"></div>
-    
-    <div class="container">
-        <div class="row">
-        <img class="img-fluid mx-auto" src="{{asset('image/detail_lomba.png')}}">
+
+    <div class="bg-overlay px-5">
+        <button class="button-exit fw-bolder text-blue-2" onclick="window.location='{{ url("lomba") }}'">
+            <img class="mx-auto image-fluid" src="{{asset('logo/exit.png')}}">
+        </button>
+
+        <div class="container">
+            <div class="mx-auto card-dlomba" style="width: 65rem; border-radius:10px">
+                <div class="row px-5 pt-5 pb-0">
+                    <div class="col-md-6 col-sm-5">
+                        <div class="card-body">
+                            <h2 class="card-text fw-bold text-blue">{{ $item->judul }}</h2>
+                            <h4 class="card-text fw-bold text-blue">{{ $item->nama_kategori }}</h4>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-5 pt-5">
+                        <div class="card-body text-center ps-5">
+                            <h5 class="card-text fw-bold text-blue ps-5">DEADLINE <br>
+                                PENDAFTARAN</h5>
+
+                            <div class="pt-3"></div>
+                            
+                            <h5 class="card-text mt-4 text-uppercase ps-5">
+                                {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row px-5 pt-0">
+                    <div class="col-md-2 col-sm-6">
+                        <div class="card-body">
+                            <p class="card-text fw-normal font-14px">
+                                PUBLISH
+                            </p>
+
+                            <p class="card-text font-14px text-uppercase">
+                                
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-6" style="border: 10px; border-color:black"></div>
+
+                    <div class="col-md-2 col-sm-6">
+                        <div class="card-body">
+                            <p class="card-text fw-normal font-14px">
+                                KATEGORI
+                            </p>
+
+                            <p class="card-text font-14px text-uppercase">
+                                {{ $item->nama_kategori }}
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="p-2"></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="p-4"></div>
+    <div class="p-5"></div>
 
     <div class="container px-5 px-5">
         <div class="row">
             <div class="col-md-4 col-sm-5">
                 <h1 class="fw-bold">Deskripsi</h1>
-                <img class="img-fluid mx-auto">Poster
-                <h5 class="fw-normal">Deskripsi</h5>
+                <img src="{{ url('image/lomba/'.$item->poster) }}" class="img-fluid mx-auto">
+                <h5 class="fw-normal">{{ $item->deskripsi }}</h5>
             </div>
 
             <div class="col-md-4 col-sm-5"></div>
 
             <div class="col-md-4 col-sm-5 px-5">
-                <div class="card px-3 pt-3" style="width: 23rem;">
-                    <h5>Tunggu apa lagi ayo daftar Lomba Hackathon sekarang :D <br><br>
+                <div class="px-3 pt-3 card text-blue-3" style="width: 20rem; border-radius: 10px; background-color: rgba(0, 53, 103, 0.1)">
+                    <h5 class="font-16px px-3 pt-3">Tunggu apa lagi ayo daftar Lomba {{ $item->nama_kategori }} sekarang :D <br><br>
                     Informasi CP : <br>
-                    WA. 087701437591 (Anon) <br>
+                    WA. +{{ $item->kontak }} ({{ $item->nama_kontak }}) <br>
                     </h5>
-                    <a href="">Klik disini untuk menghubungi CP !</a>
+                    <a href="https://wa.me/{{ $item->kontak }}" class="font-16px px-3">Klik disini untuk menghubungi <br> CP !</a>
 
                     <div class="p-4"></div>
 
-                    <div class="px-5">
-                        <button class="button-daftar-lomba fw-bolder">Daftar Sekarang</button>
+                    <div class="px-4 font-14px">
+                        <button class="button-daftar-lomba fw-bolder" onclick="window.open('{{ $item->link_website }}')">Daftar Sekarang</button>
                     </div>
                 </div>
 
                 <div class="p-4"></div>
 
-                <div class="px-5">
-                    <button class="white-button-daftar fw-bolder">Buku Panduan</button>
+                <div class="px-4 font-14px">
+                    <div class="mx-3">
+                        <button class="white-button-daftar fw-bolder" onclick="window.open('{{ $item->link_panduan }}')">
+                            <img src="{{asset('logo/unduh.png')}}"class="img-fluid mx-auto pe-3">Buku Panduan</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,46 +114,44 @@
 
         <div class="row">
             <h1 class="fw-bold">Syarat Lomba</h1>
-            <h5 class="fw-normal">Deskripsi</h5>
+            <h5 class="fw-normal">{!! nl2br(e($item->syarat)) !!}</h5>
         </div>
 
         <div class="p-4"></div>
 
         <div class="row">
             <h1 class="fw-bold">Timeline</h1>
-            <h5 class="fw-normal">Deskripsi</h5>
+            <h5 class="fw-normal">{!! nl2br(e($item->timeline)) !!}</h5>
         </div>
 
         <div class="p-4"></div>
 
         <div class="row">
             <h1 class="fw-bold">Biaya Pendaftaran</h1>
-            <h5 class="fw-normal">Deskripsi</h5>
+            <h5 class="fw-normal">{{ $item->biaya }}</h5>
         </div>
 
         <div class="p-4"></div>
 
         <div class="row">
             <h1 class="fw-bold">Juara + Hadiah</h1>
-            <h5 class="fw-normal">Deskripsi</h5>
+            @if(!empty($item->hadiah_juara_1))
+            <h5 class="fw-normal">Juara 1 : {{ $item->hadiah_juara_1 }}</h5>
+            @endif
+            @if(!empty($item->hadiah_juara_2))
+            <h5 class="fw-normal">Juara 2 : {{ $item->hadiah_juara_2 }}</h5>
+            @endif
+            @if(!empty($item->hadiah_juara_3))
+            <h5 class="fw-normal">Juara 3 : {{ $item->hadiah_juara_3 }}</h5>
+            @endif
+            @if(!empty($item->lainnya))
+            <h5 class="fw-normal">{{ $item->lainnya }}</h5>
+            @endif
         </div>
     </div>
 
     <div class="p-4"></div>
-    
-    <tabel border="1">
-    @foreach ($data as $item)
-    <tr>
-        <td>{{ $item->id_lomba }}</td>
-        <td><img src="{{ $item->poster }}" alt="Girl in a jacket" width="200" height="300"></td>
-        <td>{{ $item->judul }}</td>
-        <td>{{ $item->biaya }}</td>
-        <td>{{ $item->nama_kategori }}</td>
-        <td><a href="https://wa.me/{{$item->kontak}}?text=Halo%20kak," target="_blank">Kontak</a></td>
-    </tr>
     @endforeach
-    </tabel>
-
     <div class="p-4"></div>
     
     @include('footer')

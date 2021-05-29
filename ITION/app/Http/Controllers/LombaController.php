@@ -11,7 +11,7 @@ class LombaController extends Controller
     public function index()
     {
         $today = date("Y-m-d");
-        $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,lomba.deadline,kategori.nama_kategori 
+        $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,lomba.deskripsi,lomba.deadline,kategori.nama_kategori 
         FROM lomba,kategori 
         WHERE lomba.id_kategori = kategori.id_kategori AND lomba.deadline >= '$today'");
         return view('lomba.lomba',['data' => $data]);
@@ -19,7 +19,7 @@ class LombaController extends Controller
 
     public function indexDetail($id_lomba)
     {
-        $data = DB::select("SELECT lomba.id_lomba,lomba.poster,lomba.judul,kategori.nama_kategori,lomba.biaya,penyelenggara_lomba.kontak
+        $data = DB::select("SELECT lomba.*,kategori.*,penyelenggara_lomba.*
         FROM lomba,kategori,penyelenggara_lomba 
         WHERE lomba.id_lomba = $id_lomba AND lomba.id_kategori = kategori.id_kategori AND lomba.id_penyelenggara = penyelenggara_lomba.id_penyelenggara");
         if(empty($data)){

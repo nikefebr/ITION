@@ -7,58 +7,14 @@
     @include('navbar')
 
     <div class="pt-5"></div>
+    <div class="pt-3"></div>
     
-    <div class="container p-5">
-        <div class="row">
-            <img class="img-fluid mx-auto" style="width: 800px; height: 450px">
-        </div>
-    </div>
+    <div class="bg-testimoni px-5"></div>
 
     <div class="container px-0 ms-5">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
-        <div class="pt-5"></div>
 
-        <div class="row ms-5">
-            <h2 class="fw-bold mb-5">Gimana sih rasanya ikut ...?</h2>
-            <div class="col">
-                    <div class="card mb-3 shadow" style="border-radius:30px;">
-                        <div class="card-body">
-                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto; z-index:1;">
-                            <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
-                            <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
-                            <p class="px-3" style="font-size: 10pt;">
-                                “Selama saya mengikuti KMIPN, banyak hal yang bisa saya dapatkan. Mulai dari pengalaman, relasi, dan kesempatan - kesempatan emas lainnya. Skill saya jugaberkembang setelah mengikuti lomba tersebut karena telah direview oleh juri yang profesional. “ - Nanang,2018.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-3 shadow" style="border-radius:30px;">
-                        <div class="card-body" >
-                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
-                            <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
-                            <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
-                            <p class="px-3" style="font-size: 10pt;">
-                                “Selama saya mengikuti KMIPN, banyak hal yang bisa saya dapatkan. Mulai dari pengalaman, relasi, dan kesempatan - kesempatan emas lainnya. Skill saya jugaberkembang setelah mengikuti lomba tersebut karena telah direview oleh juri yang profesional. “ - Nanang,2018.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-3 shadow" style="border-radius:30px;">
-                        <div class="card-body">
-                            <img src="/image/reviewer/Muhammad zaid.jpg" alt="" class=" img-fluid rounded-circle p-3" style="width: 120px; height: 120px;display: block; margin-left: auto; margin-right: auto;">
-                            <h5 class="px-3 pt-3 text-bold">Mahdiya Aqila</h5>
-                            <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">KMIPN Hackathon </p>
-                            <p class="px-3" style="font-size: 10pt;">
-                                “Selama saya mengikuti KMIPN, banyak hal yang bisa saya dapatkan. Mulai dari pengalaman, relasi, dan kesempatan - kesempatan emas lainnya. Skill saya jugaberkembang setelah mengikuti lomba tersebut karena telah direview oleh juri yang profesional. “ - Nanang,2018.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <div class="p-5"></div>
         @foreach ($kategori as $kat)
         <div class="row ms-5">
             <h2 class="fw-bold mb-5">Gimana sih rasanya ikut {{$kat->nama_kategori}}?</h2>
@@ -70,7 +26,7 @@
                             <h5 class="px-3 pt-3 text-bold">{{ $item->nama }}</h5>
                             <p class="px-3 text-bold" style="font-size: 10pt; opacity: 50%;">{{$item->nama_kategori}} {{ $item->judul }} {{ $item->tahun_lomba }}</p>
                             <p class="px-3" style="font-size: 10pt;">
-                                “{{ $item->testimoni }}.“ - {{ $item->nama }},{{ $item->tahun_lomba }}.
+                                “{{ $item->testimoni }}.“ - {{ $item->nama }},{{ $item->angkatan }}.
                             </p>
                         </div>
                     </div>

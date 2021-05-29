@@ -37,7 +37,11 @@ Route::view('/tentang', 'tentang.tentang');
 
 //Modified Auth dengan mengarahkan semua prefix ke admin
 Route::group(['prefix' => 'admin'], function () {
-    Auth::routes(); 
+    Auth::routes();
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/lomba/input',[App\Http\Controllers\admin\LombaController::class, 'index']);
+    Route::get('/lomba/view',[App\Http\Controllers\admin\LombaController::class, 'view']);
+
 });
 
 Route::group(['middleware' => 'auth'],function () //digunakan untuk autentikasi meskipun membuka link selain login

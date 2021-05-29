@@ -31,6 +31,12 @@ ul {
     background-color: #001B35;
 }
 
+.bg-blue-3 {
+    background-color: rgba(0, 53, 103, 0.1);
+    border: 1px solid #386FA4;
+    box-sizing: border-box;
+}
+
 .bg-blue-gradient {
     background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
 }
@@ -38,6 +44,25 @@ ul {
 .bg-blue-footer {
     background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
     border-radius: 35px 35px 0px 0px;
+}
+
+.bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+    background-image: url("/image/detail_lomba.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 530px;
+    padding-top: 50px;
+}
+
+.bg-testimoni {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+    background-image: url("/image/testimoni.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 530px;
 }
 
 .bg-ition {
@@ -76,9 +101,20 @@ ul {
 .white-button-daftar {
     background-color: white;
     border-color: #FFDE27;
+    width: 250px;
     border-radius: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.button-exit {
+    background-color: #ffff;
+    border: none;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -120,12 +156,19 @@ ul {
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .btn-items {
     padding-top: 11px;
+}
+
+.card-dlomba {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(142, 140, 140, 0.1);
+    box-sizing: border-box;
+    border-radius: 22px;
 }
 
 .contact {
@@ -136,6 +179,18 @@ ul {
 footer .round-btn {
     box-shadow: 2px 2px 5px 0px #222 !important;
     margin: 0px 30px 0px 0px;
+}
+
+.font-12px {
+    font-size: 12px;
+}
+
+.font-14px {
+    font-size: 14px;
+}
+
+.font-16px {
+    font-size: 16px;
 }
 
 .round-btn {
@@ -162,6 +217,10 @@ footer .round-btn {
 
 .text-blue-2 {
     color: #003567;
+}
+
+.text-blue-3 {
+    color: rgba(56, 111, 164, 1);
 }
 
 .text-grey {
