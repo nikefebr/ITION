@@ -1,0 +1,37 @@
+.batas-colomn{
+	max-width: 500px;
+}
+
+.blue-box{
+	padding: 50px;
+	width: 120px;
+	height: 130px;
+	margin-left: 163px;
+	margin-top: -136px;
+	top: 0;
+}
+
+.card-button{
+	width: 20rem;
+	margin-left: -16px;
+}
+
+.card{
+}
+
+.card-place{
+	width: 700px;
+}
+.filter-places{
+
+}
+.filter-place{
+	position:absolute;
+	background: red;
+	z-index: 99;
+	width: 300px;
+	height: 700px;
+	margin-left: 750px;
+	top: 0;
+	margin-top: 1173px;
+}
