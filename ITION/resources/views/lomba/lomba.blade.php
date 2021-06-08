@@ -59,7 +59,13 @@
 
         <h1 class="fw-bold text-center">Ikuti Lomba</h1>
 
-        <div class="p-4"></div>
+        <div class="p-5"></div>
+            <div class="input-group rounded">
+                <span class="input-group-text border-0" id="search-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+                <input type="search" class="form-control rounded border-0" placeholder="cari lombamu disini" aria-label="Search" aria-describedby="search-addon" />
+            </div>
 
         <div class="row">
             @foreach ($data as $item)
