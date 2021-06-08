@@ -34,10 +34,10 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 text-area p-5 ">
                             <h4> Dapatkan update lomba setiap minggu !! </h4>
-                          Kalian maniak lomba ? Ingin mendapatkan banyak prestasi ?
-                          Jangan lewatkan layanan newsletter kami untuk mendapatkan informasi lomba disetiap minggunya. Tunggu apa lagi daftaran email kamu segera !!
+                            Kalian maniak lomba ? Ingin mendapatkan banyak prestasi ?
+                            Jangan lewatkan layanan newsletter kami untuk mendapatkan informasi lomba disetiap minggunya. Tunggu apa lagi daftaran email kamu segera !!
                         </div>
-                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 form-area p-5">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 form-area p-5">
                             <form>
                                 <div class="form-group">
                                     <label for="exampleInputNama">Nama </label>
@@ -50,9 +50,8 @@
                                     <small id="emailHelp" class="form-text text-muted">Kami tidak akan menyebarkan data anda</small>
                                 </div>
                                 <br/>
-                              <button type="submit" class="btn btn-warning button-footer btn-newsletter">Dapatkan notifikasi</button>
+                                <button type="submit" class="btn btn-warning button-footer btn-newsletter">Dapatkan notifikasi</button>
                             </form>
-                                                       
                         </div>
                     </div>
                         
