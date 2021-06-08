@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #003567;">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">Admin Page</span>
+      <span class="brand-text font-weight-dark" style="font-size:x-large; padding-left: 5%">ITION</span>
     </a>
 
     <!-- Sidebar -->
@@ -19,7 +19,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+              with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{ url('/admin/home') }}" class="{{ (request()->is('admin/home')) ? 'active' : '' }} nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>

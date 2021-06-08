@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-12">
               <!-- general form elements -->
             <div class="card card-primary">
-                <div class="card-header">
+                <div class="card-header" style="background-color: #003567">
                   <h3 class="card-title">Tambah Kategori baru</h3>
 
                   @if ($errors->any())
@@ -57,7 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- /.card-body -->
   
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #FFDE27; color:#212529; border:0;">Submit</button>
                   </div>
                 </form>
               </div>
