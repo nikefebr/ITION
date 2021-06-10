@@ -15,7 +15,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <a class="navbar-brand text-white ms-4 fw-bolder fs-4" href="{{ url('') }}" style="position: relative;">ITION</a>
+                <a class="navbar-brand text-white ms-5 fw-bolder" href="{{ url('') }}" style="position: relative; font-size: 25px;">ITION</a>
                 <ul class="navbar-nav mx-auto fs-6">
                     <li class="nav-item pe-5">
                         <a class="nav-link active text-white" aria-current="page" href="{{ url('') }}">Beranda</a>
