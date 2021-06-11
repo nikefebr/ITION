@@ -30,6 +30,6 @@ class Kategori extends Model
 
     public function lomba()
     {
-        return $this->hasMany(Lomba::class);
+        return $this->hasMany(lomba::class);
     }
 }

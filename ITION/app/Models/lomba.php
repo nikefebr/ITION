@@ -36,7 +36,7 @@ class lomba extends Model
     ];
 
     /**
-     * Get the user that owns the kategori
+     * Get the lomba that owns the kategori
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -44,5 +44,56 @@ class lomba extends Model
     public function kategori()
     {
         return $this->belongsTo(Kategori::class);
+    }
+
+    /**
+     * Get the penyelenggara that owns the lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function penyelenggara(): BelongsTo
+    {
+        return $this->belongsTo(penyelenggara_lomba::class);
+    }
+
+
+    /**
+     * Get all of the galeri for the lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function galeri(): HasMany
+    {
+        return $this->hasMany(galeri::class);
+    }
+
+    /**
+     * The admin that belong to the lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function admin(): BelongsToMany
+    {
+        return $this->belongsToMany(admin::class, 'pengisian_lomba', 'id_lomba', 'id_admin')->withTimestamps();
+    }
+
+    /**
+     * The pelanggan that belong to the lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function pelanggan(): BelongsToMany
+    {
+        return $this->belongsToMany(pelanggan::class, 'newsletter', 'id_lomba', 'id_pelanggan')->withTimestamps();
+    }
+
+    /**
+     * The reviewer that belong to the lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function reviewer(): BelongsToMany
+    {
+        return $this->belongsToMany(reviewer::class, 'testimoni', 'id_lomba', 'id_reviewer')->withPivot('tahun_lomba','testimoni');
     }
 }

@@ -22,4 +22,14 @@ class penyelenggara_lomba extends Model
         'kontak',
         'nama_kontak',
     ];
+
+    /**
+     * Get all of the lomba for the penyelenggara_lomba
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function lomba(): HasMany
+    {
+        return $this->hasMany(lomba::class);
+    }
 }
