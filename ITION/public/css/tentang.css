@@ -282,7 +282,7 @@ footer .round-btn {
     display: inline-block;
 }
 
- .btn-img{
+.btn-img{
         margin-top: 14px;
         margin-left: 14px;
         width: 30px;
@@ -311,6 +311,11 @@ footer .round-btn {
 	height: auto;
 }
 
+@media (max-width: 1200px){
+
+	
+}
+
 @media (max-width: 991px){
 
 	.content-nilai{
@@ -321,11 +326,6 @@ footer .round-btn {
 		width: 100px;
 		height: auto;
 	}
-
-	.content-nilai{
-		margin-left: 145px;
-	}
-
 }
 
 
