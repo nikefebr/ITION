@@ -93,10 +93,57 @@
             </div>
             </div>
             <div class="filter-place">
-                <h1>filter disini yaa buat div baru</h1>
+               
+            <div class="container">
+                <div class="input-group rounded">
+                    <span class="input-group-text border-0" id="search-addon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="search" class="form-control rounded border-0" placeholder="cari lombamu disini" aria-label="Search" aria-describedby="search-addon" />
+                </div>
+                <div class="card" style="border-radius:8px;">                        
+                    <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Filter</div>
+                        <div class="card-body">
+                            <div class="form-group fw-bold" >
+                            <label for="nama"  >Kategori<br></label>
+                            <select type="text" class="form-control" id="nama" placeholder="Pilih Kategori">
+                            <option value="Pilih Kategori">Pilih Kategori</option>    
+                            <option value="Gemastik">Gemastik</option>  
+                                <option value="Pemrograman">Pemrograman</option>  
+                                <option value="UI / UX">UI / UX</option>  
+                                <option value="PKM">PKM</option>
+                            </select>
+                            <br>
+                            </div>
+                            <div class="form-group fw-bold">
+                            <label for="email">Bulan</label>
+                            <select type="email" class="form-control" id="email" placeholder="Pilih Bulan">
+                            <option value="Pilih Kategori">Pilih Bulan</option>    
+                            <option value="Januari">Januari</option>  
+                                <option value="Februari">Februari</option>  
+                                <option value="Maret">Maret</option>  
+                                <option value="April">April</option>
+                                <option value="Mei">Mei</option>
+                                <option value="Juni">Juni</option>
+                                <option value="Jui">Juli</option>
+                                <option value="Agustus">Agustus</option>
+                                <option value="September">September</option>
+                                <option value="Oktober">Oktober</option>
+                                <option value="November">November</option>
+                                <option value="Desember">Desember</option>
+                            </select>
+                            </div>
+ 
+                            <div class="p-3"></div>
+                            <center> <button class="button-lomba fw-bolder " onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button></center>
+                            <br>
+                        </div>
+                    </div>       
+                </div>
             </div>
         </div>
-</div>
+
+    </div>
     <div class="p-5"></div>
     @include('footer')
 </body>
