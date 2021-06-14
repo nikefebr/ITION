@@ -27,10 +27,9 @@ ul {
         overflow: hidden;
         text-align: center ;
 }
-
-li a:hover {
-    background-color: #FFDE27;
-  } 
+a:hover{
+    color: #FFDE27;
+}
 
 .bg-blue {
     background-color: #003567;

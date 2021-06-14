@@ -21,7 +21,7 @@
                         <a class="nav-link active text-white" aria-current="page" href="{{ url('') }}">Beranda</a>
                     </li>
                     <li class="nav-item pe-5">
-                        <a class="nav-link text-white" href="{{ url('lomba') }}">Lomba</a>
+                        <a class="nav-link text-white"  href="{{ url('lomba') }}">Lomba</a>
                         </li>
                     <li class="nav-item pe-5">
                         <a class="nav-link text-white" href="{{ url('galeri') }}">Galeri</a>

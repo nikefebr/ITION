@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <footer class="bg-blue-footer pt-5">
+        <footer class="bg-blue-footer pt-5 ">
             <div class="container p-5">
                 
                 <div class="bg-white-footer" style="border-radius: 35px;">
@@ -51,7 +51,10 @@
                                     <small id="emailHelp" class="form-text text-muted">Kami tidak akan menyebarkan data anda</small>
                                 </div>
                                 <br/>
+
                                 <button type="submit" class="btn btn-warning button-footer btn-newsletter px-4 fw-bold fs-6" style="border-radius: 10px; background-color: #FFDE27">Dapatkan notifikasi</button>
+     
+
                             </form>
                         </div>
                     </div>
