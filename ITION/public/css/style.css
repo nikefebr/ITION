@@ -10,6 +10,7 @@ html, body {
     top: 0;
     left: 0;
 }
+
 body {
     background-color: #F4F9F9;
 }
@@ -21,6 +22,13 @@ a {
 
 ul {
     list-style-type: none;
+        margin: 0px;
+        padding: 0px ;
+        overflow: hidden;
+        text-align: center ;
+}
+a:hover{
+    color: #FFDE27;
 }
 
 .bg-blue {
@@ -43,7 +51,7 @@ ul {
 
 .bg-blue-footer {
     background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
-    border-radius: 35px 35px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 .bg-overlay {
@@ -240,14 +248,16 @@ footer .round-btn {
 
 .white-logo-pens{
     opacity: 50%;
-    width: 40px;
+    width: 60px;
     height: auto;
+    margin-left: 35px;
 }
 
 .white-logo-himit{
     opacity: 50%;
-    width: 50px;
+    width: 80px;
     height: auto;
+    margin-left: 25px;
 }
 
 .btn-items-bottom{
@@ -281,7 +291,11 @@ footer .round-btn {
     display: inline-block;
 }
 
- .btn-img{
+.ul-bottom li {
+    display: inline-block;
+}
+
+.btn-img{
         margin-top: 14px;
         margin-left: 14px;
         width: 30px;
@@ -291,7 +305,7 @@ footer .round-btn {
 
 @media (max-width: 1200px){
     .img-hide{
-         display: none;
+        display: none;
     }
 }
 
@@ -316,7 +330,7 @@ footer .round-btn {
     .btn-wa{
         position: absolute;
     }
-   .btn-items-bottom{
+.btn-items-bottom{
     margin-top: 5px;
     margin-right: 50px;
 }
