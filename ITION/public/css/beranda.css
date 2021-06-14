@@ -75,10 +75,22 @@
     background-color: white;
     border-color: #FFDE27;
     border-radius: 10px;
+    text-align: right;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.white-buttons {
+    background-color: white;
+    border-color: #FFDE27;
+    border-radius: 10px;
+    text-align: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 810px;
 }
 .text-blue-2 {
     color: #003567;

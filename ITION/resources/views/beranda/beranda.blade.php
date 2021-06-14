@@ -23,7 +23,7 @@
 
                     <div class="p-3"></div>
 
-                    <button class="button-lomba fw-bolder" onclick="window.location='{{url("lomba")}}'">Cari Lomba</button>
+                    <button class="button-lomba fw-bolder" onclick="window.location='{{url("lomba")}}">Cari Lomba</button>
                 </div>
                 <div class="p-3"></div>
             </div>
@@ -89,10 +89,10 @@
                 <div class="p-2"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="{{ $item->foto }}" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
+                    <img src="{{ $item->foto }}" id="0" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
                         <div class="card-body">
-                            <p class="card-text fw-normal">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
-                            <p class="card-text fw-bold">{{ $item->deskripsi }}</p>
+                            <p class="card-text fw-normal tgl-foto">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
+                            <p class="card-text fw-bold deskripsi-foto">{{ $item->deskripsi }}</p>
                     </div>
                 </div>
             </div>
@@ -103,10 +103,10 @@
                 <div class="p-4"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="{{ $item->foto }}" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
+                    <img src="{{ $item->foto }}" id="1" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
                         <div class="card-body">
-                            <p class="card-text fw-normal">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
-                            <p class="card-text fw-bold">{{ $item->deskripsi }}</p>
+                            <p class="card-text fw-normal tgl-foto">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
+                            <p class="card-text fw-bold deskripsi-foto">{{ $item->deskripsi }}</p>
 
                             <div class="p-4"></div>
 
@@ -131,8 +131,8 @@
                     
                         <img src="" class="card-img-top modal-img" alt="">
 
-                        <p class="font-14px pt-3 mb-0">Publish</p>
-                        <h5 class="fw-bold mt-0">Judul</h5>
+                        <p class="font-14px pt-3 mb-0" id="modal-tanggal"></p>
+                        <h5 class="fw-bold mt-0" id="modal-deskripsi"></h5>
 
                         <div class="pb-2"></div>                                        
                     </div>
@@ -174,23 +174,19 @@
                                                 {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
                                                 </p>
                                             </div>
-                                   
-
                                          <button class="button-katalog fw-bolder text-blue-2 card-button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             </div>
                        </div>
                     </div>
                     @endforeach
-                </div>
-        </div>
-        <div class="p-5"></div>
+
+                <div class="p-4"></div>
+
+                <button class="white-buttons fw-bolder" onclick="window.location='{{ url("lomba") }}'">Selengkapnya>></button>
+
+                
+                <div class="p-5"></div>
     </div>
-
-
-
-
-
-
 
     <div class="p-4"></div>
     
@@ -297,6 +293,11 @@
             if(e.target.classList.contains("galeri-item")){
                 const src = e.target.getAttribute("src");
                 document.querySelector(".modal-img").src = src;
+                const index = e.target.getAttribute("id");
+                const tgl = document.getElementsByClassName("tgl-foto")[index];
+                document.getElementById("modal-tanggal").innerHTML = tgl.innerHTML;
+                const deskripsi = document.getElementsByClassName("deskripsi-foto")[index];
+                document.getElementById("modal-deskripsi").innerHTML = deskripsi.innerHTML;
                 const myModal = new bootstrap.Modal(document.getElementById('galeri-popup'));
                 
             }
