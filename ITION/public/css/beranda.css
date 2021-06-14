@@ -93,8 +93,7 @@
 }
 
 .white-button {
-    background-color: white;
-    border-color: #FFDE27;
+    border: 3px solid #FFDE27;
     border-radius: 10px;
     text-align: right;
     padding-left: 30px;
