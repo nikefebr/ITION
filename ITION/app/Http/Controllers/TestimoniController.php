@@ -10,7 +10,14 @@ class TestimoniController extends Controller
     //
     public function index()
     {   
-        $kategori = DB::select("SELECT * FROM kategori");
+        $kategori = DB::table('kategori')
+                    ->whereExists(function ($query) {
+                        $query->select(DB::raw(1))
+                            ->from('testimoni')
+                            ->join('lomba', 'testimoni.id_lomba', '=', 'lomba.id_lomba')
+                            ->whereColumn('lomba.id_kategori','kategori.id_kategori');
+                    })
+                    ->get();
         $count = 0;
         foreach($kategori as $kategori_testimoni){
             $count++;
