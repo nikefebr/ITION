@@ -26,15 +26,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0">Data Kategori</h1>
+              <h1 class="m-0">Data Penyelenggara Lomba</h1>
             </div><!-- /.col -->
             
 
             <div class="col-12">
               <!-- general form elements -->
             <div class="card card-primary">
-                <div class="card-header" style="background-color: #003567">
-                  <h3 class="card-title">Tambah Kategori baru</h3>
+                <div class="card-header">
+                  <h3 class="card-title">Tambah Penyelenggara Lomba baru</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -45,19 +45,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action='{{ route('update kategori', $kategori->id_kategori) }}'>
+                <form method="post" action='{{ route('update penyelenggara lomba', $penyelenggara->id_penyelenggara) }}'>
                   @csrf
                   @method('PUT')
                   <div class="card-body">
                     <div class="form-group">
-                      <label for="nama_kategori">Nama Kategori</label>
-                      <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="{{ $kategori->nama_kategori }}" placeholder="Nama Kategori">
+                      <label for="nama_penyelenggara">Nama Penyelenggara</label>
+                      <input type="text" class="form-control" id="nama_penyelenggara" name="nama_penyelenggara" value="{{ $penyelenggara->nama_penyelenggara }}" placeholder="Nama Penyelenggara">
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="kontak">Nomor Kontak</label>
+                      <input type="text" class="form-control" id="kontak" name="kontak" value="{{ $penyelenggara->kontak }}" placeholder="Nomor Kontak">
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="nama_kontak">Nama Kontak</label>
+                      <input type="tel" class="form-control" id="nama_kontak" name="nama_kontak" value="{{ $penyelenggara->nama_kontak }}" placeholder="Nama Kontak">
                     </div>
                   </div>
                   <!-- /.card-body -->
   
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary" style="background-color: #FFDE27; color:#212529; border:0;">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </form>
               </div>

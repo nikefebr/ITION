@@ -6,6 +6,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 
+  @include('admin.layout.crop-image')
+
   <!-- add header -->
   @include('admin.layout.header')
 
@@ -20,21 +22,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    
+
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0">Data Kategori</h1>
+              <h1 class="m-0">Data Reviewer</h1>
             </div><!-- /.col -->
             
 
             <div class="col-12">
               <!-- general form elements -->
             <div class="card card-primary">
-                <div class="card-header" style="background-color: #003567">
-                  <h3 class="card-title">Tambah Kategori baru</h3>
+                <div class="card-header">
+                  <h3 class="card-title">Tambah Reviewer baru</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -45,19 +47,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action='{{ route('update kategori', $kategori->id_kategori) }}'>
+                <form method="post" action='/admin/reviewer' enctype="multipart/form-data">
                   @csrf
-                  @method('PUT')
                   <div class="card-body">
                     <div class="form-group">
-                      <label for="nama_kategori">Nama Kategori</label>
-                      <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="{{ $kategori->nama_kategori }}" placeholder="Nama Kategori">
+                      <label for="nama">Nama Reviewer</label>
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Reviewer">
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="angkatan">Angkatan</label>
+                      <select class="form-control" id='angkatan' name="angkatan">
+
+                        @for ($year = (int)date('Y'); 2001 <= $year; $year--)
+                          <option value="{{$year}}">{{$year}}</option>
+                        @endfor
+
+                        <option value="2000" selected >2000</option>
+
+                       </select>
+                    </div>
+
+                  
+
+                    <div class="form-group">
+                      <label for="input foto">Foto</label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="foto" name="foto">
+                          <label for="foto" class="custom-file-label">Choose file</label>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <!-- /.card-body -->
   
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary" style="background-color: #FFDE27; color:#212529; border:0;">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </form>
               </div>
@@ -92,6 +119,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery -->
 
  <script src="{{ asset('js/app.js') }}"></script>
+ <script>
+    $('#foto').on('change',function () {
+   var filename = $(this).val();
+
+   $(this).next('.custom-file-label').html(filename);
+   
+ });
+ </script>
 <!-- 
      jQuery 
 <script src="plugins/jquery/jquery.min.js"></script>

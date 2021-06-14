@@ -28,4 +28,14 @@ class pelanggan extends Model
         'nama',
         'email',
     ];
+
+    /**
+     * The lomba that belong to the pelanggan
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function lomba(): BelongsToMany
+    {
+        return $this->belongsToMany(lomba::class, 'newsletter', 'id_pelanggan', 'id_lomba')->withTimestamps();
+    }
 }

@@ -32,67 +32,85 @@ Route::get('/galeri',[GaleriController::class, 'index']);
 
 Route::view('/tentang', 'tentang.tentang');
 
-//Default Auth
-//Auth::routes();
+//Apabila mengubah nama pada route diharapkan untuk mengubah juga baik pada blade.php maupun controllernya
 
 //Modified Auth dengan mengarahkan semua prefix ke admin
-Route::group(['prefix' => 'admin'], function () {
-    Auth::routes();
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/lomba/input',[App\Http\Controllers\admin\LombaController::class, 'index']);
-    Route::get('/lomba/view',[App\Http\Controllers\admin\LombaController::class, 'view']);
-
-});
-
-Route::group(['middleware' => 'auth'],function () //digunakan untuk autentikasi meskipun membuka link selain login
+Route::group(['prefix' => 'admin'], function () 
 {
-    Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+    Auth::routes(); 
 
-Route::resource('/admin/lomba', App\Http\Controllers\admin\LombaController::class)
-    ->names([ //sebagai nama setiap route supaya lebih mudah memberikan nama pada head
-        'index' => 'lomba view',
-        'update' => 'lomba update',
-        'create' => 'lomba create',
-        'show' => 'lomba show',
-        'edit' => 'lomba edit',
-        'destroy' => 'lomba destroy',
-        'store' => 'lomba store',
-    ]); 
 
-Route::resource('/admin/kategori', App\Http\Controllers\admin\KategoriController::class)
-    ->names([
-        'index' => 'view kategori',
-        'update' => 'update kategori',
-        'create' => 'create kategori',
-        'show' => 'show kategori',
-        'edit' => 'edit kategori',
-        'destroy' => 'destroy kategori',
-        'store' => 'store kategori',
-    ]);
+    Route::group(['middleware' => 'auth'],function () //digunakan untuk tetap mengarahkan ke login meskipun membuka link selain login
+    {
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
-Route::resource('/admin/pelanggan', App\Http\Controllers\admin\PelangganController::class)
-    ->only([
-        'index','create','store','destroy'
-    ])
-    ->names([
-        'index' => 'view pelanggan',
-        'create' => 'create pelanggan',
-        'destroy' => 'destroy pelanggan',
-        'store' => 'store pelanggan',
-    ]);
+        Route::resource('/lomba', App\Http\Controllers\admin\LombaController::class)
+            ->names([ //sebagai nama setiap route supaya lebih mudah memberikan nama pada head dan title
+            'index' => 'lomba view',
+            'update' => 'lomba update',
+            'create' => 'lomba create',
+            'show' => 'lomba show',
+            'edit' => 'lomba edit',
+            'destroy' => 'lomba destroy',
+            'store' => 'lomba store',
+            ]); 
 
-Route::resource('/admin/penyelenggara', App\Http\Controllers\admin\PenyelenggaraLombaController::class)
-    ->names([
-        'index' => 'penyelenggara view',
-        'update' => 'penyelenggara update',
-        'create' => 'penyelenggara create',
-        'show' => 'penyelenggara show',
-        'edit' => 'penyelenggara edit',
-        'destroy' => 'penyelenggara destroy',
-        'store' => 'penyelenggara store',
-    ]);
+        Route::resource('/kategori', App\Http\Controllers\admin\KategoriController::class)
+            ->names([
+            'index' => 'view kategori', //tampilan web untuk melihat seluruh data
+            'update' => 'update kategori', // megubah satu data yang sudah ada
+            'create' => 'create kategori', // tampilan web untuk membuat data baru
+            'show' => 'show kategori', // tampilan web untuk melihat salah satu data secara spesifik
+            'edit' => 'edit kategori', // tampilan web untuk mengubah data yang sudah ada
+            'destroy' => 'destroy kategori', // menghapus data baru
+            'store' => 'store kategori', // menyimpan data baru
+            ]);
+
+        Route::resource('/pelanggan', App\Http\Controllers\admin\PelangganController::class)
+            ->only([
+            'index','create','store','destroy' //memasukkan hanya 4 route resources untuk create, read, dan delete
+            ])
+            ->names([
+            'index' => 'view pelanggan',
+            'create' => 'create pelanggan',
+            'destroy' => 'destroy pelanggan',
+            'store' => 'store pelanggan',
+            ]);
+
+        Route::resource('/penyelenggara', App\Http\Controllers\admin\PenyelenggaraLombaController::class)
+            ->names([
+            'index' => 'view penyelenggara lomba',
+            'update' => 'update penyelenggara lomba',
+            'create' => 'create penyelenggara lomba',
+            'show' => 'show penyelenggara lomba',
+            'edit' => 'edit penyelenggara lomba',
+            'destroy' => 'destroy penyelenggara lomba',
+            'store' => 'store penyelenggara lomba',
+            ]);
+        
+        Route::resource('/reviewer',App\Http\Controllers\admin\ReviewerController::class)
+        ->names([
+                'index' => 'view reviewer',
+                'update' => 'update reviewer',
+                'create' => 'create reviewer',
+                'show' => 'show reviewer',
+                'edit' => 'edit reviewer',
+                'destroy' => 'destroy reviewer',
+                'store' => 'store reviewer',
+        ]);
+        
+        Route::resource('/galeri',App\Http\Controllers\admin\GaleriController::class)
+            ->names([
+                'index' => 'view galeri',
+                'update' => 'update galeri',
+                'create' => 'create galeri',
+                'show' => 'show galeri',
+                'edit' => 'edit galeri',
+                'destroy' => 'destroy galeri',
+                'store' => 'store galeri',
+            ]);     
+    });
 });
-
 
 
 
