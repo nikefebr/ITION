@@ -201,15 +201,21 @@
                     </div>
 
                     <div class="row ms-0" style="width: 23rem;">
-                        <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
+                        <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya</button>
                     </div>
                 </div>
                     </div>
                     @endforeach
+</div>
+
+                <div class="p-4"></div>
+
+                <button class="white-buttons fw-bolder" onclick="window.location='{{ url("lomba") }}'">Selengkapnya>></button>
+
+</div>
+                
+                <div class="p-5"></div>
                 </div>
-        </div>
-        <div class="p-5"></div>
-    </div>
 
     <div class="p-4"></div>
     
