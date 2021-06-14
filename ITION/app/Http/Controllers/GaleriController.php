@@ -10,15 +10,22 @@ class GaleriController extends Controller
     //
     public function index()
     {
-        $kategori = DB::select("SELECT * FROM kategori");
+        $kategori = DB::table('kategori')
+                    ->whereExists(function ($query) {
+                        $query->select(DB::raw(1))
+                            ->from('galeri')
+                            ->join('lomba', 'galeri.id_lomba', '=', 'lomba.id_lomba')
+                            ->whereColumn('lomba.id_kategori','kategori.id_kategori');
+                    })->get();                    
         $count = 0;
         foreach($kategori as $kategori_galeri){
             $count++;
-            $data[$count] = DB::select("SELECT galeri.id_galeri,galeri.foto,galeri.deskripsi,galeri.tgl_foto,kategori.nama_kategori 
-            FROM galeri,lomba,kategori 
-            WHERE galeri.id_lomba = lomba.id_lomba 
-            AND lomba.id_kategori = kategori.id_kategori
-            AND kategori.nama_kategori = '$kategori_galeri->nama_kategori'");
+            $data[$count] = DB::table('galeri')
+                            ->join('lomba', 'galeri.id_lomba', '=', 'lomba.id_lomba')
+                            ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori')
+                            ->select('galeri.*','kategori.nama_kategori')
+                            ->where('kategori.nama_kategori', '=', $kategori_galeri->nama_kategori)
+                            ->get();
         }
         return view('galeri.galeri',['kategori' => $kategori,'data' => $data]);
     }
