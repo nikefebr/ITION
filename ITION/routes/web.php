@@ -26,6 +26,8 @@ Route::get('/lomba',[LombaController::class, 'index']);
 
 Route::get('/lomba/{id_lomba?}',[LombaController::class, 'indexDetail']);
 
+Route::get('/full-calender',[LombaController::class, 'indexKalender']);
+
 Route::get('/testimoni', [TestimoniController::class, 'index']);
 
 Route::get('/galeri',[GaleriController::class, 'index']);

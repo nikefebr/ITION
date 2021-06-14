@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\DB;
 class LombaController extends Controller
 {
     //
+    public function indexKalender()
+    {
+        $lomba = Lomba::select('judul', 'deadline')->get();
+    
+        return view('full-calender', compact('lomba'));
+    }
+
+
     public function index()
     {
         $today = date("Y-m-d");
