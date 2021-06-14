@@ -22,7 +22,15 @@ a {
 
 ul {
     list-style-type: none;
+        margin: 0px;
+        padding: 0px ;
+        overflow: hidden;
+        text-align: center ;
 }
+
+li a:hover {
+    background-color: #FFDE27;
+  } 
 
 .bg-blue {
     background-color: #003567;
@@ -44,7 +52,7 @@ ul {
 
 .bg-blue-footer {
     background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
-    border-radius: 35px 35px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 .bg-overlay {
