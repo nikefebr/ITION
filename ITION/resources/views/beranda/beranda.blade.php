@@ -1,37 +1,35 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/beranda.css') }}">
     <title>Beranda</title>
+
+    @include('snippets/fonts')
 </head>
 <body style="background-color: #F4F4F4;">
     @include('navbar')
     
     <div class="bg-blue-gradient">
         <div class="p-5"></div>
-        
         <div class="container p-5">
             <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <img src="{{asset('image/image 1.png')}}">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <img class="img-header" src="{{asset('image/image 1.png')}}" style="width: 30vw;">
                 </div>
-
                 <div class="col-md-2 col-sm-2"></div>
 
                 <div class="col-md-6 col-sm-6">
-                    <p class="fw-bold fs-3 text-white">
+                    <p class="fw-bold fs-3 text-white" style="font-family: Montserrat;">
                         Info lomba 
                     </p>
 
-                    <p class="text-white">
+                    <p class="text-white font-14px" style="font-family: Montserrat;">
                     Yuk  Cari dan Ikuti Lomba dengan hadiah menarik di ITION. <br>
                     Berbagai lomba bidang IT bisa kamu dapatkan disini dengan fitur <br>
                     yang memudahkanmu untuk mendapat informasi secara detail dan terpercaya 
                     </p>
 
                     <div class="p-3"></div>
-
-                    <button class="button-lomba fw-bolder" onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button>
+                    <button class="button-lomba fw-bolder" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button>
                 </div>
-
                 <div class="p-3"></div>
             </div>
         </div>
@@ -42,35 +40,33 @@
     @foreach ($highlight as $item)
     
     <div class="container">
-        <div class="card w-100" style="border-radius: 30px;">
+        <div class="card card-beranda w-100" style="border-radius: 30px;">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <img class="img-fluid shadow" src="{{ url('image/lomba/'.$item->poster) }}" style="border-radius: 30px;">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <img class="img-fluid shadow img-poster" src="{{ url('image/lomba/'.$item->poster) }}" style="border-radius: 30px;">
                 </div>
-
                 <div class="col-md-3 col-sm-6 ps-3">
                     <div class="card-body" style="width: 30rem;">
-                        <h5 class="card-title">{{ $item->judul }}</h5>
-                        <h6 class="card-text fw-normal">{{ $item->nama_kategori }}</h6>
-                        <p></p>
-                        <p class="card-text">{{ $item->deskripsi }}</p>
+                        <p class="card-title fw-bold fs-4 pt-4" style="font-family: Montserrat; margin-bottom: 0">{{ $item->judul }}</p>
+                        <p class="card-text fw-light font-18px" style="font-family: Montserrat; margin-bottom: 0">{{ $item->nama_kategori }}</p>
+                        <p class="font-14px mt-1" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">Publish</p>
+
+                        <br>
+                        <p class="card-text font-14px" style="font-family: Roboto;">{{ $item->deskripsi }}</p>
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-6"></div>
-
-                <div class="col-md-3 col-sm-6 text-center text-white bg-blue" style="border-radius: 0px 30px 30px 0px;">
+                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12 text-center text-white bg-blue" style="border-radius: 0px 30px 30px 0px;">
                     <div class="card-body pt-5">
-                        <h5 class="card-title">DEADLINE</h5>
-                        <h5 class="card-title">PENDAFTARAN</h5>
+                        <h5 class="card-title" style="font-family: Roboto;">DEADLINE</h5>
+                        <h5 class="card-title" style="font-family: Roboto;">PENDAFTARAN</h5>
 
                         <div class="p-3"></div>
-
-                        <p class="text-uppercase pt-3">{{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}</p>
+                        <p class="pt-3" style="font-family: Roboto;">{{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}</p>
 
                         <div class="p-4"></div>
 
-                        <button class="button fw-bolder" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
+                        <button class="button fw-bolder" style="font-family: Roboto;" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
                     </div>
                 </div>
             </div>
@@ -84,26 +80,24 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="p-3"></div>
-                <h3 class="fw-normal">Great things <br>
+                <h3 class="fw-normal" style="font-family: Montserrat;">Great things <br>
                 never came from comfort zone</h3>
                 <div class="p-5"></div>
             </div>
-
-            <div class="col-md-2 col-sm-2"></div>
             
             @foreach ($galeri as $item)
             @if ($loop->first)
             <div class="col-md-3 col-sm-6">
-                <h5 class="fw-bold">Lihat keseruan lainnya</h5>
+                <h5 class="fw-bold" style="font-family: Montserrat;">Lihat keseruan lainnya</h5>
                 <div class="p-2"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="{{ $item->foto }}" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
+                    <img src="{{ $item->foto }}" id="0" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
                         <div class="card-body">
-                            <p class="card-text fw-normal">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
-                            <p class="card-text fw-bold">{{ $item->deskripsi }}</p>
+                            <p class="card-text fw-normal tgl-foto font-14px" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
+                            <p class="card-text fw-bold deskripsi-foto" style="font-family: Roboto;">{{ $item->deskripsi }}</p>
                     </div>
                 </div>
             </div>
@@ -114,14 +108,14 @@
                 <div class="p-4"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="{{ $item->foto }}" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
+                    <img src="{{ $item->foto }}" id="1" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
                         <div class="card-body">
-                            <p class="card-text fw-normal">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
-                            <p class="card-text fw-bold">{{ $item->deskripsi }}</p>
+                        <p class="card-text fw-normal tgl-foto font-14px" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
+                            <p class="card-text fw-bold deskripsi-foto" style="font-family: Roboto;">{{ $item->deskripsi }}</p>
 
                             <div class="p-4"></div>
 
-                            <button class="white-button fw-bolder" onclick="window.location='{{ url("galeri") }}'">Selengkapnya>></button>
+                            <button class="white-button fw-bolder" style="font-family: Roboto;" onclick="window.location='{{ url("galeri") }}'">Selengkapnya>></button>
 
                             <div class="p-4"></div>
                         </div>
@@ -142,8 +136,8 @@
                     
                         <img src="" class="card-img-top modal-img" alt="">
 
-                        <p class="font-14px pt-3 mb-0">Publish</p>
-                        <h5 class="fw-bold mt-0">Judul</h5>
+                        <p class="font-14px pt-3 mb-0" id="modal-tanggal"></p>
+                        <h5 class="fw-bold mt-0" id="modal-deskripsi"></h5>
 
                         <div class="pb-2"></div>                                        
                     </div>
@@ -157,8 +151,7 @@
     <div class="bg-yellow-ition">
         <div class="container">
             <div class="p-4"></div>
-
-                <h5 class="fw-bold">Yuk ikuti lomba lainnya</h5>
+                <h5 class="fw-bold" style="font-family: Montserrat;">Yuk ikuti lomba lainnya</h5>
 
                 <div class="row">
                     @foreach ($lomba as $item)
@@ -169,16 +162,16 @@
                             <div class="row mx-auto">
                                 <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 26px 26px 0px 0px; max-width: 500px; height: 370px;">
                                 
-                                <p class="card-text ps-3 text-grey pt-2">Publish </p>
+                                <p class="card-text ps-3 text-grey pt-2 font-14px" style="font-family: Roboto;">Publish </p>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-7 col-sm-7">
                                     <div class="card-body">
-                                        <h5 class="card-text fw-bold text-blue font-16px">{{ $item->judul }}</h5>
-                                        <h6 class="card-text fw-light text-blue font-14px">{{ $item->nama_kategori }}</h6>
+                                        <h5 class="card-text fw-bold text-blue font-16px" style="font-family: Montserrat;">{{ $item->judul }}</h5>
+                                        <h6 class="card-text fw-light text-blue font-14px" style="font-family: Montserrat;">{{ $item->nama_kategori }}</h6>
                                         
-                                        <p class="card-text text-grey mt-4 font-12px">
+                                        <p class="card-text text-grey mt-4 font-12px" style="font-family: Roboto;">
                                         {{ \Illuminate\Support\Str::limit($item->deskripsi, 50, $end='...') }}
                                         </p>
                                     </div>
@@ -188,12 +181,12 @@
                                     <div class="p-2"></div>
 
                                     <div class="card-body bg-blue-2 text-center">
-                                        <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
+                                        <p class="card-text fw-bold text-blue text-white font-12px" style="font-family: Roboto;">DEADLINE <br>
                                         PENDAFTARAN</p>
 
                                         <div class="p-1"></div>
                                         
-                                        <p class="card-text mt-4 text-white font-12px text-uppercase">
+                                        <p class="card-text mt-4 text-white font-12px text-uppercase" style="font-family: Roboto;">
                                         {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
                                         </p>
                                     </div>
@@ -201,41 +194,43 @@
                     </div>
 
                     <div class="row ms-0" style="width: 23rem;">
-                        <button class="button-katalog fw-bolder text-blue-2" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
+                        <button class="button-katalog fw-bolder text-blue-2" style="font-family: Roboto;" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya</button>
                     </div>
                 </div>
                     </div>
                     @endforeach
-                </div>
-        </div>
-        <div class="p-5"></div>
+
+                <div class="p-4"></div>
+
+                <button class="white-buttons fw-bolder" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Selengkapnya>></button>
+
+                
+                <div class="p-5"></div>
     </div>
 
     <div class="p-4"></div>
     
     <div class="container mt-0">
-        <h5 class="fw-bold text-center pt-4">Keuntungan sering mengikuti lomba</h5>
+        <h5 class="fw-bold text-center pt-4" style="font-family: Montserrat;">Keuntungan sering mengikuti lomba</h5>
         <div class="p-4"></div>
-
-            <div class="row fw-bold text-center">
+            <div class="row fw-bold text-center" style="font-family: Roboto;">
                 <div class="col-md-3 col-sm-6">
                     <p>Langkah untuk menjadi<br>
                         Mawapres</p>
                     <img src="{{asset('logo/mawapres.png')}}">
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
                     <p>Personal Branding</p>
                     <img src="{{asset('logo/branding.png')}}">
                 </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <p>Membuat<br>
-                        CV lebih menarik</p>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
+                    <p>Membuat CV lebih menarik</p>
                     <img src="{{asset('logo/cv.png')}}">
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
                     <p>Mengasah skillmu</p>
                     <img src="{{asset('logo/skill.png')}}">
                 </div>
@@ -245,7 +240,7 @@
     <div class="p-5"></div>
 
     <div class="container mt-0">
-        <h5 class="fw-bold">Apa kata mereka?</h5>
+        <h5 class="fw-bold" style="font-family: Montserrat;">Apa kata mereka?</h5>
         
         <div class="p-4"></div>
         
@@ -265,7 +260,7 @@
                             <div class="col-md-10 bg-blue px-3 me-auto" style="width: 47rem; height: 15rem;" id="tekstestimoni">
                                 <div class="p-4"></div>
                                     <div class="card-body text-white" >
-                                        <p>"{{ $item->testimoni }}."</p>
+                                        <p style="font-family: Roboto;">"{{ $item->testimoni }}."</p>
                                     </div>
                                 <div class="p-4"></div>
                             </div>
@@ -278,18 +273,20 @@
                 <div class="carousel-item">
                 <div class="card mx-auto bg-transparent border-0" style="width: 1100px;">
                     <div class="row g-0">
-                        <div class="col-md-2 pt-5 ms-auto">
+
+                        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 pt-5 ms-auto">
                             <div class="card text-center" id="fototestimoni">
                                 <img src="{{ url('image/reviewer/'.$item->foto) }}" class="img-fluid">
                             </div>
                         </div>
-                        <div class="col-md-10 bg-blue px-3 me-auto" style="width: 47rem; height: 15rem;" id="tekstestimoni">
+                        <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 bg-blue px-3 mt-4 me-auto" style="width:50vw; height: 200px;" id="tekstestimoni">
                             <div class="p-4"></div>
                                 <div class="card-body text-white" >
-                                    <p>"{{ $item->testimoni }}."</p>
+                                    <p style="font-family: Roboto;">"{{ $item->testimoni }}."</p>
                                 </div>
                             <div class="p-4"></div>
                         </div>
+
                     </div> 
                 </div>
                 </div>
@@ -305,7 +302,7 @@
             </button>
         </div>
         <div class="p-4"></div>
-        <a class="fw-bold" href="testimoni" id="selengkapnya">Selengkapnya >></a>
+        <a class="fw-bold" style="font-family: Roboto;" href="testimoni" id="selengkapnya">Selengkapnya >></a>
     </div>
     <div class="p-5"></div>
     @include('footer')
@@ -316,6 +313,11 @@
             if(e.target.classList.contains("galeri-item")){
                 const src = e.target.getAttribute("src");
                 document.querySelector(".modal-img").src = src;
+                const index = e.target.getAttribute("id");
+                const tgl = document.getElementsByClassName("tgl-foto")[index];
+                document.getElementById("modal-tanggal").innerHTML = tgl.innerHTML;
+                const deskripsi = document.getElementsByClassName("deskripsi-foto")[index];
+                document.getElementById("modal-deskripsi").innerHTML = deskripsi.innerHTML;
                 const myModal = new bootstrap.Modal(document.getElementById('galeri-popup'));
                 
             }
