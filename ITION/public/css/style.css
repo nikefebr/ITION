@@ -23,6 +23,10 @@ ul {
     list-style-type: none;
 }
 
+li a:hover {
+    background-color:#FFDE27;
+  }
+
 .bg-blue {
     background-color: #003567;
 }
