@@ -14,7 +14,7 @@
                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <img class="img-header" src="{{asset('image/image 1.png')}}" style="width: 30vw;">
                 </div>
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 p-5">
+                <div class="col-lg-7 col-md-8 col-sm-8 col-xs-8 p-5">
                     <p class="fw-bold fs-3 text-white">
                         Info lomba 
                     </p>

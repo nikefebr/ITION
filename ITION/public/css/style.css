@@ -301,7 +301,7 @@ footer .round-btn {
 
 .btn-img{
         margin-top: 14px;
-        margin-left: 14px;
+        margin-left: 0px;
         width: 30px;
         height: auto;
     }
@@ -327,7 +327,7 @@ footer .round-btn {
     .btn-img{
         width: 25px;
         height: auto;
-        margin-left: 12px;
+        margin-left: 0px;
         margin-top: 12px;
     }
 
