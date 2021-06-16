@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-lg-6 col-md-5 col-sm-7 col-xs-12 p-3">
                     <div class="card-body pt-5 " >
-                        <p class="card-title fw-bold fs-4 pt-4" style="font-family: Montserrat; margin-bottom: 0">{{ $item->judul }}</p>
+                        <p class="card-title fw-bold fs-4" style="font-family: Montserrat; margin-bottom: 0">{{ $item->judul }}</p>
                         <p class="card-text fw-light font-18px" style="font-family: Montserrat; margin-bottom: 0">{{ $item->nama_kategori }}</p>
                         <p class="font-14px mt-1" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">Publish</p>
 
