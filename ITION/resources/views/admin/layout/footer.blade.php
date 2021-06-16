@@ -1,5 +1,9 @@
+<head>
+  @include('snippets/fonts')
+</head>
+
 <!-- Main Footer -->
-<footer class="main-footer">
+<footer class="main-footer" style="font-family: Roboto;">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
       <!-- Anything you want -->

@@ -7,6 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
   <!-- add header -->
   @include('admin.layout.header')
+  @include('snippets/fonts')
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -18,14 +19,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="font-family: Roboto;">
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">View data lomba</h1>
+              <h1 class="m-0" style="font-family: Montserrat;">View data penyelenggara lomba</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
             </div><!-- /.col -->
@@ -46,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
                           @endif
                         <div class="card-header">
-                          <h3 class="card-title">DataTable with default features</h3>
+                          <h3 class="card-title" style="font-family: Montserrat;">Daftar Penyelenggara Lomba</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
