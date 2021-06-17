@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lomba;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,8 +12,7 @@ class LombaController extends Controller
     public function indexKalender()
     {
         $lomba = Lomba::select('judul', 'deadline')->get();
-    
-        return view('full-calender', compact('lomba'));
+        return response()->json($lomba);
     }
 
 

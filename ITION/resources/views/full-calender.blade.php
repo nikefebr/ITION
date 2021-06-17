@@ -11,12 +11,16 @@
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
           events: [
-                {
-                    title : 'Lomba 1',
-                    start : '2021-06-01',
-                    // url : '/indexKalender',
-                }            
-            ]
+    {
+      title: 'Event1',
+      start: '2021-06-04'
+    },
+    {
+      title: 'Event2',
+      start: '2021-06-05'
+    }
+    // etc...
+  ],
         });
         calendar.render();
       });
