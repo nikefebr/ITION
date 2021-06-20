@@ -1,7 +1,8 @@
 <head>
    <link rel="stylesheet" type="text/css" href="{{ asset('css/lomba.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/kalender.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.css' rel='stylesheet' />
+    <!-- <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.css' rel='stylesheet' /> -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js'></script>
     
     <title>Lomba</title>
@@ -104,9 +105,9 @@
                     </span>
                     <input type="search" class="form-control rounded border-0" placeholder="cari lombamu disini" aria-label="Search" aria-describedby="search-addon" />
                 </div>
-
-                <div class="updateSize" id="calendar"></div>
-
+                <br>    
+                <div id='calendar'></div>
+                <br >
                 <div class="card" style="border-radius:8px;">                        
                     <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Filter</div>
                         <div class="card-body">
@@ -157,19 +158,18 @@
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
+          
           initialView: 'dayGridMonth',
-          events: [
-                {
-                title: 'Event1',
-                start: '2021-06-04'
-                },
-                {
-                    title : 'Event 2',
-                    start : '2021-06-05'
-                }
-                // etc...
-            ],
-
+          events :  [
+              {
+                title : 'Lomba 1',
+                start : '2021-06-01'
+              },
+              {
+                title : 'Lomba 2',
+                start : '2021-06-02'
+              },
+          ],
         });
         calendar.render();
       });

@@ -12,7 +12,7 @@ class LombaController extends Controller
     public function indexKalender()
     {
         $lomba = Lomba::select('judul', 'deadline')->get();
-        return response()->json($lomba);
+        return view('full-calender', compact('lomba'));
     }
 
 
