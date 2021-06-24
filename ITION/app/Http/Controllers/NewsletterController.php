@@ -8,6 +8,7 @@ use App\Mail\NewsletterAwal;
 use App\Mail\NewsletterLomba;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use Redirect;
 
 class NewsletterController extends Controller
 {
@@ -26,20 +27,17 @@ class NewsletterController extends Controller
         Mail::to($data['email'])->send(new NewsletterAwal($details));
         return redirect()->back();
     }
-    public function unsubscribe() {
-        /*
-        $data = array(
-            'email'=> 'bitutama05@gmail.com'
-        );
+    public function unsubscribe($email) {
+        
+        $data = [            
+            'email' => $email
+        ];
 
-        return view('newsletter.unsubscribe')->with('data', $data);*/
+        return view('newsletter.unsubscribe')->with('data', $data);
     }
     public function success_unsubscribe($email) {
-        /*DB::table('pelanggan')->where('nama', '=', $email)->delete();
-        
-        $pelanggan = pelanggan::find($email);
-        $pelanggan->delete();
+        DB::table('pelanggan')->where('email', '=', $email)->delete();
 
-        return Redirect::to('/');*/
+        return Redirect::to('/');
     }
 }

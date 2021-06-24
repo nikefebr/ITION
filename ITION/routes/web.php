@@ -35,6 +35,10 @@ Route::view('/tentang', 'tentang.tentang');
 
 Route::get('/subscribe',[NewsletterController::class, 'subscribe'])->name('subscribe');
 
+Route::get('/unsubscribe/{email?}',[NewsletterController::class, 'unsubscribe'])->name('unsubscribe');
+
+Route::get('/success-unsubscribe/{email?}',[NewsletterController::class, 'success_unsubscribe'])->name('success-unsubscribe');
+
 //Apabila mengubah nama pada route diharapkan untuk mengubah juga baik pada blade.php maupun controllernya
 
 //Modified Auth dengan mengarahkan semua prefix ke admin

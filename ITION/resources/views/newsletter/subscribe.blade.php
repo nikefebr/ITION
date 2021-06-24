@@ -87,10 +87,10 @@ footer img{
 
     <footer class="container" style="font-family: Roboto;">
         <p>Terima kasih telah membaca!</p>
-        <p>Jika ada pertanyaan, Anda dapat <a>Hubungi Kami.</a> Jika email kami memiliki kekurangan, kami akan mengerti jika Anda <a>berhenti berlangganan.</a></p>
+        <p>Jika ada pertanyaan, Anda dapat <a href="https://wa.me/6287701437591">Hubungi Kami.</a> Jika email kami memiliki kekurangan, kami akan mengerti jika Anda <a href="{{ url('unsubscribe/'.$details['email']) }}">berhenti berlangganan.</a></p>
         
         <div>
-            <a>HIMIT</a> <span>|</span> <a>PENS</a>
+            <a href="#">HIMIT</a> <span>|</span> <a href="https://https://www.pens.ac.id/">PENS</a>
             <p>Kelompok A4 Workshop Produksi Perangkat Lunak 2021</p>
             <P><a>Legal</a> <span>•</span> <a>Privacy</a></P>
         </div>
