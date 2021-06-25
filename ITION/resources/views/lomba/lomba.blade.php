@@ -184,14 +184,12 @@
           
           initialView: 'dayGridMonth',
           events :  [
+              @foreach ($data as $item)
               {
-                title : 'Lomba 1',
-                start : '2021-06-01'
+                title : '{{$item->judul}}',
+                start : '{{$item->deadline}}'
               },
-              {
-                title : 'Lomba 2',
-                start : '2021-06-02'
-              },
+              @endforeach
           ],
         });
         calendar.render();
@@ -205,15 +203,13 @@
         
         initialView: 'dayGridMonth',
         events :  [
-            {
-            title : 'Lomba 1',
-            start : '2021-06-01'
-            },
-            {
-            title : 'Lomba 2',
-            start : '2021-06-02'
-            },
-        ],
+              @foreach ($data as $item)
+              {
+                title : '{{$item->judul}}',
+                start : '{{$item->deadline}}'
+              },
+              @endforeach
+          ],
     });
     calendar.render();
     });
