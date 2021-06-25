@@ -105,8 +105,11 @@
                     </span>
                     <input type="search" class="form-control rounded border-0" placeholder="cari lombamu disini" aria-label="Search" aria-describedby="search-addon" />
                 </div>
-                <br>    
-                <div id='calendar'></div>
+                <br>   
+                <div id="calendar" class="updateSize"></div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                See More..
+                </button>
                 <br >
                 <div class="card" style="border-radius:8px;">                        
                     <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Filter</div>
@@ -152,6 +155,26 @@
 
     </div>
     <div class="p-5"></div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <div id="calender"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
 
     <script>
 
@@ -175,6 +198,38 @@
       });
 
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calender');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        
+        initialView: 'dayGridMonth',
+        events :  [
+            {
+            title : 'Lomba 1',
+            start : '2021-06-01'
+            },
+            {
+            title : 'Lomba 2',
+            start : '2021-06-02'
+            },
+        ],
+    });
+    calendar.render();
+    });
+    </script>
+    <script type="text/javascript">
+        document.addEventListener("click",function(e){
+            if(e.target.classList.contains("kalender-item")){
+                const myModal = new bootstrap.Modal(document.getElementById('kalender-popup'));
+            }
+            myModal.show();
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+    
     @include('footer')
 </body>
 </html>
