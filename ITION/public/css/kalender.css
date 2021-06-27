@@ -7,7 +7,7 @@
 
 .fc-unselectable {
   -webkit-user-select: none;
-     -moz-user-select: none;
+      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   -webkit-touch-callout: none;
@@ -170,7 +170,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
-       -moz-user-select: none;
+        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
     background-color: transparent;
@@ -710,7 +710,7 @@ A HORIZONTAL event
   }
 .fc .fc-daygrid-day.fc-day-today {
       background-color: rgba(255, 220, 40, 0.15);
-      background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));
+      background-color: var(--fc-today-bg-color, rgba(255, 222, 39, 1));
     }
 .fc .fc-daygrid-day-frame {
     position: relative;
