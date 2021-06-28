@@ -73,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <a class="btn btn-warning" href="{{ route('edit kategori', $kategori->id_kategori) }}">Edit</button></a>
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit"class="btn btn-danger" onclick="confirm('Kategori yang dibuat akan dihapus\nPastikan data lomba sudah dihapus semua')">Delete</button>
+                                  <button type="submit"class="btn btn-danger" onclick="return(confirm('Kategori yang dibuat akan dihapus\nPastikan data lomba sudah dihapus semua'))">Delete</button>
                                 </div>
                               </form>
                               </td>
