@@ -9,5 +9,5 @@
       <!-- Anything you want -->
     </div>
     <!-- Default to the left -->
-    <strong style="color: #212529;">Copyright ITION 2021</a></strong>
+    <strong style="color: #212529;">Copyright ITION {{date("Y")}}</a></strong>
 </footer>

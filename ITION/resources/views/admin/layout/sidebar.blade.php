@@ -106,7 +106,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="{{ (request()->is('admin/galeri*')) ? 'active' : '' }}  nav-link">
               <i class="nav-icon fas fa-image"></i>
               <p>
                 Galeri
@@ -115,13 +115,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/admin/galeri/create') }}" class="{{ (request()->is('admin/galeri/create')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah baru</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/admin/galeri') }}" class="{{ (request()->is('admin/galeri')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tampilkan data</p>
                 </a>
@@ -130,7 +130,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="{{ (request()->is('admin/pelanggan*')) ? 'active' : '' }} nav-link">
+            <a href="#" class="{{ (request()->is('admin/pelanggan*')) ? 'active' : '' }}{{ (request()->is('admin/newsletter*')) ? 'active' : '' }} nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Pelanggan Newsletter
@@ -141,20 +141,34 @@
               <li class="nav-item">
                 <a href="{{ url('/admin/pelanggan/create') }}" class="{{ (request()->is('admin/pelanggan/create')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah baru</p>
+                  <p>Tambah pelanggan</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('/admin/pelanggan') }}" class="{{ (request()->is('admin/pelanggan')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tampilkan data</p>
+                  <p>Tampilkan data pelanggan</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/newsletter/create') }}" class="{{ (request()->is('admin/newsletter/create')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Masukkan data newsletter</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ url('/admin/newsletter') }}" class="{{ (request()->is('admin/newsletter')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>histori newsletter</p>
+                </a>
+              </li>
+
             </ul>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="{{ (request()->is('admin/reviewer*')) ? 'active' : '' }} nav-link">
               <i class="nav-icon fas fa-comments"></i>
               <p>
                 Reviewer Lomba
@@ -163,13 +177,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/admin/reviewer/create') }}" class="{{ (request()->is('admin/reviewer/create')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah baru</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/admin/reviewer') }}" class="{{ (request()->is('admin/reviewer')) ? 'active' : '' }} nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tampilkan data</p>
                 </a>
@@ -202,7 +216,7 @@
               </li>
             </ul>
           </li>
-        -->
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -212,6 +226,7 @@
               </p>
             </a>
           </li>
+                  -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
