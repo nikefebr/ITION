@@ -34,8 +34,8 @@ class pelanggan extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function lomba(): BelongsToMany
+    public function lomba()
     {
-        return $this->belongsToMany(lomba::class, 'newsletter', 'id_pelanggan', 'id_lomba')->withTimestamps();
+        return $this->belongsToMany(lomba::class, 'newsletter', 'id_pelanggan', 'id_lomba')->withPivot('subyek','isi')->withTimestamps();
     }
 }
