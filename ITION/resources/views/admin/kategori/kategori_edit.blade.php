@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- add header -->
   @include('admin.layout.header')
+  @include('snippets/fonts')
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -19,14 +20,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="font-family: Roboto;">
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0">Data Kategori</h1>
+              <h1 class="m-0" style="font-family: Montserrat;">Data Kategori</h1>
             </div><!-- /.col -->
             
 
@@ -34,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header" style="background-color: #003567">
-                  <h3 class="card-title">Tambah Kategori baru</h3>
+                  <h3 class="card-title" style="font-family: Montserrat;">Tambah Kategori baru</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)

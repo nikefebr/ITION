@@ -7,7 +7,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
   <!-- add header -->
   @include('admin.layout.header')
-  @include('snippets/fonts')
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -19,14 +18,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="font-family: Roboto;">
+  <div class="content-wrapper">
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0" style="font-family: Montserrat;">View data kategori</h1>
+              <h1 class="m-0">View data lomba</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
             </div><!-- /.col -->
@@ -47,7 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
                           @endif
                         <div class="card-header">
-                          <h3 class="card-title" style="font-family: Montserrat;">Daftar Kategori</h3>
+                          <h3 class="card-title">DataTable with default features</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -55,25 +54,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <thead>
                             <tr>
                               <th>No</th>
-                              <th>Nama Kategori</th>
-                              <th width="200px">Action</th>
+                              <th width="200px">Poster</th>
+                              <th max-width="130px">Judul</th>
+                              <th>deadline</th>
+                              <th width="110px">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @php
                             $i = 0;
                             @endphp 
-                            @foreach ($category as $kategori)
+                            
+                            @foreach ($manylomba as $lomba)
+
                             <tr>
                               <td>{{ ++$i }}</td>
-                              <td>{{ $kategori->nama_kategori }}</td>
                               <td>
-                                <form method="post" action="{{ route('destroy kategori', $kategori->id_kategori) }}" >
+                                <img src="{{ asset('image/lomba/'.$lomba->poster) }}" alt="{{ $lomba->judul }}" class="img-thumbnail mx-auto d-block" style="max-width: 150px; max-height: 150px;"> 
+                              </td>
+                              <td>{{ $lomba->judul }}</td>
+                              <td>{{ date("d-m-Y", strtotime($lomba->deadline)) }}</td>
+                              <td>
+                                <form method="post" action="{{ route('destroy lomba', $lomba->id_lomba) }}" >
                                 <div class="btn-group">
-                                  <a class="btn btn-warning" href="{{ route('edit kategori', $kategori->id_kategori) }}">Edit</button></a>
+                                  <a class="btn btn-primary" href="{{ route('show lomba', $lomba->id_lomba) }}">Show</button></a>
+                                  <a class="btn btn-warning" href="{{ route('edit lomba', $lomba->id_lomba) }}">Edit</button></a>
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit"class="btn btn-danger" onclick="return(confirm('Kategori yang dibuat akan dihapus\nPastikan data lomba sudah dihapus semua'))">Delete</button>
+                                  <button type="submit"class="btn btn-danger" onclick="confirm('Lomba {{ $lomba->judul }} akan dihapus, lanjutkan?')">Delete</button>
                                 </div>
                               </form>
                               </td>

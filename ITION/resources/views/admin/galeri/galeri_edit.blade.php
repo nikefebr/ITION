@@ -8,7 +8,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- add header -->
   @include('admin.layout.header')
-  @include('snippets/fonts')
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -20,22 +19,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="font-family: Roboto;">
+  <div class="content-wrapper">
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0" style="font-family: Montserrat;">Data Penyelenggara Lomba</h1>
+              <h1 class="m-0">Data Galeri</h1>
             </div><!-- /.col -->
             
 
             <div class="col-12">
               <!-- general form elements -->
             <div class="card card-primary">
-                <div class="card-header" style="background-color: #003567">
-                  <h3 class="card-title" style="font-family: Montserrat;">Tambah Penyelenggara Lomba baru</h3>
+                <div class="card-header">
+                  <h3 class="card-title">Tambah Galeri baru</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -46,31 +45,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action='{{ route('update penyelenggara lomba', $penyelenggara->id_penyelenggara) }}'>
+                <form method="post" action='{{ route('update galeri', $galeri->id_galeri) }}' enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
                   <div class="card-body">
                     <div class="form-group">
-                      <label for="nama_penyelenggara">Nama Penyelenggara</label>
-                      <input type="text" class="form-control" id="nama_penyelenggara" name="nama_penyelenggara" value="{{ $penyelenggara->nama_penyelenggara }}" placeholder="Nama Penyelenggara">
-                    </div>
-                  </div>
-                  <div class="card-body">
+                      <label for="input poster">Foto</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="foto" name="foto">
+                              <label for="foto" class="custom-file-label">Choose file</label>
+                            </div>
+                        </div>
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="id_lomba">Nama Lomba</label>
+                        <select class="form-control" id='id_lomba' name="id_lomba">
+  
+                          @foreach ($manylomba as $lomba)
+                            <option value="{{$lomba->id_lomba}}">{{$lomba->judul}}</option>
+                          @endforeach
+  
+                         </select>
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="tgl_foto">Tanggal foto</label>
+                        <input type="date" class="form-control" id="tgl_foto" name="tgl_foto" placeholder="tgl_foto" value="{{$galeri->tgl_foto}}">
+                      </div>
+
                     <div class="form-group">
-                      <label for="kontak">Nomor Kontak</label>
-                      <input type="text" class="form-control" id="kontak" name="kontak" value="{{ $penyelenggara->kontak }}" placeholder="Nomor Kontak">
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label for="nama_kontak">Nama Kontak</label>
-                      <input type="tel" class="form-control" id="nama_kontak" name="nama_kontak" value="{{ $penyelenggara->nama_kontak }}" placeholder="Nama Kontak">
+                      <label for="deskripsi">Deskripsi</label>
+                      <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi" value="{{$galeri->deskripsi}}">
                     </div>
                   </div>
                   <!-- /.card-body -->
   
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary" style="background-color: #FFDE27; color:#212529; border:0;">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </form>
               </div>

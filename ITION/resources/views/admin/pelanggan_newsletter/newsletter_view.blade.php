@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0" style="font-family: Montserrat;">View data kategori</h1>
+              <h1 class="m-0" style="font-family: Montserrat;">View data newsletter</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
             </div><!-- /.col -->
@@ -47,36 +47,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
                           @endif
                         <div class="card-header">
-                          <h3 class="card-title" style="font-family: Montserrat;">Daftar Kategori</h3>
+                          <h3 class="card-title" style="font-family: Montserrat;">Daftar Histori Newsletter</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                           <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                              <th>No</th>
-                              <th>Nama Kategori</th>
-                              <th width="200px">Action</th>
+                              <th width="50px">No</th>
+                              <th>Nama Lomba</th>
+                              <th>Subyek</th>
+                              <th>Isi</th>
                             </tr>
                             </thead>
                             <tbody>
                             @php
                             $i = 0;
                             @endphp 
-                            @foreach ($category as $kategori)
+                            @foreach ($manynewsletter as $newsletter)
                             <tr>
-                              <td>{{ ++$i }}</td>
-                              <td>{{ $kategori->nama_kategori }}</td>
-                              <td>
-                                <form method="post" action="{{ route('destroy kategori', $kategori->id_kategori) }}" >
-                                <div class="btn-group">
-                                  <a class="btn btn-warning" href="{{ route('edit kategori', $kategori->id_kategori) }}">Edit</button></a>
-                                  @csrf
-                                  @method('DELETE')
-                                  <button type="submit"class="btn btn-danger" onclick="return(confirm('Kategori yang dibuat akan dihapus\nPastikan data lomba sudah dihapus semua'))">Delete</button>
-                                </div>
-                              </form>
-                              </td>
+                              <td width="50px">{{ ++$i }}</td>
+                              <td>{{ $newsletter->judul }}</td>
+                              <td width="300px">{{ $newsletter->subyek }}</td>
+                              <td width="700px">{{ $newsletter->isi}}</td>
                             </tr>
                             @endforeach
                             </tbody>
