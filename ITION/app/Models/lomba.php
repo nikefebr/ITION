@@ -51,7 +51,7 @@ class lomba extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function penyelenggara(): BelongsTo
+    public function penyelenggara()
     {
         return $this->belongsTo(penyelenggara_lomba::class);
     }
@@ -62,7 +62,7 @@ class lomba extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function galeri(): HasMany
+    public function galeri()
     {
         return $this->hasMany(galeri::class);
     }
@@ -72,7 +72,7 @@ class lomba extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function admin(): BelongsToMany
+    public function admin()
     {
         return $this->belongsToMany(admin::class, 'pengisian_lomba', 'id_lomba', 'id_admin')->withTimestamps();
     }
@@ -82,9 +82,9 @@ class lomba extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function pelanggan(): BelongsToMany
+    public function pelanggan()
     {
-        return $this->belongsToMany(pelanggan::class, 'newsletter', 'id_lomba', 'id_pelanggan')->withTimestamps();
+        return $this->belongsToMany(pelanggan::class, 'newsletter', 'id_lomba', 'id_pelanggan')->withPivot('subyek','isi')->withTimestamps();
     }
 
     /**
@@ -92,8 +92,8 @@ class lomba extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function reviewer(): BelongsToMany
+    public function reviewer()
     {
-        return $this->belongsToMany(reviewer::class, 'testimoni', 'id_lomba', 'id_reviewer')->withPivot('tahun_lomba','testimoni');
+        return $this->belongsToMany(reviewer::class, 'testimoni', 'id_lomba', 'id_reviewer')->using(testimoni::class);
     }
 }

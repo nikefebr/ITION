@@ -46,13 +46,13 @@ Route::group(['prefix' => 'admin'], function ()
 
         Route::resource('/lomba', App\Http\Controllers\admin\LombaController::class)
             ->names([ //sebagai nama setiap route supaya lebih mudah memberikan nama pada head dan title
-            'index' => 'lomba view',
-            'update' => 'lomba update',
-            'create' => 'lomba create',
-            'show' => 'lomba show',
-            'edit' => 'lomba edit',
-            'destroy' => 'lomba destroy',
-            'store' => 'lomba store',
+            'index' => 'view lomba',
+            'update' => 'update lomba',
+            'create' => 'create lomba',
+            'show' => 'show lomba',
+            'edit' => 'edit lomba',
+            'destroy' => 'destroy lomba',
+            'store' => 'store lomba',
             ]); 
 
         Route::resource('/kategori', App\Http\Controllers\admin\KategoriController::class)
@@ -109,6 +109,10 @@ Route::group(['prefix' => 'admin'], function ()
                 'destroy' => 'destroy galeri',
                 'store' => 'store galeri',
             ]);     
+
+        Route::get('/newsletter/create',[App\Http\Controllers\admin\PelangganController::class, 'create_newsletter'])->name('create newsletter');
+        Route::post('/newsletter',[App\Http\Controllers\admin\PelangganController::class, 'store_newsletter'])->name('store newsletter');
+        Route::get('/newsletter',[App\Http\Controllers\admin\PelangganController::class, 'index_newsletter'])->name('view newsletter');
     });
 });
 

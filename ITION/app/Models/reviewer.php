@@ -23,8 +23,8 @@ class reviewer extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function lomba(): BelongsToMany
+    public function lomba()
     {
-        return $this->belongsToMany(lomba::class, 'testimoni', 'id_reviewer', 'id_lomba')->withPivot('tahun_lomba','testimoni');
+        return $this->belongsToMany(lomba::class, 'testimoni', 'id_reviewer', 'id_lomba')->using(testimoni::class);
     }
 }
