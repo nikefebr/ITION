@@ -28,7 +28,7 @@ class penyelenggara_lomba extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function lomba(): HasMany
+    public function lomba()
     {
         return $this->hasMany(lomba::class);
     }

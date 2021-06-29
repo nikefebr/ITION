@@ -4,9 +4,11 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\penyelenggara_lomba;
+use App\Models\lomba;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
 
 class PenyelenggaraLombaController extends Controller
 {
@@ -48,7 +50,7 @@ class PenyelenggaraLombaController extends Controller
         
         // mengecek apabila terdapat error atau tidak
         if ($validated->fails()) {
-            return redirect()->route('create kategori')->withErrors($validated); // redirect kembali dengan pesan error
+            return redirect()->route('create penyelenggara lomba')->withErrors($validated); // redirect kembali dengan pesan error
         } else {
             
             // akan membuat data baru dengan 
@@ -59,7 +61,7 @@ class PenyelenggaraLombaController extends Controller
             ]);
 
             //redirect
-            return redirect()->route('view penyelenggara lomba')->with('success','Kategori berhasil dibuat!');
+            return redirect()->route('view penyelenggara lomba')->with('success','Penyelenggara lomba berhasil dibuat!');
         }
     }
 
@@ -111,7 +113,7 @@ class PenyelenggaraLombaController extends Controller
                 'kontak' => $request -> kontak,
                 'nama_kontak' => $request -> nama_kontak,
             ]);
-            return redirect()->route('view kategori')->with('success','Penyelenggara Lomba berhasil diupdate!');
+            return redirect()->route('view penyelenggara lomba')->with('success','Penyelenggara Lomba berhasil diupdate!');
         }
     }
 
@@ -121,9 +123,19 @@ class PenyelenggaraLombaController extends Controller
      * @param  \App\Models\penyelenggara_lomba  $penyelenggara_lomba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(penyelenggara_lomba $penyelenggara_lomba)
+    public function destroy(penyelenggara_lomba $penyelenggara)
     {
-        $kategori->delete();
+        $datapenyelenggara = lomba::where('id_penyelenggara', $penyelenggara->id_penyelenggara)->get();
+        $data = NULL;
+
+        foreach($datapenyelenggara as $penyelenggara):
+        $data = $penyelenggara->id_penyelenggara;
+        endforeach;
+
+        if ($data == $penyelenggara->id_penyelenggara) {
+            return redirect()->route('view penyelenggara lomba')->withErrors('Masih ada lomba yang berhubungan dengan penyelenggara '.$penyelenggara->nama_penyelenggara);
+        }
+        $penyelenggara->delete();
         return redirect()->route('view penyelenggara lomba')->with('success', 'Penyelenggara Lomba Berhasil Dihapus!');
     }
 }

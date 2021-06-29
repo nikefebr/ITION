@@ -5,6 +5,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\LombaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\admin\KategoriController;
 use App\Http\Controllers\admin\PelangganController;
 use App\Http\Controllers\admin\PenyelenggaraLombaController;
@@ -32,6 +33,12 @@ Route::get('/galeri',[GaleriController::class, 'index']);
 
 Route::view('/tentang', 'tentang.tentang');
 
+Route::get('/subscribe',[NewsletterController::class, 'subscribe'])->name('subscribe');
+
+Route::get('/unsubscribe/{email?}',[NewsletterController::class, 'unsubscribe'])->name('unsubscribe');
+
+Route::get('/success-unsubscribe/{email?}',[NewsletterController::class, 'success_unsubscribe'])->name('success-unsubscribe');
+
 //Apabila mengubah nama pada route diharapkan untuk mengubah juga baik pada blade.php maupun controllernya
 
 //Modified Auth dengan mengarahkan semua prefix ke admin
@@ -46,13 +53,13 @@ Route::group(['prefix' => 'admin'], function ()
 
         Route::resource('/lomba', App\Http\Controllers\admin\LombaController::class)
             ->names([ //sebagai nama setiap route supaya lebih mudah memberikan nama pada head dan title
-            'index' => 'lomba view',
-            'update' => 'lomba update',
-            'create' => 'lomba create',
-            'show' => 'lomba show',
-            'edit' => 'lomba edit',
-            'destroy' => 'lomba destroy',
-            'store' => 'lomba store',
+            'index' => 'view lomba',
+            'update' => 'update lomba',
+            'create' => 'create lomba',
+            'show' => 'show lomba',
+            'edit' => 'edit lomba',
+            'destroy' => 'destroy lomba',
+            'store' => 'store lomba',
             ]); 
 
         Route::resource('/kategori', App\Http\Controllers\admin\KategoriController::class)
@@ -108,7 +115,24 @@ Route::group(['prefix' => 'admin'], function ()
                 'edit' => 'edit galeri',
                 'destroy' => 'destroy galeri',
                 'store' => 'store galeri',
-            ]);     
+            ]); 
+        
+        Route::resource('/testimoni',App\Http\Controllers\admin\TestimoniController::class)
+            ->except(['destroy','edit','update'])
+            ->names([
+                'index' => 'view testimoni',
+                'create' => 'create testimoni',
+                'show' => 'show testimoni',
+                'store' => 'store testimoni',
+            ]);
+        
+        Route::delete('/testimoni/{id_lomba}/{id_reviewer}',[App\Http\Controllers\admin\TestimoniController::class, 'destroy'])->name('destroy testimoni');
+        Route::put('/testimoni/{id_lomba}/{id_reviewer}',[App\Http\Controllers\admin\TestimoniController::class, 'update'])->name('update testimoni');
+        Route::get('/testimoni/{id_lomba}/{id_reviewer}/edit',[App\Http\Controllers\admin\TestimoniController::class, 'edit'])->name('edit testimoni');
+
+        Route::get('/newsletter/create',[App\Http\Controllers\admin\PelangganController::class, 'create_newsletter'])->name('create newsletter');
+        Route::post('/newsletter',[App\Http\Controllers\admin\PelangganController::class, 'store_newsletter'])->name('store newsletter');
+        Route::get('/newsletter',[App\Http\Controllers\admin\PelangganController::class, 'index_newsletter'])->name('view newsletter');
     });
 });
 

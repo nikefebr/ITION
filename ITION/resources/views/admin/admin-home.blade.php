@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- add header -->
   @include('admin.layout.header')
+  @include('snippets/fonts')
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -19,13 +20,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="font-family: Roboto;">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0" style="font-family: Montserrat;">Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
           </div><!-- /.col -->
@@ -113,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Recently Added Products</h3>
+                <h3 class="card-title" style="font-family: Montserrat;">Recently Added Products</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -196,7 +197,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header border-0">
-                <h3 class="card-title">Online Store Overview</h3>
+                <h3 class="card-title" style="font-family: Montserrat;">Online Store Overview</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>

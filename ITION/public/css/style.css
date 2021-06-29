@@ -100,16 +100,6 @@ li a:hover {
     padding-bottom: 10px;
 }
 
-.white-button {
-    background-color: white;
-    border-color: #FFDE27;
-    border-radius: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .white-button-daftar {
     background-color: white;
     border-color: #FFDE27;
@@ -125,8 +115,8 @@ li a:hover {
     background-color: #ffff;
     border: none;
     border-radius: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -137,16 +127,6 @@ li a:hover {
     border-radius: 10px;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.button-lomba {
-    background-color: #FFDE27;
-    border: none;
-    border-radius: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -301,7 +281,7 @@ footer .round-btn {
 
 .btn-img{
         margin-top: 14px;
-        margin-left: 14px;
+        margin-left: 0px;
         width: 30px;
         height: auto;
     }
@@ -327,7 +307,7 @@ footer .round-btn {
     .btn-img{
         width: 25px;
         height: auto;
-        margin-left: 12px;
+        margin-left: 0px;
         margin-top: 12px;
     }
 

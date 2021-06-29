@@ -39,15 +39,15 @@
                             Jangan lewatkan layanan newsletter kami untuk mendapatkan informasi lomba disetiap minggunya. Tunggu apa lagi daftaran email kamu segera !!
                         </div>
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 form-area p-5" style="font-family: Roboto;">
-                            <form>
+                            <form type="get" action="{{ route('subscribe') }}">
                                 <div class="form-group font-14px">
                                     <label for="exampleInputNama" class="font-14px" >Nama </label>
-                                    <input type="nama" class="form-control" style="border-radius:8px" id="exampleInputNama" placeholder="Tuliskan namamu...">
+                                    <input name = "nama" type="nama" class="form-control" style="border-radius:8px" id="exampleInputNama" placeholder="Tuliskan namamu...">
                                 </div>
                                 <br/>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="font-14px">Email</label>
-                                    <input type="email" class="form-control" style="border-radius:8px" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tuliskan emailmu...">
+                                    <input name = "email" type="email" class="form-control" style="border-radius:8px" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tuliskan emailmu...">
                                     <small id="emailHelp" class="form-text text-muted">Kami tidak akan menyebarkan data anda</small>
                                 </div>
                                 <br/>
@@ -75,15 +75,15 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="contact">
                                     <ul class="ul-top">
-                                        <li class="round-btn"><a href="#">
-                                            <img class="btn-img" src="{{asset('logo/1200px-Instagram_logo_2016 1.png')}}">
-                                        </a></li>
-                                        <li class="round-btn"><a href="mailto:infoITION@gmail.com">
-                                            <img class="btn-img" src="{{asset('logo/logo-gmail 1.png')}}">
-                                        </a></li>
-                                        <li class="round-btn btn-wa"><a ref="https://wa.me/6287701437591">
-                                            <img class="btn-img" src="{{asset('logo/WhatsApp-Logo 1.png')}}">
-                                        </a></li>
+                                    <a href="#"><li class="round-btn">
+                                        <img class="btn-img" src="{{asset('logo/1200px-Instagram_logo_2016 1.png')}}">
+                                    </li></a>
+                                    <a href="mailto:infoITION@gmail.com"><li class="round-btn">
+                                        <img class="btn-img" src="{{asset('logo/logo-gmail 1.png')}}">
+                                    </li></a>
+                                    <a href="https://wa.me/6287701437591" target="_blank"><li class="round-btn btn-wa">
+                                        <img class="btn-img" src="{{asset('logo/WhatsApp-Logo 1.png')}}">
+                                    </li></a>
                                     </ul>   
                                                                         
                                     <ul class="ul-bottom">
