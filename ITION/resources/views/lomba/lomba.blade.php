@@ -64,12 +64,7 @@
         <div class="p-4"></div>
         
         <div class="content-section">
-            <div class="input-group rounded">
-                <span class="input-group-text border-0" id="search-addon">
-                    <i class="fa fa-search"></i>
-                </span>
-                <input type="search" class="form-control rounded border-0" placeholder="cari lombamu disini" aria-label="Search" aria-describedby="search-addon" />
-            </div>
+            
 
             <div class="card-place">
                 <div class="row">
@@ -153,13 +148,9 @@
                                 <div class="p-3"></div>
                                 <center> <button class="button-lomba fw-bolder " type="submit">Cari Lomba</button></center><br>                                
                             </div>
-                            <div class="p-3"></div>
-                            <center> <button class="button-lomba fw-bolder " onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button></center>
-                            <br>
-                        </div>
-                    </div>       
-                        </form>  
-                </div>
+                        </form>
+                    </div>
+                </div>       
             </div>
         </div>
     </div>
@@ -183,6 +174,15 @@
             </div>
         </div>
     </div>
+
+    <div class="p-5"></div>
+    <div class="p-5"></div>
+    <div class="p-5"></div>
+    <div class="p-5"></div>
+    <div class="p-5"></div>
+    <div class="p-5"></div>
+    <div class="p-5"></div>
+    <div class="p-5"></div>
 
     @include('footer')
 
