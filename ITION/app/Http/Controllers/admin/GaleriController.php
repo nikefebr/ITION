@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\galeri;
 use App\Models\lomba;
+use App\Models\admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -57,7 +58,8 @@ class GaleriController extends Controller
         
         // mengecek apabila terdapat error atau tidak
         if ($validated->fails()) {
-            return redirect()->route('create galeri')->withErrors($validated); // redirect kembali dengan pesan error
+            $manylomba = lomba::all();
+            return redirect()->route('create galeri', compact('manylomba'))->withErrors($validated); // redirect kembali dengan pesan error
         } else {
             
             // akan membuat data baru

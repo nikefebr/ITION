@@ -106,7 +106,9 @@ class PelangganController extends Controller
     public function destroy(pelanggan $pelanggan)
     {
         //fungsi eloquent untuk menghapus data
+        $pelanggan->lomba()->detach();
         $pelanggan->delete();
+        
         return redirect()->route('view pelanggan')->with('success', 'Pelanggan Berhasil Dihapus!');
     }
 
@@ -144,7 +146,8 @@ class PelangganController extends Controller
         
         // mengecek apabila terdapat error atau tidak
         if ($validated->fails()) {
-            return redirect()->route('create newsletter')->withErrors($validated); // redirect kembali dengan pesan error
+            $manylomba = lomba::all();
+            return redirect()->route('create newsletter',compact('manylomba'))->withErrors($validated); // redirect kembali dengan pesan error
         } else {
             
             $id_pelanggan = pelanggan::all();

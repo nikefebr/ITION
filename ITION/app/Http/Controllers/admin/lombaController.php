@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LombaController extends Controller
 {
@@ -68,7 +69,9 @@ class LombaController extends Controller
                 
                 // mengecek apabila terdapat error atau tidak
                 if ($validated->fails()) {
-                    return redirect()->route('create lomba')->withErrors($validated); // redirect kembali dengan pesan error
+                    $manykategori = Kategori::all();
+                    $manypenyelenggara = penyelenggara_lomba::all();
+                    return redirect()->route('create lomba', compact('manykategori','manypenyelenggara'))->withErrors($validated); // redirect kembali dengan pesan error
                 } else {
                     
                     // akan membuat data baru dengan reviewer
@@ -170,7 +173,9 @@ class LombaController extends Controller
                 
                 // mengecek apabila terdapat error atau tidak
                 if ($validated->fails()) {
-                    return redirect()->route('edit lomba',compact('lomba'))->withErrors($validated); // redirect kembali dengan pesan error
+                    $manykategori = Kategori::all();
+                    $manypenyelenggara = penyelenggara_lomba::all();
+                    return redirect()->route('edit lomba',compact('lomba','manykategori','manypenyelenggara'))->withErrors($validated); // redirect kembali dengan pesan error
                 } else { 
                     
                     $admin = admin::find(Auth::id());
@@ -237,14 +242,22 @@ class LombaController extends Controller
         
         $lomba->pelanggan()->detach(); //menghapus semua newsletter yang terhubung dengan lomba
 
-        /*if (galeri::find($lomba->id_lomba);) {
-            $lomba->galeri()->get()->delete(); //menghapus semua galeri yang terhubung dengan lomba
-        }*/
-        
+
+        $datagaleri = galeri::where('id_lomba', $lomba->id_lomba)->get();
+        $data = NULL;
+
+        foreach($datagaleri as $gallery):
+        $data = $gallery->id_lomba;
+        endforeach;
+        echo $data.$lomba->id_lomba;
         
         $lomba->admin()->detach(); //menghapus semua data pengisian galeri yang terhubung dengan lomba
         $lomba->reviewer()->detach(); //menghapus semua newsletter yang terhubung dengan lomba
+        if ($data == $lomba->id_lomba) {
+            return redirect()->route('view lomba')->withErrors('Masih ada galeri yang berhubungan dengan lomba');
+        }
         $lomba->delete(); //menghapus data dari reviewer tersebut
+        
 
         return redirect()->route('view lomba')->with('success', 'Lomba '.$lomba->judul.' Berhasil Dihapus!');
     }
