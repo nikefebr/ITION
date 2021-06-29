@@ -94,6 +94,6 @@ class lomba extends Model
      */
     public function reviewer()
     {
-        return $this->belongsToMany(reviewer::class, 'testimoni', 'id_lomba', 'id_reviewer')->using(testimoni::class);
+        return $this->belongsToMany(reviewer::class, 'testimoni', 'id_lomba', 'id_reviewer')->withPivot('tahun_lomba','testimoni');
     }
 }
