@@ -27,7 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0" style="font-family: Montserrat;">Data Penyelenggara Lomba</h1>
+              <h1 class="m-0" style="font-family: Montserrat;">Edit Testimoni</h1>
             </div><!-- /.col -->
             
 
@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header" style="background-color: #003567">
-                  <h3 class="card-title" style="font-family: Montserrat;">Tambah Penyelenggara Lomba baru</h3>
+                  <h3 class="card-title" style="font-family: Montserrat;">Tambah Testimoni Baru</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -46,27 +46,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action='{{ route('update penyelenggara lomba', $penyelenggara->id_penyelenggara) }}'>
+                <form method="post" action='/admin/testimoni'>
                   @csrf
-                  @method('PUT')
                   <div class="card-body">
-                    <div class="form-group">
-                      <label for="nama_penyelenggara">Nama Penyelenggara</label>
-                      <input type="text" class="form-control" id="nama_penyelenggara" name="nama_penyelenggara" value="{{ $penyelenggara->nama_penyelenggara }}" placeholder="Nama Penyelenggara">
-                    </div>
+                  <div class="form-group">
+                    <label for="id_penyelenggara">Nama Lomba</label>
+                    <select class="form-control" id='id_lomba' name="id_lomba">
+
+                      @foreach ($manylomba as $lomba)
+                        <option value="{{$lomba->id_lomba}}">{{$lomba->judul}}</option>
+                      @endforeach
+
+                     </select>
                   </div>
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label for="kontak">Nomor Kontak</label>
-                      <input type="text" class="form-control" id="kontak" name="kontak" value="{{ $penyelenggara->kontak }}" placeholder="Nomor Kontak">
-                    </div>
+
+                  <div class="form-group">
+                    <label for="id_penyelenggara">Nama Reviewer</label>
+                    <select class="form-control" id='id_reviewer' name="id_reviewer">
+
+                      @foreach ($manyreviewer as $reviewer)
+                        <option value="{{$reviewer->id_reviewer}}">{{$reviewer->nama}}</option>
+                      @endforeach
+
+                     </select>
                   </div>
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label for="nama_kontak">Nama Kontak</label>
-                      <input type="tel" class="form-control" id="nama_kontak" name="nama_kontak" value="{{ $penyelenggara->nama_kontak }}" placeholder="Nama Kontak">
-                    </div>
+
+                  <div class="form-group">
+                    <label for="angkatan">Tahun Lomba</label>
+                    <select class="form-control" id='tahun_lomba' name="tahun_lomba">
+
+                      @for ($year = (int)date('Y'); 2001 <= $year; $year--)
+                        <option value="{{$year}}">{{$year}}</option>
+                      @endfor
+
+                      <option value="2000" selected >2000</option>
+
+                     </select>
                   </div>
+
+                  <div class="form-group">
+                    <label>Isi Testimoni</label>
+                    <textarea class="form-control" id='testimoni' name="testimoni" rows="3" placeholder="Testimoni" value=""></textarea>
+                  </div>
+                </div>
+                  
                   <!-- /.card-body -->
   
                   <div class="card-footer">

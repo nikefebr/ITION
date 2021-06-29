@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\reviewer;
+use App\Models\lomba;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Redirector;
@@ -122,7 +123,7 @@ class ReviewerController extends Controller
 
         //throw exception error
         if ($validated->fails()) {
-            return redirect()->route('create reviewer')->withErrors($validated);
+            return redirect()->route('edit reviewer')->withErrors($validated);
         }
         else {
             $id_reviewer = $reviewer->id_reviewer;
@@ -159,8 +160,8 @@ class ReviewerController extends Controller
     public function destroy(reviewer $reviewer)
     {
         Storage::disk('public_image')->delete('reviewer/'.$reviewer->foto); //menghapus gambar
-
-        $request->lomba()->detach(); //menghapus semua testimoni yang terhubung drngan reviewer
+        
+        $reviewer->lomba()->detach(); //menghapus semua testimoni yang terhubung drngan reviewer
         $reviewer->delete(); //menghapus data dari reviewer tersebut
 
         return redirect()->route('view reviewer')->with('success', 'Reviewer '.$reviewer->nama.' Berhasil Dihapus!');

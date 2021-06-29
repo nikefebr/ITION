@@ -16,6 +16,7 @@ class galeri extends Model
         'foto',
         'deskripsi',
         'tgl_foto',
+        'id_lomba',
     ];
 
     /**
@@ -23,7 +24,7 @@ class galeri extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function admin(): BelongsToMany
+    public function admin()
     {
         return $this->belongsToMany(admin::class, 'pengisian_galeri', 'id_galeri', 'id_admin')->withTimestamps();
     }
@@ -33,7 +34,7 @@ class galeri extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function lomba(): BelongsTo
+    public function lomba()
     {
         return $this->belongsTo(lomba::class);
     }

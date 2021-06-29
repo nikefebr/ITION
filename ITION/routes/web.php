@@ -46,13 +46,13 @@ Route::group(['prefix' => 'admin'], function ()
 
         Route::resource('/lomba', App\Http\Controllers\admin\LombaController::class)
             ->names([ //sebagai nama setiap route supaya lebih mudah memberikan nama pada head dan title
-            'index' => 'lomba view',
-            'update' => 'lomba update',
-            'create' => 'lomba create',
-            'show' => 'lomba show',
-            'edit' => 'lomba edit',
-            'destroy' => 'lomba destroy',
-            'store' => 'lomba store',
+            'index' => 'view lomba',
+            'update' => 'update lomba',
+            'create' => 'create lomba',
+            'show' => 'show lomba',
+            'edit' => 'edit lomba',
+            'destroy' => 'destroy lomba',
+            'store' => 'store lomba',
             ]); 
 
         Route::resource('/kategori', App\Http\Controllers\admin\KategoriController::class)
@@ -108,7 +108,24 @@ Route::group(['prefix' => 'admin'], function ()
                 'edit' => 'edit galeri',
                 'destroy' => 'destroy galeri',
                 'store' => 'store galeri',
-            ]);     
+            ]); 
+        
+        Route::resource('/testimoni',App\Http\Controllers\admin\TestimoniController::class)
+            ->except(['destroy','edit','update'])
+            ->names([
+                'index' => 'view testimoni',
+                'create' => 'create testimoni',
+                'show' => 'show testimoni',
+                'store' => 'store testimoni',
+            ]);
+        
+        Route::delete('/testimoni/{id_lomba}/{id_reviewer}',[App\Http\Controllers\admin\TestimoniController::class, 'destroy'])->name('destroy testimoni');
+        Route::put('/testimoni/{id_lomba}/{id_reviewer}',[App\Http\Controllers\admin\TestimoniController::class, 'update'])->name('update testimoni');
+        Route::get('/testimoni/{id_lomba}/{id_reviewer}/edit',[App\Http\Controllers\admin\TestimoniController::class, 'edit'])->name('edit testimoni');
+
+        Route::get('/newsletter/create',[App\Http\Controllers\admin\PelangganController::class, 'create_newsletter'])->name('create newsletter');
+        Route::post('/newsletter',[App\Http\Controllers\admin\PelangganController::class, 'store_newsletter'])->name('store newsletter');
+        Route::get('/newsletter',[App\Http\Controllers\admin\PelangganController::class, 'index_newsletter'])->name('view newsletter');
     });
 });
 

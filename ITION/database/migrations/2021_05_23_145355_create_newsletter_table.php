@@ -24,6 +24,9 @@ class CreateNewsletterTable extends Migration
             $table->primary(['id_pelanggan','id_lomba']);
             //end foreign key as composite key
 
+            $table->string('subyek')->nullable();
+            $table->text('isi')->nullable();
+            
             $table->timestamps();
         });
     }
