@@ -191,6 +191,30 @@
             </ul>
           </li>
 
+          <li class="nav-item">
+            <a href="#" class="{{ (request()->is('admin/testimoni*')) ? 'active' : '' }} nav-link">
+              <i class="nav-icon fas fa-comment-dots"></i>
+              <p>
+                Testimoni Lomba
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/admin/testimoni/create') }}" class="{{ (request()->is('admin/testimoni/create')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah baru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/testimoni') }}" class="{{ (request()->is('admin/testimoni')) ? 'active' : '' }} nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tampilkan data</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
 
           <!--
           <li class="nav-item">

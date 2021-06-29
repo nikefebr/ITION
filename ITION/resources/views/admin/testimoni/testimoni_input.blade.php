@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- add header -->
   @include('admin.layout.header')
+  @include('snippets/fonts')
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -19,22 +20,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="font-family: Roboto;">
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0">Data Reviewer Lomba</h1>
+              <h1 class="m-0" style="font-family: Montserrat;">Edit Testimoni</h1>
             </div><!-- /.col -->
             
 
             <div class="col-12">
               <!-- general form elements -->
             <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title">Edit Reviewer baru</h3>
+                <div class="card-header" style="background-color: #003567">
+                  <h3 class="card-title" style="font-family: Montserrat;">Tambah Testimoni Baru</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -45,42 +46,54 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action='{{ route('update reviewer', $reviewer->id_reviewer) }}' enctype="multipart/form-data">
+                <form method="post" action='/admin/testimoni'>
                   @csrf
-                  @method('PUT')
                   <div class="card-body">
-                    <div class="form-group">
-                      <label for="nama">Nama Reviewer</label>
-                      <input type="text" class="form-control" id="nama" name="nama" value="{{ $reviewer->nama }}" placeholder="Nama Reviewer">
-                    </div>
+                  <div class="form-group">
+                    <label for="id_penyelenggara">Nama Lomba</label>
+                    <select class="form-control" id='id_lomba' name="id_lomba">
 
-                    <div class="form-group">
-                      <label for="angkatan">Angkatan</label>
-                      <select class="form-control" id='angkatan' name="angkatan">
-  
-                        @for ($year = (int)date('Y'); 2001 <= $year; $year--)
-                          <option value="{{$year}}">{{$year}}</option>
-                        @endfor
-  
-                        <option value="{{ $reviewer->angkatan }}" selected >{{ $reviewer->angkatan }}</option>
-  
-                       </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="input foto">Foto</label>
-                      <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="foto" name="foto" value="{{ $reviewer->foto }}">
-                          <label for="foto" class="custom-file-label">Choose file</label>
-                        </div>
-                      </div>
-                    </div>
+                      @foreach ($manylomba as $lomba)
+                        <option value="{{$lomba->id_lomba}}">{{$lomba->judul}}</option>
+                      @endforeach
+
+                     </select>
                   </div>
+
+                  <div class="form-group">
+                    <label for="id_penyelenggara">Nama Reviewer</label>
+                    <select class="form-control" id='id_reviewer' name="id_reviewer">
+
+                      @foreach ($manyreviewer as $reviewer)
+                        <option value="{{$reviewer->id_reviewer}}">{{$reviewer->nama}}</option>
+                      @endforeach
+
+                     </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="angkatan">Tahun Lomba</label>
+                    <select class="form-control" id='tahun_lomba' name="tahun_lomba">
+
+                      @for ($year = (int)date('Y'); 2001 <= $year; $year--)
+                        <option value="{{$year}}">{{$year}}</option>
+                      @endfor
+
+                      <option value="2000" selected >2000</option>
+
+                     </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Isi Testimoni</label>
+                    <textarea class="form-control" id='testimoni' name="testimoni" rows="3" placeholder="Testimoni" value=""></textarea>
+                  </div>
+                </div>
+                  
                   <!-- /.card-body -->
   
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #FFDE27; color:#212529; border:0;">Submit</button>
                   </div>
                 </form>
               </div>
@@ -115,20 +128,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- jQuery -->
 
  <script src="{{ asset('js/app.js') }}"></script>
- 
- <script>
-
-    $('#foto').on('change',function () {
-
-    var filename = $(this).val();
-
-   $(this).next('.custom-file-label').html(filename);
-   
- });
-
-
- </script>
-
 <!-- 
      jQuery 
 <script src="plugins/jquery/jquery.min.js"></script>
