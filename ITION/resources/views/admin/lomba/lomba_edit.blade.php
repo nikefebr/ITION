@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper"  style="font-family: Roboto;">
+  <div class="content-wrapper" style="font-family: Roboto;">
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
