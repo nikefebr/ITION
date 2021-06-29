@@ -23,8 +23,9 @@ class LombaController extends Controller
         if($_GET){
             if(!empty($_GET['query'])){
                 $data = DB::table('lomba')
-                ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
-                ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori')
+                ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
+                ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                 ->where('lomba.deadline', '>=', $today)
                 ->where('lomba.judul', 'LIKE', '%'.$_GET['query'].'%')
                 ->orWhere('kategori.nama_kategori', 'LIKE', '%'.$_GET['query'].'%')
@@ -35,8 +36,9 @@ class LombaController extends Controller
                 if(!empty($_GET['kategori']) || !empty($_GET['bulan'])){
                     if(empty($_GET['bulan'])){
                         $data = DB::table('lomba')
-                        ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
-                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                        ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori')
+                        ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba') 
+                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                         ->where('lomba.deadline', '>=', $today)
                         ->where('kategori.id_kategori', '=', $_GET['kategori'])
                         ->orderBy('lomba.deadline')
@@ -45,8 +47,9 @@ class LombaController extends Controller
                     }
                     elseif(empty($_GET['kategori'])){
                         $data = DB::table('lomba')
-                        ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
-                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                        ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori')
+                        ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
+                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                         ->where('lomba.deadline', '>=', $today)
                         ->whereMonth('lomba.deadline', $_GET['bulan'])
                         ->orderBy('lomba.deadline')
@@ -56,10 +59,11 @@ class LombaController extends Controller
                     else{
                         $data = DB::table('lomba')
                         ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori')
+                        ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
                         ->where('lomba.deadline', '>=', $today)
                         ->where('kategori.id_kategori', '=', $_GET['kategori'])
                         ->whereMonth('lomba.deadline', $_GET['bulan'])
-                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                         ->orderBy('lomba.deadline')
                         ->get();
                         $selectedKategori = $_GET['kategori'];
@@ -69,8 +73,9 @@ class LombaController extends Controller
                 }
                 else{
                     $data = DB::table('lomba')
-                    ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
-                    ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                    ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori')
+                    ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
+                    ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                     ->where('lomba.deadline', '>=', $today)
                     ->orderBy('lomba.deadline')
                     ->get();
@@ -80,7 +85,8 @@ class LombaController extends Controller
         else{
             $data = DB::table('lomba')
                 ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
-                ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
+                ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                 ->where('lomba.deadline', '>=', $today)
                 ->orderBy('lomba.deadline')
                 ->get();
@@ -99,7 +105,8 @@ class LombaController extends Controller
         $data = DB::table('lomba')
                 ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori')
                 ->join('penyelenggara_lomba', 'lomba.id_penyelenggara', '=', 'penyelenggara_lomba.id_penyelenggara')
-                ->select('lomba.*','kategori.*','penyelenggara_lomba.*')
+                ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
+                ->select('lomba.*','kategori.*','penyelenggara_lomba.*','pengisian_lomba.*')
                 ->where('lomba.id_lomba', '=', $id_lomba)
                 ->get();
         if(empty($data)){

@@ -43,7 +43,7 @@
                     <div class="col-md-2 col-sm-6">
                         <div class="card-body">
                             <p class="card-text fw-normal font-14px" style="font-family: Roboto;">
-                                PUBLISH
+                            {{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }}
                             </p>
 
                             <p class="card-text font-14px text-uppercase" style="font-family: Roboto;">
