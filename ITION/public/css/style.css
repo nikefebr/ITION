@@ -100,16 +100,6 @@ li a:hover {
     padding-bottom: 10px;
 }
 
-.white-button {
-    background-color: white;
-    border-color: #FFDE27;
-    border-radius: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .white-button-daftar {
     background-color: white;
     border-color: #FFDE27;
@@ -137,16 +127,6 @@ li a:hover {
     border-radius: 10px;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.button-lomba {
-    background-color: #FFDE27;
-    border: none;
-    border-radius: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
