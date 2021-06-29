@@ -143,15 +143,14 @@ class PelangganController extends Controller
             'isi' => ['required']
         ]);
 
-        
         // mengecek apabila terdapat error atau tidak
         if ($validated->fails()) {
-            return redirect()->route('create newsletter')->withErrors($validated); // redirect kembali dengan pesan error
+            $manylomba = lomba::all();
+            return redirect()->route('create newsletter',compact('manylomba'))->withErrors($validated); // redirect kembali dengan pesan error
         } else {
             
             $id_pelanggan = pelanggan::all();
             $lomba = lomba::find(request('id_lomba'));
-
             
             foreach ($id_pelanggan as $pelanggan):
             $lomba->pelanggan()->attach($pelanggan['id_pelanggan'],['subyek' => request('subyek'),'isi' => request('isi')]);

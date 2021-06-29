@@ -41,11 +41,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                          @if ($message = Session::get('success'))
-                          <div class="card-header">
+                          
+                          
+                            @if ($message = Session::get('success'))
+                            <div class="card-header">
                             <p class="alert alert-success card-text">{{ $message }}</p>
-                          </div>
-                          @endif
+                            </div>
+                            @endif
+                            @if ($errors->any())
+                              @foreach ($errors->all() as $error)
+                              <div class="card-header">
+                            <p class="alert alert-danger card-text">{{$error}}</p>
+                              </div>
+                                @endforeach
+                            @endif
+                          
                         <div class="card-header">
                           <h3 class="card-title" style="font-family: Montserrat;">Daftar Penyelenggara Lomba</h3>
                         </div>
@@ -77,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <a class="btn btn-warning" href="{{ route('edit penyelenggara lomba', $penyelenggara->id_penyelenggara) }}">Edit</button></a>
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit"class="btn btn-danger" onclick="confirm('Penyelenggara lomba yang dibuat akan dihapus\nPastikan data lomba sudah dihapus semua')">Delete</button>
+                                  <button type="submit"class="btn btn-danger" onclick="return(confirm('Penyelenggara lomba yang dibuat akan dihapus\nPastikan data lomba sudah dihapus semua'))">Delete</button>
                                 </div>
                               </form>
                               </td>

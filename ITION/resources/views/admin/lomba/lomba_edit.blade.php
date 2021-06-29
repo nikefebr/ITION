@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- add header -->
   @include('admin.layout.header')
+  @include('snippets/fonts')
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -19,22 +20,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('admin.layout.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="font-family: Roboto;">
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6 p-3 mb-4">
-              <h1 class="m-0">Data Lomba</h1>
+              <h1 class="m-0" style="font-family: Montserrat;">Data Lomba</h1>
             </div><!-- /.col -->
             
 
             <div class="col-12">
               <!-- general form elements -->
             <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title">Edit Reviewer baru</h3>
+                <div class="card-header"  style="background-color: #003567">
+                  <h3 class="card-title"  style="font-family: Montserrat;">Edit Lomba baru</h3>
 
                   @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -158,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- /.card-body -->
   
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #FFDE27; color:#212529; border:0;">Submit</button>
                   </div>
                 </form>
               </div>

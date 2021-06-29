@@ -48,4 +48,37 @@
 }
 
 
+section.sticky{
+	position: fixed;
+}
 
+#sticky_scrolled{
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	margin-top: 126vh;
+	margin-left: 63vw;
+}
+
+.text-areas{
+	width: 60vw;
+	text-align: justify;
+}
+
+.text-body{
+	font-size: 17px;
+	line-height: 32px;
+}
+
+.text-title{
+	font-size: 27px;
+}
+
+.button-daftar-lomba{
+	margin-left: 10px;
+	margin-bottom: 25px;
+}
+
+.white-button-daftar {
+	margin-left: 25px;
+}

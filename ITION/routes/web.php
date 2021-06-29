@@ -115,7 +115,20 @@ Route::group(['prefix' => 'admin'], function ()
                 'edit' => 'edit galeri',
                 'destroy' => 'destroy galeri',
                 'store' => 'store galeri',
-            ]);     
+            ]); 
+        
+        Route::resource('/testimoni',App\Http\Controllers\admin\TestimoniController::class)
+            ->except(['destroy','edit','update'])
+            ->names([
+                'index' => 'view testimoni',
+                'create' => 'create testimoni',
+                'show' => 'show testimoni',
+                'store' => 'store testimoni',
+            ]);
+        
+        Route::delete('/testimoni/{id_lomba}/{id_reviewer}',[App\Http\Controllers\admin\TestimoniController::class, 'destroy'])->name('destroy testimoni');
+        Route::put('/testimoni/{id_lomba}/{id_reviewer}',[App\Http\Controllers\admin\TestimoniController::class, 'update'])->name('update testimoni');
+        Route::get('/testimoni/{id_lomba}/{id_reviewer}/edit',[App\Http\Controllers\admin\TestimoniController::class, 'edit'])->name('edit testimoni');
 
         Route::get('/newsletter/create',[App\Http\Controllers\admin\PelangganController::class, 'create_newsletter'])->name('create newsletter');
         Route::post('/newsletter',[App\Http\Controllers\admin\PelangganController::class, 'store_newsletter'])->name('store newsletter');

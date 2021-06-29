@@ -10,5 +10,6 @@
             text-transform: uppercase;
         }
     </style>
+      @include('snippets/fonts')
 </head>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Kategori;
+use App\Models\lomba;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Redirector;
@@ -118,6 +119,17 @@ class KategoriController extends Controller
     public function destroy(Kategori $kategori)
     {
         //fungsi eloquent untuk menghapus data
+        $datakategori = lomba::where('id_kategori', $kategori->id_kategori)->get();
+        $data = NULL;
+
+        foreach($datakategori as $category):
+        $data = $category->id_kategori;
+        endforeach;
+
+        if ($data == $kategori->id_kategori) {
+            return redirect()->route('view kategori')->withErrors('Masih ada lomba yang berhubungan dengan kategori '.$kategori->nama_kategori);
+        }
+
         $kategori->delete();
         return redirect()->route('view kategori')->with('success', 'Kategori Berhasil Dihapus!');
     }

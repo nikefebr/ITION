@@ -73,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <form method="post" action="{{ route('destroy pelanggan', $pelanggan->id_pelanggan) }}" >
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit"class="btn btn-danger" onclick="confirm('Data pelanggan yang dihapus tidak lagi menerima newsletter, lanjutkan?')">Delete</button>
+                                  <button type="submit"class="btn btn-danger" onclick="return(confirm('Data pelanggan yang dihapus tidak lagi menerima newsletter, lanjutkan?'))">Delete</button>
                               </form>
                               </td>
                             </tr>
