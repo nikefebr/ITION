@@ -41,11 +41,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                          @if ($message = Session::get('success'))
-                          <div class="card-header">
+                            @if ($message = Session::get('success'))
+                            <div class="card-header">
                             <p class="alert alert-success card-text">{{ $message }}</p>
-                          </div>
-                          @endif
+                           </div>
+                            @endif
+                            @if ($errors->any())
+                              @foreach ($errors->all() as $error)
+                            <div class="card-header">
+                            <p class="alert alert-danger card-text">{{$error}}</p>
+                            </div>
+                                @endforeach
+                            @endif
+                          
+                          
                         <div class="card-header">
                           <h3 class="card-title" style="font-family: Montserrat;">Daftar Kategori</h3>
                         </div>

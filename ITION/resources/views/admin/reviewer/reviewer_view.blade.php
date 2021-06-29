@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <a class="btn btn-warning" href="{{ route('edit reviewer', $reviewer->id_reviewer) }}">Edit</button></a>
                                   @csrf
                                   @method('DELETE')
-                                  <button type="submit"class="btn btn-danger" onclick="confirm('Reviewer {{ $reviewer->nama }} akan dihapus, lanjutkan?')">Delete</button>
+                                  <button type="submit"class="btn btn-danger" onclick="return(confirm('Reviewer {{ $reviewer->nama }} akan dihapus, lanjutkan?'))">Delete</button>
                                 </div>
                               </form>
                               </td>
