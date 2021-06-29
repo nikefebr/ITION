@@ -75,14 +75,34 @@ footer img{
     <main class="container" style="font-family: Roboto;">
         <img src="https://rpl.pens.ac.id/project/ition/public/image/tentang/ition.png" class="header-img">
         <!--
-        <img src="{{ url('image/tentang/ition-minimalis.png') }}" class="header-img">
+        <img src="{{ url('image/lomba/'.$details['poster']) }}" class="header-img">
         -->
         <div class="body">
-            <h2>Terima Kasih,</h2>
+            <h2>{{$details['judul_lomba']}}</h2>
             
-            <p>telah berlangganan informasi lomba terbaru dari kami. Nantikan informasi selengkapnya mengenai informasi lomba - lomba terbaru.</p>
+            <p>{{ $details['deskripsi'] }}</p>
+
+            <h4>Juara + Hadiah : </h4>
+            @if(!empty($details['hadiah_juara_1']))
+            <p>Juara 1 : {{ $details['hadiah_juara_1'] }}</p>
+            @endif
+            @if(!empty($details['hadiah_juara_2']))
+            <p>Juara 2 : {{ $details['hadiah_juara_2'] }}</p>
+            @endif
+            @if(!empty($details['hadiah_juara_3']))
+            <p>Juara 3 : {{ $details['hadiah_juara_3'] }}</p>
+            @endif
+            @if(!empty($details['lainnya']))
+            <p>{{ $details['lainnya'] }}</p>
+            @endif
             
-            <a href="{{ url('') }}"><button>VISIT US!</button></a>
+            <h4>Biaya : </h4>
+            <p>{{ $details['biaya'] }}</p>
+
+            <h4>Deadline : </h4>
+            <p>{{ \Carbon\Carbon::parse($details['deadline'])->format('d F Y') }}</p>
+            
+            <a href="{{ url('lomba/'.$details['id_lomba']) }}"><button>Baca Selengkapnya</button></a>
         </div>
 
     </main>

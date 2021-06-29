@@ -11,14 +11,18 @@ class NewsletterLomba extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $details;
+    private $judul;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($details)
     {
         //
+        $this->details = $details;
+        $this->judul = $details['subyek'];
     }
 
     /**
@@ -28,6 +32,6 @@ class NewsletterLomba extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject($this->judul)->view('newsletter.n_lomba');
     }
 }

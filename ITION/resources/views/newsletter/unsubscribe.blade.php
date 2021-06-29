@@ -80,7 +80,7 @@ footer img{
             
             <p>Silakan klik tombol biru dibawah ini untuk mengkonfirmasi bahwa anda ingin segera berhenti berlangganan.</p>
             
-            <a href="{{ url('success-unsubscribe/'.$data['email']) }}"><button>BERHENTI BERLANGGANAN</button></a>
+            <a href="{{ url('success-unsubscribe/'.$data['id']) }}"><button>BERHENTI BERLANGGANAN</button></a>
         </div>
 
     </main>
