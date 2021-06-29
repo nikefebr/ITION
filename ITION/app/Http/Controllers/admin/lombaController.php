@@ -242,7 +242,6 @@ class LombaController extends Controller
         
         $lomba->pelanggan()->detach(); //menghapus semua newsletter yang terhubung dengan lomba
 
-
         $datagaleri = galeri::where('id_lomba', $lomba->id_lomba)->get();
         $data = NULL;
 
@@ -257,7 +256,6 @@ class LombaController extends Controller
             return redirect()->route('view lomba')->withErrors('Masih ada galeri yang berhubungan dengan lomba');
         }
         $lomba->delete(); //menghapus data dari reviewer tersebut
-        
 
         return redirect()->route('view lomba')->with('success', 'Lomba '.$lomba->judul.' Berhasil Dihapus!');
     }

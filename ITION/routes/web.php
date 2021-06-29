@@ -5,6 +5,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\LombaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\admin\KategoriController;
 use App\Http\Controllers\admin\PelangganController;
 use App\Http\Controllers\admin\PenyelenggaraLombaController;
@@ -31,6 +32,12 @@ Route::get('/testimoni', [TestimoniController::class, 'index']);
 Route::get('/galeri',[GaleriController::class, 'index']);
 
 Route::view('/tentang', 'tentang.tentang');
+
+Route::get('/subscribe',[NewsletterController::class, 'subscribe'])->name('subscribe');
+
+Route::get('/unsubscribe/{email?}',[NewsletterController::class, 'unsubscribe'])->name('unsubscribe');
+
+Route::get('/success-unsubscribe/{email?}',[NewsletterController::class, 'success_unsubscribe'])->name('success-unsubscribe');
 
 //Apabila mengubah nama pada route diharapkan untuk mengubah juga baik pada blade.php maupun controllernya
 

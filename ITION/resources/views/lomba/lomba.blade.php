@@ -74,40 +74,32 @@
                     <div class="row mx-auto">
                         <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 26px 26px 0px 0px; max-width: 370px; height: 370px;">
                         
-                        <p class="card-text ps-3 text-grey pt-2">Publish </p>
+                        <p class="card-text ps-3 text-grey pt-2">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }} </p>
                     </div>
 
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
-                            <div class="card-body">
-                                <h5 class="card-text fw-bold text-blue font-16px">{{ $item->judul }}</h5>
-                                <h6 class="card-text fw-light text-blue font-14px">{{ $item->nama_kategori }}</h6>
-                                
-                                <p class="card-text text-grey mt-4 font-12px">
-                                {{ \Illuminate\Support\Str::limit($item->deskripsi, 50, $end='...') }}
-                                </p>
-                            </div>
-                        </div>
                         <div class="card-body">
-                                    <h5 class="card-text fw-bold text-blue font-12px">{{ $item->judul }}</h5>
-                                    <h6 class="card-text fw-light text-blue font-12px">{{ $item->nama_kategori }}</h6>
+                                <h5 class="card-text fw-bold text-blue font-12px">{{ $item->judul }}</h5>
+                                <h6 class="card-text fw-light text-blue font-12px">{{ $item->nama_kategori }}</h6>
                                     
-                                    <p class="card-text text-grey mt-4 font-12px">
+                                <p class="card-text text-grey mt-4 font-12px">
                                     {{ \Illuminate\Support\Str::limit($item->deskripsi, 25, $end='...') }}
-                                    </p>
+                                </p>
                                 
-                                 <div class="card-body bg-blue-2 text-center blue-box">
-                                        <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
-                                        PENDAFTARAN</p>
+                                <div class="card-body bg-blue-2 text-center blue-box">
+                                    <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
+                                    PENDAFTARAN</p>
 
-                                        <div class="p-1"></div>
-                                        
-                                        <p class="card-text mt-4 text-white font-12px text-uppercase">
-                                        {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
-                                        </p>
+                                    <div class="p-1"></div>
+                                    
+                                    <p class="card-text mt-4 text-white font-12px text-uppercase">
+                                    {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
+                                    </p>
                                 </div>
                                 <button class="button-katalog fw-bolder text-blue-2 card-button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
-                        </div>
+                            </div>
+                        </div>                            
                     </div>      
                 </div>
                 @endforeach

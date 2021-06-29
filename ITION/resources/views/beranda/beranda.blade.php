@@ -155,7 +155,7 @@
                         <div class="card" style="width: 20rem; height: 450px; border-radius:20px">
                                 <div class="">
                                     <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 370px; height: 300px;">
-                                    <p class="card-text ps-3 text-grey pt-2"  style="font-family: Roboto; font-size: 8pt;">Publish </p>
+                                    <p class="card-text ps-3 text-grey pt-2"  style="font-family: Roboto; font-size: 8pt;">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }} </p>
                                 </div>
 
                             <div class="card-body">

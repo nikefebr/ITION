@@ -46,7 +46,8 @@ class BerandaController extends Controller
             
         $lomba = DB::table('lomba')
                 ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
-                ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
+                ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                 ->where('lomba.deadline', '>=', $today)        
                 ->orderBy('lomba.deadline')
                 ->offset($total_lomba)

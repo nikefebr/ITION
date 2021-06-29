@@ -5,9 +5,11 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\pelanggan;
 use App\Models\lomba;
+use App\Mail\NewsletterLomba;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 
 class PelangganController extends Controller
@@ -141,9 +143,6 @@ class PelangganController extends Controller
             'isi' => ['required']
         ]);
 
-        
-        
-        
         // mengecek apabila terdapat error atau tidak
         if ($validated->fails()) {
             $manylomba = lomba::all();
@@ -152,14 +151,30 @@ class PelangganController extends Controller
             
             $id_pelanggan = pelanggan::all();
             $lomba = lomba::find(request('id_lomba'));
-
-
+            
             foreach ($id_pelanggan as $pelanggan):
             $lomba->pelanggan()->attach($pelanggan['id_pelanggan'],['subyek' => request('subyek'),'isi' => request('isi')]);
+        
+            $details = [
+                'subyek' => request('subyek'),
+                'id_lomba' => $lomba->id_lomba,
+                'judul_lomba' => $lomba->judul,
+                'poster' => $lomba->poster,
+                'deskripsi' => $lomba->deskripsi,
+                'deadline' => $lomba->deadline,
+                'biaya' => $lomba->biaya,  
+                'timeline' => $lomba->timeline, 
+                'hadiah_juara_1' => $lomba->hadiah_juara_1,
+                'hadiah_juara_2' => $lomba->hadiah_juara_2,
+                'hadiah_juara_3' => $lomba->hadiah_juara_3, 
+                'lainnya' => $lomba->lainnya,
+                'email' => $pelanggan->email
+            ];
+            Mail::to($pelanggan->email)->send(new NewsletterLomba($details));
             endforeach;
-
+            
             //redirect
-            return redirect()->route('view pelanggan')->with('success','Pelanggan baru berhasil dibuat!');
+            return redirect()->route('view newsletter')->with('success','Newsletter Berhasil Dikirim!');
         }
     }
 

@@ -93,6 +93,7 @@ class TestimoniController extends Controller
      * @param  \App\Models\testimoni  $testimoni
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id_lomba,$id_reviewer)
     {
         
@@ -104,6 +105,7 @@ class TestimoniController extends Controller
         $manyreviewer = reviewer::all(); //mengambil semua isi tabel
         
         return view('admin.testimoni.testimoni_edit',compact('manylomba','manyreviewer','manytestimoni'));
+
     }
 
     /**
@@ -113,6 +115,7 @@ class TestimoniController extends Controller
      * @param  \App\Models\testimoni  $testimoni
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request,$id_lomba,$id_reviewer)
     {
         // membuat validasi untuk memvalidasi isi data
