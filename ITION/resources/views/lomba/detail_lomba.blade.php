@@ -11,7 +11,7 @@
     <div class="p-4"></div>
 
     <div class="bg-overlay px-5">
-        <button class="button-exit fw-bolder text-blue-2" onclick="window.location='{{ url("lomba") }}'">
+        <button class="button-exit fw-bolder text-blue-2" onclick="window.location='{{ url()->previous() }}'">
             <img class="mx-auto image-fluid" src="{{asset('logo/exit.png')}}">
         </button>
 
@@ -95,7 +95,7 @@
                         Informasi CP : <br>
                         WA. +{{ $item->kontak }} ({{ $item->nama_kontak }}) <br>
                         </h5>
-                        <a href="https://wa.me/{{ $item->kontak }}" class="font-16px px-3">Klik disini untuk menghubungi <br> CP !</a>
+                        <a href="https://wa.me/{{ $item->kontak }} target="_blank"" class="font-16px px-3">Klik disini untuk menghubungi <br> CP !</a>
 
                         <div class="p-3"></div>
 
