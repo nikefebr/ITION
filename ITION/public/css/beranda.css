@@ -1,0 +1,164 @@
+#cardfoto {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+#fototestimoni {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    align-content: center;
+}
+
+#tekstestimoni {
+    border-radius: 20px;
+}
+
+.carousel-control-prev-icon {
+    background: black;
+    border-radius: 5px;
+    margin-right: 100px;
+}
+
+.carousel-control-next-icon {
+    background-color: black;
+    border-radius: 5px;
+    margin-left: 100px;
+}
+
+#selengkapnya {
+    text-decoration: none;
+    color: black;
+    margin-left: 900px;
+}
+
+.bg-blue {
+    background-color: #003567;
+}
+
+.bg-blue-gradient {
+    background: linear-gradient(112.26deg, #003567 0.79%, #00203E 103.66%);
+}
+
+.bg-yellow-ition {
+    background: rgba(255, 222, 39, 0.2);
+}
+
+.button {
+    background-color: #FFDE27;
+    border: none;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.button-katalog {
+    background-color: #FFDE27;
+    border: none;
+    border-radius: 0px 0px 26px 26px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.font-12px {
+    font-size: 12px;
+}
+
+.font-14px {
+    font-size: 14px;
+}
+
+.font-16px {
+    font-size: 16px;
+}
+
+.font-18px {
+    font-size: 18px;
+}
+
+.white-button {
+    background-color: #FFFFFF;
+    border: 3px solid #FFDE27;
+    border-radius: 10px;
+    text-align: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 810px;
+}
+
+.text-blue-2 {
+    color: #003567;
+}
+
+.text-white {
+    color: white;
+}
+
+.batas-colomn {
+    max-width: 500px;
+}
+
+.blue-box {
+    padding: 50px;
+    width: 120px;
+    height: 130px;
+    margin-left: 163px;
+    margin-top: -136px;
+    top: 0;
+}
+
+.card-button {
+    width: 20rem;
+    margin-left: -16px;
+}
+
+.button-lomba {
+    background-color: #FFDE27;
+    text-align: center;
+    width: 10rem;
+    border: none;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    color:#003567;
+}
+
+.img-header {
+    margin-left: 30px;
+}
+
+.font-mont {
+    font-family: montserrat;
+    font-weight: lighter;
+    font-size: 30pt;
+    padding-top: 40px;
+    opacity: 70%;
+}
+
+.keuntungan {
+    opacity: 90%;
+}
+
+.keuntungan p {
+    font-family: roboto;
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+@media (max-width:600px ) {
+    .font-mont{
+        display: none;
+        top: 0;
+    }
+}
