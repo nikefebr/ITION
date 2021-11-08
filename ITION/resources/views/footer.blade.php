@@ -41,12 +41,12 @@
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 form-area p-5" style="font-family: Roboto;">
                             <form type="get" action="{{ route('subscribe') }}">
                                 <div class="form-group font-14px">
-                                    <label for="exampleInputNama" class="font-14px" >Nama </label>
+                                    <label for="exampleInputNama" class="font-14px text-white" >Nama </label>
                                     <input name = "nama" type="nama" class="form-control" style="border-radius:8px" id="exampleInputNama" placeholder="Tuliskan namamu...">
                                 </div>
                                 <br/>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="font-14px">Email</label>
+                                    <label for="exampleInputEmail1" class="font-14px text-white">Email</label>
                                     <input name = "email" type="email" class="form-control" style="border-radius:8px" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tuliskan emailmu...">
                                     <small id="emailHelp" class="form-text text-muted">Kami tidak akan menyebarkan data anda</small>
                                 </div>
