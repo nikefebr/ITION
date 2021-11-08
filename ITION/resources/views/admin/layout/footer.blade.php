@@ -2,6 +2,9 @@
   @include('snippets/fonts')
 </head>
 
+<script src="{{ asset('js/admin.js') }}"></script>
+<script src="{{ asset('js/chart.js') }}"></script>
+
 <!-- Main Footer -->
 <footer class="main-footer" style="font-family: Roboto;">
     <!-- To the right -->
