@@ -67,18 +67,18 @@
                             Contact Person Admin 
                         </p>
                         <p class="text-white wa"> 
-                            WA : +6287701437591 (Anon)<br>
-                            Email : infoITION@gmail.com 
+                            WA : +6287701437591 (Riri)<br>
+                            Email : itionpens@gmail.com 
                         </p>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="contact">
                                     <ul class="ul-top">
-                                    <a href="#"><li class="round-btn">
+                                    <a href="https://www.instagram.com/itionpens/"><li class="round-btn">
                                         <img class="btn-img" src="{{asset('logo/1200px-Instagram_logo_2016 1.png')}}">
                                     </li></a>
-                                    <a href="mailto:infoITION@gmail.com"><li class="round-btn">
+                                    <a href="mailto:itionpens@gmail.com"><li class="round-btn">
                                         <img class="btn-img" src="{{asset('logo/logo-gmail 1.png')}}">
                                     </li></a>
                                     <a href="https://wa.me/6287701437591" target="_blank"><li class="round-btn btn-wa">
