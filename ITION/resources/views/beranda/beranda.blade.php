@@ -233,18 +233,15 @@
                     <div class="card mx-auto bg-transparent border-0" style="width: 1100px;">
                         <div class="row g-0">
                             <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 pt-5 ms-auto">
-                            <!-- <div class="card bg-white" id="cardfoto"> -->
                                 <div class="card text-center" id="fototestimoni">
                                     <img src="{{ url('image/reviewer/'.$item->foto) }}" class="img-fluid">
                                 </div>
-                            <!-- </div> -->
                             </div>
                             <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 bg-blue px-3 mt-4 me-auto" style="width:50vw; height: 200px;" id="tekstestimoni">
                             <div class="p-4"></div>
-                                <div class="p-4"></div>
-                                    <div class="card-body text-white" >
-                                        <p style="font-family: Roboto;">"{{ $item->testimoni }}."</p>
-                                    </div>
+                                <div class="card-body text-white" >
+                                    <p style="font-family: Roboto;">"{{ $item->testimoni }}."</p>
+                                </div>
                                 <div class="p-4"></div>
                             </div>
                         </div> 
@@ -256,7 +253,6 @@
                 <div class="carousel-item">
                     <div class="card mx-auto bg-transparent border-0" style="width: 1100px;">
                         <div class="row g-0">
-
                             <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 pt-5 ms-auto">
                                 <div class="card text-center" id="fototestimoni">
                                     <img src="{{ url('image/reviewer/'.$item->foto) }}" class="img-fluid">
