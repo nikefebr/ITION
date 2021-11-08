@@ -45,7 +45,7 @@
                     <div class="card-body pt-5 " >
                         <p class="card-title fw-bold fs-4" style="font-family: Montserrat; margin-bottom: 0">{{ $item->judul }}</p>
                         <p class="card-text fw-light font-18px" style="font-family: Montserrat; margin-bottom: 0">{{ $item->nama_kategori }}</p>
-                        <p class="font-14px mt-1" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">Publish</p>
+                        <p class="font-14px mt-1" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }}</p>
 
                         <br>
                         <p class="card-text text-card-body font-14px" style="font-family: Roboto;">{{ $item->deskripsi }}</p> 
