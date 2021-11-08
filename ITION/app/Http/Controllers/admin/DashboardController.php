@@ -37,6 +37,10 @@ class DashboardController extends Controller
         $countpelanggan = DB::table('pelanggan')
                         ->select(DB::raw('COUNT(nama) as data'))
                         ->get();
-        return view('admin.home', compact('countlomba','countkategori','countreviewer','countpelanggan'));
+        $data =  DB::table('lomba')
+                ->select(DB::raw('count(id_lomba) as `data`'),DB::raw('YEAR(deadline) year, MONTH(deadline) month'))
+                ->groupby('year','month')
+                ->get();
+        return view('admin.home', compact('countlomba','countkategori','countreviewer','countpelanggan','data'));
     }
 }

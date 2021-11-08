@@ -109,6 +109,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.row -->
 
         <br>
+        <div class="row">
+          <div class="col-md-12">
+            
+             <!-- LINE CHART -->
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Grafik Deadline lomba</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <canvas id="myChart" height="70"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card --> 
+          </div>
+          <!-- /.div col --> 
+        </div>
+        <!-- /.div row --> 
 
       </div>
       <!-- /.container-fluid -->
@@ -138,6 +164,55 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/chart.js') }}"></script>
+
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var data = {!! json_encode($data) !!};
+    var month = [];
+    var count = [];
+    for (let index = 0; index < data.length; index++) {
+      month.push(data[index].month+'-'+data[index].year);
+      count.push(data[index].data);
+    }
+
+    console.log(month);
+      console.log(count);
+    console.log(data);
+    var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: month,
+        datasets: [{
+            label: 'Jumlah lomba yang akan deadline berdasarkan bulan',
+            data: count,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+    </script> 
 <!-- 
     jQuery 
 <script src="plugins/jquery/jquery.min.js"></script>
