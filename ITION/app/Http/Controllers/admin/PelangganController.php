@@ -139,6 +139,7 @@ class PelangganController extends Controller
     {
         // membuat validasi untuk memvalidasi isi data
         $validated = Validator::make($request->all(),[
+            'id_lomba' => ['required','unique:newsletter'],
             'subyek' => ['required','max:255'],
             'isi' => ['required']
         ]);

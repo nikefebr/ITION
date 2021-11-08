@@ -123,7 +123,7 @@ class TestimoniController extends Controller
             'id_lomba' => ['required'],
             'id_reviewer' => ['required','max:255'],
             'tahun_lomba' => ['required','max:255'],
-            'testimoni' => ['required']
+            'testimoni' => ['required','max:255'],
         ]);
 
         $manytestimoni = DB::table('testimoni')
