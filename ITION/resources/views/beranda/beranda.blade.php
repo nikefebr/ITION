@@ -89,7 +89,7 @@
                     <div class="p-2"></div>
 
                     <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                        <img src="{{ $item->foto }}" id="0" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
+                        <img src="{{ url('image/galeri/'.$item->foto) }}" id="0" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
                             <div class="card-body">
                                 <p class="card-text fw-normal tgl-foto font-14px" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
                                 <p class="card-text fw-bold deskripsi-foto" style="font-family: Roboto;">{{ $item->deskripsi }}</p>
@@ -103,7 +103,7 @@
                 <div class="p-4"></div>
 
                 <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
-                    <img src="{{ $item->foto }}" id="1" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
+                    <img src="{{ url('image/galeri/'.$item->foto) }}" id="1" class="card-img-top galeri-item" alt="" width="200" height="200" data-toggle="modal" data-target="#galeri-popup">
                         <div class="card-body">
                         <p class="card-text fw-normal tgl-foto font-14px" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">{{ \Carbon\Carbon::parse($item->tgl_foto)->format('d F Y') }}</p>
                             <p class="card-text fw-bold deskripsi-foto" style="font-family: Roboto;">{{ $item->deskripsi }}</p>
