@@ -187,11 +187,12 @@ class PelangganController extends Controller
     public function index_newsletter()
     {
         $manynewsletter = DB::table('newsletter')
-                        ->distinct()
-                        ->select('newsletter.id_lomba','lomba.judul','subyek','isi','newsletter.created_at')
+                        
+                        ->select('newsletter.id_lomba','lomba.judul','subyek','isi')
                         ->leftJoin('lomba','newsletter.id_lomba','=','lomba.id_lomba')
+                        ->distinct()
                         ->get();
-                    
+        
         return view('admin.pelanggan_newsletter.newsletter_view',compact('manynewsletter'));
     }
 }
