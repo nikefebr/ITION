@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
              <!-- LINE CHART -->
             <div class="card card-info">
-              <div class="card-header">
+              <div class="card-header" style="background-color: #003567; font-family:Roboto;">
                 <h3 class="card-title">Grafik Deadline lomba</h3>
 
                 <div class="card-tools">
