@@ -5,7 +5,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #003567; font-family:Roboto;">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <span class="brand-text font-weight-dark" style="font-size:x-large; padding-left: 5%">ITION</span>
     </a>
 
