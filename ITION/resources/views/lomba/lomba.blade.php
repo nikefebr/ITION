@@ -70,9 +70,9 @@
                 <div class="row">
                     @foreach ($data as $item)
                     <div class="col-lg-6 col-md-12 col-sm-12 p-5 ">
-                        <div class="card" style="width: 20rem; height: 450px; border-radius:20px">
+                        <div class="card" style="width: 19rem; height: 530px; border-radius:20px">
                             <div class="">
-                                <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 370px; height: 300px;">
+                                <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 300px; height: 370px;">
                                 <p class="card-text ps-3 text-grey pt-2">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }} </p>
                             </div>
                             <div class="card-body">
@@ -87,13 +87,13 @@
                                 <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
                                 PENDAFTARAN</p>
 
-                                <div class="p-1"></div>
+                                <div class="p-0"></div>
                                 
                                 <p class="card-text mt-4 text-white font-12px text-uppercase">
                                 {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
                                 </p>
                             </div>
-                            
+                            <div> </div>
                             <button class="button-katalog fw-bolder text-blue-2 card-button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             
                         </div>
