@@ -117,8 +117,8 @@
                 
                 <div class="card" style="border-radius:8px;">                        
                     <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Kalender</div>
-                        <div class="card-body p-0">
-                            <div class="pt-3" id="calendar">
+                        <div class="card-body px-0 mx-0 " style="margin-bottom: 90px">
+                            <div class="pt-0" id="calendar">
                             </div>
                             <!-- <div class="pt-3">
                                 <button type="button" class="btn btn-primary float-end" data-toggle="modal" data-target="#exampleModal" style="background-color: #FFDE27; color: black; border: none;">
