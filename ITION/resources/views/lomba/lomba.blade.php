@@ -177,16 +177,7 @@
     <div class="d-flex justify-content-center">
     {{ $data->links()  }}
     </div>
-    
     <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-
     @include('footer')
 
     <script>
