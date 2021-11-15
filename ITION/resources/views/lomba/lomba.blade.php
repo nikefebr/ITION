@@ -115,10 +115,20 @@
                 </div>
                 <br>  
                 
-                <div id="calendar"></div>
-                <button type="button" class="btn btn-primary float-end" data-toggle="modal" data-target="#exampleModal" style="background-color: #FFDE27; color: black; border: none;">
-                See More..
-                </button>
+                <div class="card" style="border-radius:8px;">                        
+                    <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Kalender</div>
+                        <div class="card-body p-0">
+                            <div class="pt-3" id="calendar">
+                            </div>
+                            <!-- <div class="pt-3">
+                                <button type="button" class="btn btn-primary float-end" data-toggle="modal" data-target="#exampleModal" style="background-color: #FFDE27; color: black; border: none;">
+                                    See More..
+                                </button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                
                 <br>
                 <br>
                 <br>
@@ -159,7 +169,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Kalender</h5>
@@ -171,15 +181,15 @@
                 <div class="modal-body">
                     <div id="calender"></div>
                 </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
     <div class="p-5"></div>
     <div class="p-5"></div>
     <div class="p-5"></div>
@@ -224,6 +234,7 @@
         calendar.render();
     });
     </script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
