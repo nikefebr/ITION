@@ -75,11 +75,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <label for="angkatan">Tahun Lomba</label>
                     <select class="form-control" id='tahun_lomba' name="tahun_lomba">
 
-                      @for ($year = (int)date('Y'); 2001 <= $year; $year--)
-                        <option value="{{$year}}">{{$year}}</option>
+                      @for ($year = (int)date('Y')-14; (int)date('Y')-1 >= $year; $year++)
+                            <option value="{{$year}}">{{$year}}</option>
                       @endfor
-
-                      <option value="2000" selected >2000</option>
+  
+                      <option value="{{(int)date('Y')}}" selected >{{(int)date('Y')}}</option>
+                      <option value="{{(int)date('Y')+1}}">{{(int)date('Y')+1}}</option>
 
                      </select>
                   </div>

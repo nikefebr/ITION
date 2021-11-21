@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="info-box-content">
                 <span class="info-box-text">Lomba</span>
                 <span class="info-box-number">
-                  10
+                  {{ $countlomba[0]->data }}
                   <small>data</small>
                 </span>
               </div>
@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <div class="info-box-content">
                 <span class="info-box-text">Kategori</span>
-                <span class="info-box-number">4
+                <span class="info-box-number">{{ $countkategori[0]->data }}
                   <small>data</small>
                 </span>
               </div>
@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <div class="info-box-content">
                 <span class="info-box-text">Reviewer</span>
-                <span class="info-box-number">7
+                <span class="info-box-number">{{ $countreviewer[0]->data }}
                   <small>orang</small>
                 </span>
               </div>
@@ -96,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <div class="info-box-content">
                 <span class="info-box-text">Pelanggan</span>
-                <span class="info-box-number">2
+                <span class="info-box-number">{{ $countpelanggan[0]->data }}
                   <small>orang</small>
                 </span>
               </div>
@@ -109,148 +109,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.row -->
 
         <br>
-
         <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title" style="font-family: Montserrat;">Recently Added Products</h3>
+          <div class="col-md-12">
+            
+             <!-- LINE CHART -->
+            <div class="card card-info">
+              <div class="card-header" style="background-color: #003567; font-family:Roboto;">
+                <h3 class="card-title">Grafik Deadline lomba</h3>
 
                 <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
                 </div>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Samsung TV
-                        <span class="badge badge-warning float-right">$1800</span></a>
-                      <span class="product-description">
-                        Samsung 32" 1080p 60Hz LED Smart HDTV.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Bicycle
-                        <span class="badge badge-info float-right">$700</span></a>
-                      <span class="product-description">
-                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">
-                        Xbox One <span class="badge badge-danger float-right">
-                        $350
-                      </span>
-                      </a>
-                      <span class="product-description">
-                        Xbox One Console Bundle with Halo Master Chief Collection.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">PlayStation 4
-                        <span class="badge badge-success float-right">$399</span></a>
-                      <span class="product-description">
-                        PlayStation 4 500GB Console (PS4)
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                </ul>
+              <div class="card-body">
+                <div class="chart">
+                  <canvas id="myChart" height="70"></canvas>
+                </div>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All Products</a>
-              </div>
-              <!-- /.card-footer -->
             </div>
-            <!-- /.card -->
+            <!-- /.card --> 
           </div>
-
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
-                <h3 class="card-title" style="font-family: Montserrat;">Online Store Overview</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                  <p class="text-success text-xl">
-                    <i class="ion ion-ios-refresh-empty"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-success"></i> 12%
-                    </span>
-                    <span class="text-muted">CONVERSION RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-                <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                  <p class="text-warning text-xl">
-                    <i class="ion ion-ios-cart-outline"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                    </span>
-                    <span class="text-muted">SALES RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-                <div class="d-flex justify-content-between align-items-center mb-0">
-                  <p class="text-danger text-xl">
-                    <i class="ion ion-ios-people-outline"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                    </span>
-                    <span class="text-muted">REGISTRATION RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-              </div>
-            </div>
-          </div>
+          <!-- /.div col --> 
         </div>
-
-        <br>
+        <!-- /.div row --> 
 
       </div>
       <!-- /.container-fluid -->
@@ -277,8 +161,58 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-
+  
   <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/chart.js') }}"></script>
+
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var data = {!! json_encode($data) !!};
+    var month = [];
+    var count = [];
+    for (let index = 0; index < data.length; index++) {
+      month.push(data[index].month+'-'+data[index].year);
+      count.push(data[index].data);
+    }
+
+    console.log(month);
+      console.log(count);
+    console.log(data);
+    var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: month,
+        datasets: [{
+            label: 'Jumlah lomba yang akan deadline berdasarkan bulan',
+            data: count,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+    </script> 
 <!-- 
     jQuery 
 <script src="plugins/jquery/jquery.min.js"></script>

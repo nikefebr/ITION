@@ -120,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- jQuery -->
 
- <script src="{{ asset('js/app.js') }}"></script>
+  @include('admin.layout.view-script')
  <script>
    jQuery(document).ready(function($){
      $('.hapus').on('submit',function(e){
@@ -130,19 +130,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       });
   });
  </script>
-<!-- 
-     jQuery 
-<script src="plugins/jquery/jquery.min.js"></script>
-     Bootstrap 4 
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-     AdminLTE App 
-<script src="dist/js/adminlte.min.js"></script>
--->
-
-<!--page script-->
-<script>
-    
-  </script>
 
 </body>
 </html>

@@ -103,11 +103,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <label for="tahun">Tahun Lomba</label>
                         <select class="form-control" id='tahun' name="tahun">
   
-                          @for ($year = (int)date('Y'); 2001 <= $year; $year--)
+                          @for ($year = (int)date('Y')+15; (int)date('Y') <= $year; $year--)
                             <option value="{{$year}}">{{$year}}</option>
                           @endfor
   
-                          <option value="2000" selected >2000</option>
+                          <option value="{{(int)date('Y')}}" selected >{{(int)date('Y')}}</option>
   
                          </select>
                       </div>
@@ -208,9 +208,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     update();
 });
 
+$("#biaya").val($('#biaya').val() + "Rp ");
+
 function update() {
   $("#deskripsi").val($('#judul').val() + " merupakan ");
 }
+
  </script>
 <!-- 
      jQuery 
