@@ -70,9 +70,9 @@
                 <div class="row">
                     @foreach ($data as $item)
                     <div class="col-lg-6 col-md-12 col-sm-12 p-5 ">
-                        <div class="card" style="width: 20rem; height: 450px; border-radius:20px">
+                        <div class="card" style="width: 19rem; height: 530px; border-radius:20px">
                             <div class="">
-                                <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 370px; height: 300px;">
+                                <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 300px; height: 370px;">
                                 <p class="card-text ps-3 text-grey pt-2">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }} </p>
                             </div>
                             <div class="card-body">
@@ -87,13 +87,13 @@
                                 <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
                                 PENDAFTARAN</p>
 
-                                <div class="p-1"></div>
+                                <div class="p-0"></div>
                                 
                                 <p class="card-text mt-4 text-white font-12px text-uppercase">
                                 {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
                                 </p>
                             </div>
-                            
+                            <div> </div>
                             <button class="button-katalog fw-bolder text-blue-2 card-button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             
                         </div>
@@ -115,10 +115,20 @@
                 </div>
                 <br>  
                 
-                <div id="calendar"></div>
-                <button type="button" class="btn btn-primary float-end" data-toggle="modal" data-target="#exampleModal" style="background-color: #FFDE27; color: black; border: none;">
-                See More..
-                </button>
+                <div class="card" style="border-radius:8px;">                        
+                    <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Kalender</div>
+                        <div class="card-body px-0 mx-0 " style="margin-bottom: 90px">
+                            <div class="pt-0" id="calendar">
+                            </div>
+                            <!-- <div class="pt-3">
+                                <button type="button" class="btn btn-primary float-end" data-toggle="modal" data-target="#exampleModal" style="background-color: #FFDE27; color: black; border: none;">
+                                    See More..
+                                </button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                
                 <br>
                 <br>
                 <br>
@@ -159,7 +169,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Kalender</h5>
@@ -171,13 +181,20 @@
                 <div class="modal-body">
                     <div id="calender"></div>
                 </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
             </div>
         </div>
     </div>
+
     <div class="d-flex justify-content-center">
     {{ $data->links()  }}
     </div>
     <div class="p-5"></div>
+
     @include('footer')
 
     <script>
@@ -218,6 +235,7 @@
         calendar.render();
     });
     </script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>

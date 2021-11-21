@@ -45,7 +45,7 @@
                     <div class="card-body pt-5 " >
                         <p class="card-title fw-bold fs-4" style="font-family: Montserrat; margin-bottom: 0">{{ $item->judul }}</p>
                         <p class="card-text fw-light font-18px" style="font-family: Montserrat; margin-bottom: 0">{{ $item->nama_kategori }}</p>
-                        <p class="font-14px mt-1" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">Publish</p>
+                        <p class="font-14px mt-1" style="font-family: Roboto; color: rgba(0, 0, 0, 0.5);">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }}</p>
 
                         <br>
                         <p class="card-text text-card-body font-14px" style="font-family: Roboto;">{{ $item->deskripsi }}</p> 
@@ -233,18 +233,15 @@
                     <div class="card mx-auto bg-transparent border-0" style="width: 1100px;">
                         <div class="row g-0">
                             <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 pt-5 ms-auto">
-                            <!-- <div class="card bg-white" id="cardfoto"> -->
                                 <div class="card text-center" id="fototestimoni">
                                     <img src="{{ url('image/reviewer/'.$item->foto) }}" class="img-fluid">
                                 </div>
-                            <!-- </div> -->
                             </div>
                             <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 bg-blue px-3 mt-4 me-auto" style="width:50vw; height: 200px;" id="tekstestimoni">
                             <div class="p-4"></div>
-                                <div class="p-4"></div>
-                                    <div class="card-body text-white" >
-                                        <p style="font-family: Roboto;">"{{ $item->testimoni }}."</p>
-                                    </div>
+                                <div class="card-body text-white" >
+                                    <p style="font-family: Roboto;">"{{ $item->testimoni }}."</p>
+                                </div>
                                 <div class="p-4"></div>
                             </div>
                         </div> 
@@ -256,7 +253,6 @@
                 <div class="carousel-item">
                     <div class="card mx-auto bg-transparent border-0" style="width: 1100px;">
                         <div class="row g-0">
-
                             <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 pt-5 ms-auto">
                                 <div class="card text-center" id="fototestimoni">
                                     <img src="{{ url('image/reviewer/'.$item->foto) }}" class="img-fluid">

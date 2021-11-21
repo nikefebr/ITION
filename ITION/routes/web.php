@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin'], function ()
 
     Route::group(['middleware' => 'auth'],function () //digunakan untuk tetap mengarahkan ke login meskipun membuka link selain login
     {
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+        Route::get('/home', [App\Http\Controllers\admin\DashboardController::class, 'index'])->name('dashboard');
 
         Route::resource('/lomba', App\Http\Controllers\admin\LombaController::class)
             ->names([ //sebagai nama setiap route supaya lebih mudah memberikan nama pada head dan title
