@@ -41,12 +41,12 @@
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 form-area p-5" style="font-family: Roboto;">
                             <form type="get" action="{{ route('subscribe') }}">
                                 <div class="form-group font-14px">
-                                    <label for="exampleInputNama" class="font-14px" >Nama </label>
+                                    <label for="exampleInputNama" class="font-14px text-white" >Nama </label>
                                     <input name = "nama" type="nama" class="form-control" style="border-radius:8px" id="exampleInputNama" placeholder="Tuliskan namamu...">
                                 </div>
                                 <br/>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="font-14px">Email</label>
+                                    <label for="exampleInputEmail1" class="font-14px text-white">Email</label>
                                     <input name = "email" type="email" class="form-control" style="border-radius:8px" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tuliskan emailmu...">
                                     <small id="emailHelp" class="form-text text-muted">Kami tidak akan menyebarkan data anda</small>
                                 </div>
@@ -67,18 +67,18 @@
                             Contact Person Admin 
                         </p>
                         <p class="text-white wa"> 
-                            WA : +6287701437591 (Anon)<br>
-                            Email : infoITION@gmail.com 
+                            WA : +6287701437591 (Riri)<br>
+                            Email : itionpens@gmail.com 
                         </p>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="contact">
                                     <ul class="ul-top">
-                                    <a href="#"><li class="round-btn">
+                                    <a href="https://www.instagram.com/itionpens/"><li class="round-btn">
                                         <img class="btn-img" src="{{asset('logo/1200px-Instagram_logo_2016 1.png')}}">
                                     </li></a>
-                                    <a href="mailto:infoITION@gmail.com"><li class="round-btn">
+                                    <a href="mailto:itionpens@gmail.com"><li class="round-btn">
                                         <img class="btn-img" src="{{asset('logo/logo-gmail 1.png')}}">
                                     </li></a>
                                     <a href="https://wa.me/6287701437591" target="_blank"><li class="round-btn btn-wa">
