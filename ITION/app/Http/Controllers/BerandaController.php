@@ -25,7 +25,8 @@ class BerandaController extends Controller
        
         $highlight =    DB::table('lomba')
                         ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
-                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori')
+                        ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
+                        ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                         ->where('lomba.deadline', '>=', $today)
                         ->offset($lomba_random)
                         ->limit(1)
@@ -38,20 +39,15 @@ class BerandaController extends Controller
                     ->offset($total_galeri)
                     ->limit(2)
                     ->get();
-
-        if($total_lomba < 5)
-            $total_lomba = 0;
-        else
-            $total_lomba -= 5;
-            
+   
         $lomba = DB::table('lomba')
                 ->join('kategori', 'lomba.id_kategori', '=', 'kategori.id_kategori') 
                 ->join('pengisian_lomba', 'lomba.id_lomba', '=', 'pengisian_lomba.id_lomba')
                 ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                 ->where('lomba.deadline', '>=', $today)        
                 ->orderBy('lomba.deadline')
-                ->offset($total_lomba)
-                ->limit(4)
+                ->offset(0)
+                ->limit(3)
                 ->get();
         
         $testimoni = DB::table('testimoni')

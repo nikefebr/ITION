@@ -41,12 +41,12 @@
     
     <div class="content-nilai">
         <div class="row d-flex justify-content-center" data-aos="fade-up">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-3 col-sm-6">
                 <div class="ps-4 img" >
                     <img src= "{{asset('image/tentang/bump2.png')}}" class=""  alt="" width="130" height="130">
                 </div>
         
-                <div class="card shadow margin-50" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
+                <div class="card shadow margin-50" style="background-color:#003567; width: 14rem; height: 15rem; border-radius:30px;">
                     <div class="card-body px-4">
                             <br/> <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Memotivasi</p>
                             <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</p>
@@ -55,12 +55,12 @@
                     </div>
                 </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"> 
+            <div class="col-md-3 col-sm-6"> 
                 <div class="ps-4 img">
                     <img src= "{{asset('image/tentang/search3.png')}}" class=""  alt=""width="130" height="130">
                 </div>
                 
-                <div class="card shadow margin-50 " style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
+                <div class="card shadow margin-50 " style="background-color:#003567; width: 14rem; height: 15rem; border-radius:30px;">
                     <div class="card-body px-4">
                         <br/> <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Akurat</p>
                         <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Mahasiswa mendapatkan informasi lomba secara akurat.</p>
@@ -69,12 +69,12 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-3 col-sm-6">
                 <div class="ps-4 img">
                     <img src= "{{asset('image/tentang/integrasi2.png')}}" class="" alt="" width="130" height="130">
                 </div>
                 
-                <div class="card shadow margin-50" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">   
+                <div class="card shadow margin-50" style="background-color:#003567; width: 14rem; height: 15rem; border-radius:30px;">   
                     <div class="card-body px-4"> <br>    
                         <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Integrasi</p>
                         <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Mahasiswa dapat mencari informasi lomba di dalam satu sistem informasi.</p>
@@ -83,12 +83,12 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-3 col-sm-6">
                 <div class="ps-4 img">
                     <img src= "{{asset('image/tentang/collabs3.png')}}" class="" alt="" width="130" height="130">
                 </div>
                 
-                <div class="card shadow margin-50" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">   
+                <div class="card shadow margin-50" style="background-color:#003567; width: 14rem; height: 15rem; border-radius:30px;">   
                     <div class="card-body px-4"> <br>    
                         <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Kolaborasi</p>
                         <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Penyelenggara lomba dapat mendaftarkan lombanya untuk dipublikasikan di website ini.</p>

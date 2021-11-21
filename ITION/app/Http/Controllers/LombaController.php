@@ -31,7 +31,7 @@ class LombaController extends Controller
                 ->where('lomba.judul', 'LIKE', '%'.$_GET['query'].'%')
                 ->orWhere('kategori.nama_kategori', 'LIKE', '%'.$_GET['query'].'%')
                 ->orderBy('lomba.deadline')
-                ->get();
+                ->paginate(4);
             }
             else{
                 if(!empty($_GET['kategori']) || !empty($_GET['bulan'])){
@@ -43,7 +43,7 @@ class LombaController extends Controller
                         ->where('lomba.deadline', '>=', $today)
                         ->where('kategori.id_kategori', '=', $_GET['kategori'])
                         ->orderBy('lomba.deadline')
-                        ->get();
+                        ->paginate(4);
                         $selectedKategori = $_GET['kategori'];
                     }
                     elseif(empty($_GET['kategori'])){
@@ -54,7 +54,7 @@ class LombaController extends Controller
                         ->where('lomba.deadline', '>=', $today)
                         ->whereMonth('lomba.deadline', $_GET['bulan'])
                         ->orderBy('lomba.deadline')
-                        ->get();
+                        ->paginate(4);
                         $selectedBulan = $_GET['bulan'];
                     }
                     else{
@@ -66,7 +66,7 @@ class LombaController extends Controller
                         ->whereMonth('lomba.deadline', $_GET['bulan'])
                         ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                         ->orderBy('lomba.deadline')
-                        ->get();
+                        ->paginate(4);
                         $selectedKategori = $_GET['kategori'];
                         $selectedBulan = $_GET['bulan'];
                     }
@@ -79,7 +79,7 @@ class LombaController extends Controller
                     ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                     ->where('lomba.deadline', '>=', $today)
                     ->orderBy('lomba.deadline')
-                    ->get();
+                    ->paginate(4);
                 }                
             }            
         }
@@ -90,7 +90,7 @@ class LombaController extends Controller
                 ->select('lomba.id_lomba', 'lomba.poster', 'lomba.judul', 'lomba.deskripsi', 'lomba.deadline', 'kategori.nama_kategori','pengisian_lomba.created_at')
                 ->where('lomba.deadline', '>=', $today)
                 ->orderBy('lomba.deadline')
-                ->get();
+                ->paginate(4);
             
         }
         
