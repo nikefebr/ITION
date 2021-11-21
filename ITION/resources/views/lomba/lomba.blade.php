@@ -94,7 +94,7 @@
                                 </p>
                             </div>
                             <div> </div>
-                            <button class="button-katalog fw-bolder text-blue-2 card-button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
+                            <button class="button-katalog fw-bolder text-blue-2 card-button btn-all" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             
                         </div>
                     </div>      
