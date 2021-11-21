@@ -50,7 +50,6 @@
                     </div>
 
                     <div class="p-1"></div>
-
                 </div>
             </div>
         </div>
@@ -64,8 +63,6 @@
         <div class="p-4"></div>
         
         <div class="content-section">
-            
-
             <div class="card-place">
                 <div class="row">
                     @foreach ($data as $item)
@@ -83,36 +80,38 @@
                                 {{ \Illuminate\Support\Str::limit($item->deskripsi, 25, $end='...') }}
                                 </p>
                                     
-                            <div class="card-body bg-blue-2 text-center blue-box">
-                                <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
-                                PENDAFTARAN</p>
+                                <div class="card-body bg-blue-2 text-center blue-box">
+                                    <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
+                                    PENDAFTARAN</p>
 
-                                <div class="p-0"></div>
+                                    <div class="p-0"></div>
+                                    
+                                    <p class="card-text mt-4 text-white font-12px text-uppercase">
+                                    {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
+                                    </p>
+                                </div>
                                 
-                                <p class="card-text mt-4 text-white font-12px text-uppercase">
-                                {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
-                                </p>
+                                <button class="button-katalog fw-bolder text-blue-2 card-button btn-all" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             </div>
-                            <div> </div>
-                            <button class="button-katalog fw-bolder text-blue-2 card-button btn-all" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
-                            
-                        </div>
-                    </div>      
+                        </div>      
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
         </div>
         
         <div class="filter-place">
             <div class="container">
-                <div class="input-group rounded">
+                <!-- <div class="input-group w-50"> -->
                     <form type="get" action="{{ url('lomba') }}">
-                        <span class="input-group-text border-0" id="search-addon">
-                            <i class="fa fa-search"></i>
+                        <span class="input-group-append border-0" id="search-addon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                            </svg>
                         </span>
-                        <input name = "query" type="search" class="form-control rounded border-0" placeholder="cari lombamu disini" aria-label="Search" aria-describedby="search-addon" />
+                        <input name="query" type="text" class="form-control rounded border-0" placeholder="cari lombamu disini" aria-label="Search" aria-describedby="search-addon" />
                     </form>
-                </div>
+                <!-- </div> -->
                 <br>  
                 
                 <div class="card" style="border-radius:8px;">                        
@@ -185,7 +184,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-
             </div>
         </div>
     </div>
@@ -193,6 +191,9 @@
     <div class="d-flex justify-content-center">
     {{ $data->links()  }}
     </div>
+    
+    <div class="p-5"></div>
+    <div class="p-5"></div>
     <div class="p-5"></div>
 
     @include('footer')

@@ -149,45 +149,44 @@
 
                 <div class="row">
                     @foreach ($lomba as $item)
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-5">
-                        
-                        <div class="card" style="width: 20rem; height: 450px; border-radius:20px">
-                                <div class="">
-                                    <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 370px; height: 300px;">
-                                    <p class="card-text ps-3 text-grey pt-2"  style="font-family: Roboto; font-size: 8pt;">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }} </p>
-                                </div>
-
+                    <div class="col-lg-6 col-md-12 col-sm-12 p-5 ">
+                        <div class="card" style="width: 19rem; height: 530px; border-radius:20px">
+                            <div class="">
+                                <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 300px; height: 370px;">
+                                <p class="card-text ps-3 text-grey pt-2">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }} </p>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-text fw-bold text-blue" style="font-family: Montserrat; font-size: 8.5pt;">{{ $item->judul }}</h5>
-                                <h6 class="card-text fw-light text-blue" style="font-family: Montserrat; font-size: 8pt;">{{ $item->nama_kategori }}</h6>
-                                <p class="card-text text-grey mt-4 font-12px">{{ \Illuminate\Support\Str::limit($item->deskripsi, 25, $end='...') }}</p>
-
+                                <h5 class="card-text fw-bold text-blue font-12px">{{ $item->judul }}</h5>
+                                <h6 class="card-text fw-light text-blue font-12px">{{ $item->nama_kategori }}</h6>
+                                
+                                <p class="card-text text-grey mt-4 font-12px">
+                                {{ \Illuminate\Support\Str::limit($item->deskripsi, 25, $end='...') }}
+                                </p>
+                                    
                                 <div class="card-body bg-blue-2 text-center blue-box">
-                                    <p class="card-text fw-bold text-blue text-white font-12px" style="font-family: Roboto;">DEADLINE <br>
-                                                PENDAFTARAN</p>
+                                    <p class="card-text fw-bold text-blue text-white font-12px">DEADLINE <br>
+                                    PENDAFTARAN</p>
 
-                                    <div class="p-1"></div>
-
-                                    <p class="card-text mt-4 text-white font-12px text-uppercase" style="font-family: Roboto;">
+                                    <div class="p-0"></div>
+                                    
+                                    <p class="card-text mt-4 text-white font-12px text-uppercase">
                                     {{ \Carbon\Carbon::parse($item->deadline)->format('d F Y') }}
-                                                </p>
+                                    </p>
                                 </div>
-
-
+                                
                                 <button class="button-katalog fw-bolder text-blue-2 card-button btn-all" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             </div>
-                        </div>
+                        </div>      
                     </div>
                     @endforeach
                 </div>
-
-            <div class="p-4"></div>
-            
-            <button class="white-button fw-bolder float-end btn-all" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Selengkapnya ></button>
-        
+                <div class="p-4"></div>
+                <button class="white-button fw-bolder float-end btn-all" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Selengkapnya ></button>
         </div>          
-        <div class="p-5"></div>
-        <div class="p-2"></div>
+        
+            <div class="p-5"></div>
+            <div class="p-2"></div>
+
     </div>
     
     <div class="p-4"></div>
@@ -197,23 +196,19 @@
         <div class="p-4"></div>
             <div class="row fw-bold text-center keuntungan" style="font-family: Roboto;">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-
                     <img class="resize-img-benefit" src="{{asset('logo/mawapres.png')}}">
                     <br>
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-               
                     <img class="resize-img-benefit" src="{{asset('logo/branding.png')}}">
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-            
                     <img class="resize-img-benefit" src="{{asset('logo/cv.png')}}">
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-            
                     <img class="resize-img-benefit" src="{{asset('logo/skill.png')}}">
                 </div>
             </div>
