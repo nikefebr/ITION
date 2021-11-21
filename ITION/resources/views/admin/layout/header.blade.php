@@ -5,6 +5,7 @@
     <title class="title">{{ ucwords($data) }}</title>
     <link rel="icon" href="{{asset("") }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <style>
         .titleadmin{
             text-transform: uppercase;
