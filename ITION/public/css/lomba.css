@@ -1,3 +1,17 @@
+:root{
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+    --backdrop-filter-blur:blur(5px);
+}
+
+.card-lomba{
+	width: 65rem;
+	background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter-blur);
+	border-radius: 10px;
+}
+
 .batas-colomn{
 	max-width: 500px;
 }
@@ -82,3 +96,13 @@ section.sticky{
 .white-button-daftar {
 	margin-left: 25px;
 }
+.resize-img-benefit{
+	width: 150px;
+	height: auto;
+}
+
+.btn-all:hover{
+	opacity: 80%;
+}
+
+

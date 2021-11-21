@@ -21,11 +21,11 @@
                                 Apakah kalian tertarik ?
                             </p>
 
-                            <button class="button-footer fw-bold" style="font-family: Roboto;" onclick="window.open('https://wa.me/6287701437591?text=Halo kak, saya ingin melakukan kolaborasi')">Yuk kolaborasi</button>
+                            <button class="button-footer btn-all fw-bold" style="font-family: Roboto;" onclick="window.open('https://wa.me/6287701437591?text=Halo kak, saya ingin melakukan kolaborasi')">Yuk kolaborasi</button>
                             </section>
                         </div>
                         <div class="col-lg-4 ">
-                            <img class="img-hide" src="{{asset('image/footer.png')}}">
+                            <img class="img-hide" src="{{asset('image/collabs.png')}}">
                         
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                 </div>
                                 <br/>
 
-                                <button type="submit" class="btn btn-warning button-footer btn-newsletter px-4 fw-bold fs-6" style="border-radius: 10px; background-color: #FFDE27">Dapatkan notifikasi</button>
+                                <button type="submit" class="btn btn-warning button-footer btn-newsletter px-4 fw-bold fs-6 btn-all" style="border-radius: 10px; background-color: #FFDE27">Dapatkan notifikasi</button>
      
 
                             </form>
@@ -75,13 +75,13 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="contact">
                                     <ul class="ul-top">
-                                    <a href="#"><li class="round-btn">
+                                    <a href="#"><li class="round-btn btn-all">
                                         <img class="btn-img" src="{{asset('logo/1200px-Instagram_logo_2016 1.png')}}">
                                     </li></a>
-                                    <a href="mailto:infoITION@gmail.com"><li class="round-btn">
+                                    <a href="mailto:infoITION@gmail.com"><li class="round-btn btn-all">
                                         <img class="btn-img" src="{{asset('logo/logo-gmail 1.png')}}">
                                     </li></a>
-                                    <a href="https://wa.me/6287701437591" target="_blank"><li class="round-btn btn-wa">
+                                    <a href="https://wa.me/6287701437591" target="_blank"><li class="round-btn btn-all btn-wa">
                                         <img class="btn-img" src="{{asset('logo/WhatsApp-Logo 1.png')}}">
                                     </li></a>
                                     </ul>   

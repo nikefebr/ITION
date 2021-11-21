@@ -15,38 +15,37 @@
     <div class="p-3"></div>
         <div class="container p-5">
             <div class="row">
-                <img class="img-fluid mx-auto" src="{{asset('image/lomba.png')}}" style="width: 800px; height: 450px">
+                <img class="img-fluid mx-auto" src="{{asset('image/halaman lomba.png')}}" style="width: 600px; height: auto">
             </div>
 
             <div class="p-5"></div>
-            <div class="p-1"></div>
 
             <div class="row text-white">
                 <h4 class="fw-bold text-center">Keuntungan sering mengikuti lomba</h4>
                 
-                <div class="p-5"></div>
+                <div class="p-3"></div>
 
                 <div class="row fw-bold text-center">
                     <div class="col-md-3 col-sm-6">
                         <p>Langkah untuk menjadi<br>
                             Mawapres</p>
-                        <img src="{{asset('logo/mawapres-white.png')}}">
+                        <img class="resize-img-benefit" src="{{asset('logo/mawapres (2).png')}}">
                     </div>
 
                     <div class="col-md-3 col-sm-6">
                         <p>Personal Branding</p>
-                        <img src="{{asset('logo/branding-white.png')}}">
+                        <img class="resize-img-benefit" src="{{asset('logo/branding (2).png')}}">
                     </div>
 
                     <div class="col-md-3 col-sm-6">
                         <p>Membuat<br>
                             CV lebih menarik</p>
-                        <img src="{{asset('logo/cv-white.png')}}">
+                        <img class="resize-img-benefit" src="{{asset('logo/cv (2).png')}}">
                     </div>
 
                     <div class="col-md-3 col-sm-6">
                         <p>Mengasah skillmu</p>
-                        <img src="{{asset('logo/skill-white.png')}}">
+                        <img class="resize-img-benefit" src="{{asset('logo/skill (2).png')}}">
                     </div>
 
                     <div class="p-1"></div>
@@ -94,7 +93,7 @@
                                 </p>
                             </div>
                             
-                            <button class="button-katalog fw-bolder text-blue-2 card-button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
+                            <button class="button-katalog fw-bolder text-blue-2 card-button btn-all" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             
                         </div>
                     </div>      
@@ -116,9 +115,6 @@
                 <br>  
                 
                 <div id="calendar"></div>
-                <button type="button" class="btn btn-primary float-end" data-toggle="modal" data-target="#exampleModal" style="background-color: #FFDE27; color: black; border: none;">
-                See More..
-                </button>
                 <br>
                 <br>
                 <br>
@@ -146,7 +142,7 @@
                                     </select>
                                 </div>    
                                 <div class="p-3"></div>
-                                <center> <button class="button-lomba fw-bolder " type="submit">Cari Lomba</button></center><br>                                
+                                <center> <button class="button-lomba fw-bolder btn-all " type="submit">Cari Lomba</button></center><br>                                
                             </div>
                         </form>
                     </div>
@@ -210,19 +206,18 @@
         document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calender');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            
-            initialView: 'dayGridMonth',
-            events :  [
-                @foreach ($data as $item)
-                {
-                    title : '{{$item->judul}}',
-                    start : '{{$item->deadline}}'
-                },
-                @endforeach
-            ],
+                initialView: 'dayGridMonth',
+                events :  [
+                    @foreach ($data as $item)
+                    {
+                        title : '{{$item->judul}}',
+                        start : '{{$item->deadline}}'
+                    },
+                    @endforeach
+                ],
+            });
+            calendar.render();
         });
-        calendar.render();
-    });
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

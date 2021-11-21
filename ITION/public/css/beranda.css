@@ -86,11 +86,8 @@
     background-color: #FFFFFF;
     border: 3px solid #FFDE27;
     border-radius: 10px;
-    text-align: right;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    text-align: center;
+    padding : 10px 20px;
     margin-left: 810px;
 }
 
@@ -162,3 +159,17 @@
         top: 0;
     }
 }
+.resize-img-benefit{
+    width: 150px;
+    height : auto;
+}
+
+.text-benefit{
+    margin-top: 20px;
+}
+
+
+.btn-all:hover{
+	opacity: 80%;
+}
+

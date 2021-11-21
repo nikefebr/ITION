@@ -11,12 +11,11 @@
     <div class="p-4"></div>
 
     <div class="bg-overlay px-5">
-        <button class="button-exit fw-bolder text-blue-2" onclick="window.location='{{ url()->previous() }}'">
+        <button class="button-exit fw-bolder text-blue-2  btn-all" onclick="window.location='{{ url()->previous() }}'">
             <img class="mx-auto image-fluid" src="{{asset('logo/exit.png')}}">
         </button>
-
         
-            <div class="mx-auto card-dlomba" style="width: 65rem; border-radius:10px">
+            <div class="mx-auto card-lomba" >
                 <div class="row px-5 pt-5 pb-0">
                     <div class="col-md-8 col-sm-5">
                         <div class="card-body">
@@ -100,14 +99,14 @@
                         <div class="p-3"></div>
 
                         <div class="font-14px">
-                            <button class="button-daftar-lomba fw-bolder" onclick="window.open('{{ $item->link_website }}')" style="font-family: Roboto;">Daftar Sekarang</button>
+                            <button class="button-daftar-lomba fw-bolder btn-all" onclick="window.open('{{ $item->link_website }}')" style="font-family: Roboto;">Daftar Sekarang</button>
                         </div>
                     </div>
 
                     <div class="p-4"></div>
 
                     <div class="font-14px">
-                            <button class="white-button-daftar fw-bolder" onclick="window.open('{{ $item->link_panduan }}')">
+                            <button class="white-button-daftar fw-bolder  btn-all" onclick="window.open('{{ $item->link_panduan }}')">
                             <img src="{{asset('logo/unduh.png')}}"class="img-fluid mx-auto pe-3" style="font-family: Roboto;">Buku Panduan</button>
                     </div>
                 </div>

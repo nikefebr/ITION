@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12text-ition">
-                <p class="fw-bold fs-3 text-black" style="font-family: Montserrat;">
+                <p class="fw-bold fs-3 text-black" style="font-family: Montserrat Black;">
                     ITION 
                 </p>
                 <p class="text-black text-deskripsi" style="font-family: Roboto;">
@@ -34,7 +34,7 @@
         </div>
     
     <div class="p-4"></div>
-        <p class="fw-bold fs-3 text-black text-center" style="font-family: Montserrat;">
+        <p class="fw-bold fs-3 text-black text-center" >
             Nilai Kami
         </p>
     <div class="p-2"></div>
@@ -43,12 +43,12 @@
         <div class="row d-flex justify-content-center" data-aos="fade-up">
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="ps-4 img" >
-                    <img src= "{{asset('image/tentang/motivasi.png')}}" class=""  alt="" width="130" height="130">
+                    <img src= "{{asset('image/tentang/bump2.png')}}" class=""  alt="" width="130" height="130">
                 </div>
         
                 <div class="card shadow margin-50" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
                     <div class="card-body px-4">
-                            <br/> <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat;">Memotivasi</p>
+                            <br/> <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Memotivasi</p>
                             <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Mahasiswa mendapat testimoni dari mahasiswa lain yang pernah mengikuti lomba.</p>
                             <br>
                         </div>
@@ -57,12 +57,12 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="ps-4 img">
-                    <img src= "{{asset('image/tentang/akurat.png')}}" class=""  alt=""width="130" height="130">
+                    <img src= "{{asset('image/tentang/search3.png')}}" class=""  alt=""width="130" height="130">
                 </div>
                 
                 <div class="card shadow margin-50 " style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">
                     <div class="card-body px-4">
-                        <br/> <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat;">Akurat</p>
+                        <br/> <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Akurat</p>
                         <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Mahasiswa mendapatkan informasi lomba secara akurat.</p>
                         <br><br>
                     </div>
@@ -71,12 +71,12 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="ps-4 img">
-                    <img src= "{{asset('image/tentang/integrasi.png')}}" class="" alt="" width="130" height="130">
+                    <img src= "{{asset('image/tentang/integrasi2.png')}}" class="" alt="" width="130" height="130">
                 </div>
                 
                 <div class="card shadow margin-50" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">   
                     <div class="card-body px-4"> <br>    
-                        <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat;">Integrasi</p>
+                        <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Integrasi</p>
                         <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Mahasiswa dapat mencari informasi lomba di dalam satu sistem informasi.</p>
                         <br><br>
                     </div>
@@ -85,12 +85,12 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="ps-4 img">
-                    <img src= "{{asset('image/tentang/support.png')}}" class="" alt="" width="130" height="130">
+                    <img src= "{{asset('image/tentang/collabs3.png')}}" class="" alt="" width="130" height="130">
                 </div>
                 
                 <div class="card shadow margin-50" style="background-color:#003567; width: 15rem; height: 16rem; border-radius:30px;">   
                     <div class="card-body px-4"> <br>    
-                        <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat;">Kolaborasi</p>
+                        <br/> <br/> <p class="card-text fw-bold text-white" style="font-family: Montserrat Black;">Kolaborasi</p>
                         <p class="card-text fw-normal text-white font-14px" style="font-family: Roboto;">Penyelenggara lomba dapat mendaftarkan lombanya untuk dipublikasikan di website ini.</p>
                         <br><br>
                     </div>

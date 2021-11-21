@@ -59,11 +59,16 @@ ul {
 
 .bg-testimoni {
     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
-    background-image: url("/image/testimoni.png");
+    background-image: url("/image/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 530px;
+}
+
+.bg-testimoni2 {
+    width: 100%;
+    height: auto;
 }
 
 .bg-ition {

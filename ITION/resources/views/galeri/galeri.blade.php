@@ -12,14 +12,14 @@
         <div class="p-5"></div>
         <div class="mt-1"></div>
 
-        <h1 class="fw-bold text-center" style="font-family: Montserrat;">Galeri</h1>
+        <h1 class="fw-bold text-center" style="font-family: Montserrat Black;">Galeri</h1>
 
-        <div class="p-5"></div>
+        <div class="p-4"></div>
         
         <?php $index=0?>
         @foreach ($kategori as $kat)
         <div class="row">
-            <h1 class="fw-bold" style="font-family: Montserrat;">{{$kat->nama_kategori}}</h1>
+            <h1 class="fw-bold fs-3" style="font-family: 'Montserrat', sans-serif;">{{$kat->nama_kategori}}</h1>
         </div>
         
         <div class="row">
@@ -48,7 +48,7 @@
                 <div class="modal-body px-5">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                     
-                    <button type="button" class="btn-close float-end pt-2" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="btn-close float-end pt-2 " data-dismiss="modal" aria-label="Close">
                     </button>
                 
                     <img src="" class="card-img-top modal-img" alt="">

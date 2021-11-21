@@ -241,13 +241,18 @@ footer .round-btn {
     opacity: 50%;
     width: 80px;
     height: auto;
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .btn-items-bottom{
     margin-right: 150px;
     display: inline-block;
 }
+
+.btn-all:hover{
+	opacity: 80%;
+}
+
 
 .btn-items {
     padding-top: 11px;
@@ -261,6 +266,15 @@ footer .round-btn {
     box-shadow: 0px 3px 10px 10px #cccccc;
 }
 
+.round-btn2 {
+    position: relative;
+    z-index: -2;
+    height: 80px; 
+    width: 80px; 
+    background:#fff; 
+    box-shadow: 3px 0px 5px -2px #222;
+    border-radius: 50%; 
+}
 
 .contact {
     padding-top: 0px;

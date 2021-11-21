@@ -12,10 +12,10 @@
         <div class="container p-5">
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                    <img class="img-header" src="{{asset('image/image 1.png')}}" style="width: 30vw;">
+                    <img class="img-header" src="{{asset('image/landing page.png')}}" style="width: 25vw;">
                 </div>
-                <div class="col-lg-7 col-md-8 col-sm-8 col-xs-8 p-5">
-                    <p class="fw-bold fs-3 text-white">
+                <div class="col-lg-7 col-md-8 col-sm-8 col-xs-8 p-5" >
+                    <p class="fw-bold fs-3 text-white" style="font-family: Montserrat Black";>
                         Info lomba 
                     </p>
 
@@ -24,7 +24,7 @@
                     </p>
 
                     <div class="p-3"></div>
-                    <button class="button-lomba fw-bolder" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button>
+                    <button class="button-lomba fw-bolder btn-all" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Cari Lomba</button>
                 </div>
                 <div class="p-3"></div>
             </div>
@@ -62,7 +62,7 @@
 
                         <div class="p-4"></div>
 
-                        <button class="button fw-bolder" style="font-family: Roboto;" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
+                        <button class="button fw-bolder btn-all" style="font-family: Roboto;" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Baca Selengkapnya !</button>
                     </div>
                 </div>
             </div>
@@ -78,14 +78,14 @@
         <div class="row">
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="p-3"></div>
-                <h3 class="fw-normal" style="font-family: Montserrat;">Great things never came from comfort zone</h3>
+                <img class="img-header" src="{{asset('image/Quotes.png')}}" style="width: 300px;">
                 <div class="p-5"></div>
             </div>
             
             @foreach ($galeri as $item)
             @if ($loop->first)
                 <div class="col-lg-4 col-md-6 col-sm-12 px-5">
-                    <h5 class="fw-bold" style="font-family: Montserrat;">Lihat keseruan lainnya</h5>
+                    <h5 class="fw-bold fs-4" style="font-family: Montserrat Black;">Lihat keseruan lainnya</h5>
                     <div class="p-2"></div>
 
                     <div class="card" style="background-color:#F4F4F4; width: 18rem; border:none;">
@@ -109,8 +109,7 @@
                             <p class="card-text fw-bold deskripsi-foto" style="font-family: Roboto;">{{ $item->deskripsi }}</p>
 
                             <div class="p-4"></div>
-
-                            <button class="white-button fw-bolder float-end" style="font-family: Roboto;" onclick="window.location='{{ url("galeri") }}'">Selengkapnya>></button>
+                            <button class="white-button fw-bolder float-end btn-all" style="font-family: Roboto;" onclick="window.location='{{ url("galeri") }}'">Selengkapnya></button>
 
                             <div class="p-5"></div>
                         </div>
@@ -126,7 +125,7 @@
                     <div class="modal-body px-5">
                         <h5 class="modal-title" id="exampleModalLabel"></h5>
                         
-                        <button type="button" class="btn-close float-end pt-2" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="btn-close float-end pt-2 btn-all" data-dismiss="modal" aria-label="Close">
                         </button>
                     
                         <img src="" class="card-img-top modal-img" alt="">
@@ -146,7 +145,7 @@
     <div class="bg-yellow-ition">
         <div class="container">
             <div class="p-4"></div>
-                <h5 class="fw-bold" style="font-family: Montserrat;">Yuk ikuti lomba lainnya</h5>
+                <h5 class="fw-bold fs-4" style="font-family: Montserrat Black ;">Yuk ikuti lomba lainnya</h5>
 
                 <div class="row">
                     @foreach ($lomba as $item)
@@ -175,7 +174,7 @@
                                 </div>
 
 
-                                <button class="button-katalog fw-bolder text-blue-2 card-button" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
+                                <button class="button-katalog fw-bolder text-blue-2 card-button btn-all" onclick="window.location='{{ url("lomba/$item->id_lomba") }}'">Daftar Lomba Ini</button>
                             </div>
                         </div>
                     </div>
@@ -184,7 +183,7 @@
 
             <div class="p-4"></div>
             
-            <button class="white-button fw-bolder float-end" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Selengkapnya>></button>
+            <button class="white-button fw-bolder float-end btn-all" style="font-family: Roboto;" onclick="window.location='{{ url("lomba") }}'">Selengkapnya ></button>
         
         </div>          
         <div class="p-5"></div>
@@ -194,27 +193,28 @@
     <div class="p-4"></div>
     
     <div class="container mt-0">
-        <h5 class="fw-bold text-center pt-4" style="font-family: Montserrat;">Keuntungan sering mengikuti lomba</h5>
+        <h5 class=" text-center pt-4 fs-4" style="font-family: Montserrat Black;">Keuntungan sering mengikuti lomba</h5>
         <div class="p-4"></div>
             <div class="row fw-bold text-center keuntungan" style="font-family: Roboto;">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-                    <p>Langkah untuk menjadi Mawapres</p>
-                    <img src="{{asset('logo/mawapres.png')}}">
+
+                    <img class="resize-img-benefit" src="{{asset('logo/mawapres.png')}}">
+                    <br>
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-                    <p>Personal Branding</p>
-                    <img src="{{asset('logo/branding.png')}}">
+               
+                    <img class="resize-img-benefit" src="{{asset('logo/branding.png')}}">
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-                    <p>Membuat CV lebih menarik</p>
-                    <img src="{{asset('logo/cv.png')}}">
+            
+                    <img class="resize-img-benefit" src="{{asset('logo/cv.png')}}">
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pb-4">
-                    <p>Mengasah skillmu</p>
-                    <img src="{{asset('logo/skill.png')}}">
+            
+                    <img class="resize-img-benefit" src="{{asset('logo/skill.png')}}">
                 </div>
             </div>
     </div>
@@ -222,7 +222,7 @@
     <div class="p-5"></div>
 
     <div class="container mt-0">
-        <h5 class="fw-bold" style="font-family: Montserrat;">Apa kata mereka?</h5>
+        <h5 class="fw-bold fs-4" style="font-family: Montserrat Black;">Apa kata mereka?</h5>
         
         <div class="p-4"></div>
         
@@ -286,7 +286,7 @@
             </button>
         </div>
         <div class="p-4"></div>
-        <a class="fw-bold" style="font-family: Roboto;" href="testimoni" id="selengkapnya">Selengkapnya >></a>
+        <a class="fw-light" style="font-family: Roboto;" href="testimoni" id="selengkapnya">Selengkapnya ></a>
     </div>
 
 

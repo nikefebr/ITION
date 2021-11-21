@@ -11,15 +11,16 @@
 
     <div class="pt-5"></div>
     <div class="pt-3"></div>
-    
-    <div class="bg-testimoni px-5"></div>
+
+        <img class="bg-testimoni2" src="{{asset('image/banner.png')}}">
+    </div>
     <div class="container px-0 ms-5">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
 
         @foreach ($kategori as $kat)
         <div class="row ms-5" data-aos="fade-up">
-            <h2 class="fw-bold mb-5" style="font-family: Montserrat;">Gimana sih rasanya ikut {{$kat->nama_kategori}}?</h2>
+            <h2 class="fw-bold mb-5  fs-3" style="font-family: Montserrat;">Gimana sih rasanya ikut lomba {{$kat->nama_kategori}}?</h2>
             @foreach ($data[$loop->iteration] as $item)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-4">
                     <div class="card mb-3 shadow" style="border-radius:30px; width: 20rem; height: 27rem;">
