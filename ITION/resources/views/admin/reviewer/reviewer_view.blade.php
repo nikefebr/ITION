@@ -54,9 +54,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <thead>
                             <tr>
                               <th>No</th>
-                              <th width="200px">Nama Penyelenggara</th>
-                              <th>Kontak</th>
-                              <th>Nama Kontak</th>
+                              <th width="200px">Gambar</th>
+                              <th>Nama reviewer</th>
+                              <th>Angkatan</th>
                               <th width="110px">Action</th>
                             </tr>
                             </thead>
