@@ -52,9 +52,6 @@ class LombaController extends Controller
                 // membuat validasi
                 $validated = Validator::make($request->all(),[
                     'judul' => ['required','max:255','unique:lomba'],
-                    'deskripsi' => ['max:511'],
-                    'syarat' => ['max:511'],
-                    'timeline' =>['max:511'],
                     'biaya' => ['required','max:255'],
                     'link_panduan' => ['required','max:255'],
                     'hadiah_juara_1' => ['max:255'],
@@ -156,9 +153,6 @@ class LombaController extends Controller
                 // membuat validasi
                 $validated = Validator::make($request->all(),[
                     'judul' => ['required','max:255'],
-                    'deskripsi' => ['max:511'],
-                    'syarat' => ['max:511'],
-                    'timeline' =>['max:511'],
                     'biaya' => ['required','max:255'],
                     'link_panduan' => ['required','max:255'],
                     'hadiah_juara_1' => ['max:255'],
