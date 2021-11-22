@@ -1,0 +1,1 @@
+Kategori model itu ada kapitalnya dan tidak apabila case sensitive pada OSnya (kalau tidak, error waktu deploy hehe soalya di controller web user itu tidak kapital, sedangkan di controller web admin itu kapital)
