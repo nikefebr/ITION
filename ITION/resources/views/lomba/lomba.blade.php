@@ -15,7 +15,7 @@
     <div class="p-3"></div>
         <div class="container p-5">
             <div class="row">
-                <img class="img-fluid mx-auto" src="{{asset('image/lomba.png')}}" style="width: 800px; height: 450px">
+            <img class="img-fluid mx-auto" src="{{asset('image/halaman lomba.png')}}" style="width: 600px; height: auto">
             </div>
 
             <div class="p-5"></div>
@@ -30,23 +30,23 @@
                     <div class="col-md-3 col-sm-6">
                         <p>Langkah untuk menjadi<br>
                             Mawapres</p>
-                        <img src="{{asset('logo/mawapres-white.png')}}">
+                            <img class="resize-img-benefit" src="{{asset('logo/mawapres (2).png')}}">
                     </div>
 
                     <div class="col-md-3 col-sm-6">
                         <p>Personal Branding</p>
-                        <img src="{{asset('logo/branding-white.png')}}">
+                        <img class="resize-img-benefit" src="{{asset('logo/branding (2).png')}}">
                     </div>
 
                     <div class="col-md-3 col-sm-6">
                         <p>Membuat<br>
                             CV lebih menarik</p>
-                        <img src="{{asset('logo/cv-white.png')}}">
+                            <img class="resize-img-benefit" src="{{asset('logo/cv (2).png')}}">
                     </div>
 
                     <div class="col-md-3 col-sm-6">
                         <p>Mengasah skillmu</p>
-                        <img src="{{asset('logo/skill-white.png')}}">
+                        <img class="resize-img-benefit" src="{{asset('logo/skill (2).png')}}">
                     </div>
 
                     <div class="p-1"></div>
@@ -116,7 +116,7 @@
                 
                 <div class="card" style="border-radius:8px;">                        
                     <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Kalender</div>
-                        <div class="card-body px-0 mx-0 " style="margin-bottom: 90px">
+                        <div class="card-body px-0 mx-0" style="margin-bottom: 90px">
                             <div class="pt-0" id="calendar">
                             </div>
                             <!-- <div class="pt-3">
@@ -126,38 +126,38 @@
                             </div> -->
                         </div>
                     </div>
-                </div>
                 
-                <br>
-                <br>
-                <br>
+                    <br>
+                    <br>
+                    <br>
 
-                <div class="card" style="border-radius:8px;">                        
-                    <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Filter</div>
-                        <form type="get" action="{{ url('lomba') }}" id="cari">
-                            <div class="card-body">
-                                <div class="form-group fw-bold" >
-                                    <label for="kategori"  >Kategori<br></label>
-                                    <select name="kategori" class="form-control" placeholder="Pilih Kategori" form="cari">
-                                        <option selected disabled>Pilih Kategori</option>    
-                                        @foreach ($kategori as $row)
-                                        <option value="{{$row->id_kategori}}" {{ ($row->id_kategori == $selectedKategori) ? 'selected' : '' }}>{{$row->nama_kategori}}</option>
-                                        @endforeach
-                                    </select><br>                                    
+                    <div class="card ml-2" style="border-radius:8px">                        
+                        <div class="card-header" style="background-color:#003567; font:20px ; color:white ;border-radius: 8px 8px 0px 0px; font-weight:bold;">Filter</div>
+                            <form type="get" action="{{ url('lomba') }}" id="cari">
+                                <div class="card-body">
+                                    <div class="form-group fw-bold" >
+                                        <label for="kategori"  >Kategori<br></label>
+                                        <select name="kategori" class="form-control" placeholder="Pilih Kategori" form="cari">
+                                            <option selected disabled>Pilih Kategori</option>    
+                                            @foreach ($kategori as $row)
+                                            <option value="{{$row->id_kategori}}" {{ ($row->id_kategori == $selectedKategori) ? 'selected' : '' }}>{{$row->nama_kategori}}</option>
+                                            @endforeach
+                                        </select><br>                                    
+                                    </div>
+                                    <div class="form-group fw-bold">
+                                        <label for="bulan">Bulan</label>
+                                        <select name="bulan" class="form-control" placeholder="Pilih Bulan" form="cari">
+                                            <option selected disabled>Pilih Bulan</option>    
+                                            @foreach ($bulan as $noBulan=>$namaBulan)
+                                            <option value="{{$noBulan}}" {{ ($noBulan == $selectedBulan) ? 'selected' : '' }}>{{$namaBulan}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>    
+                                    <div class="p-3"></div>
+                                    <center> <button class="button-lomba fw-bolder " type="submit">Cari Lomba</button></center><br>                                
                                 </div>
-                                <div class="form-group fw-bold">
-                                    <label for="bulan">Bulan</label>
-                                    <select name="bulan" class="form-control" placeholder="Pilih Bulan" form="cari">
-                                        <option selected disabled>Pilih Bulan</option>    
-                                        @foreach ($bulan as $noBulan=>$namaBulan)
-                                        <option value="{{$noBulan}}" {{ ($noBulan == $selectedBulan) ? 'selected' : '' }}>{{$namaBulan}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>    
-                                <div class="p-3"></div>
-                                <center> <button class="button-lomba fw-bolder " type="submit">Cari Lomba</button></center><br>                                
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>       
             </div>
@@ -192,9 +192,14 @@
     {{ $data->links()  }}
     </div>
     
-    <div class="p-5"></div>
-    <div class="p-5"></div>
-    <div class="p-5"></div>
+    @if(count($data) < 3) {
+        <div class="p-5"></div>
+        <div class="p-5"></div>
+        <div class="p-5"></div>
+    } @else {
+        <div class="p-1"></div>
+    }
+    @endif
 
     @include('footer')
 

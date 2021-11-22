@@ -149,7 +149,7 @@
 
                 <div class="row">
                     @foreach ($lomba as $item)
-                    <div class="col-lg-6 col-md-12 col-sm-12 p-5 ">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-5">
                         <div class="card" style="width: 19rem; height: 530px; border-radius:20px">
                             <div class="">
                                 <img src="{{ url('image/lomba/'.$item->poster) }}" class="card-img" alt="" style="border-radius: 20px 20px 0px 0px; max-width: 300px; height: 370px;">
